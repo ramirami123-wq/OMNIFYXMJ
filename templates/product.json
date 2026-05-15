@@ -114,7 +114,7 @@
             "display_icon": true,
             "icon_size": "medium",
             "icon_alignment": "top",
-            "message": "<p>Get it between <strong>[start_date]</strong> and <strong>[end_date]</strong>.</p>",
+            "message": "<p>Get it between 5 and <strong>7 days</strong>.</p>",
             "min_shipping_days": 7,
             "max_shipping_days": 15,
             "date_format": "day_mm_dd",
