@@ -15,7 +15,7 @@
         "template--18472095940937__e6750b05-7703-4f69-ab7c-9ffb0acf18fb-16798645128eb8005e-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/1778152175_hf_20260507_110038_0f960a8d-4d86-4b39-a964-525cb470c65c.png",
+            "image": "shopify://shop_images/WhatsApp_Image_2026-05-15_at_4.41.54_PM.jpg",
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -103,14 +103,14 @@
         "heading_yazzb7": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Who's omnify?</p>",
+            "heading": "<h1>Who's omnify?</h1>",
             "heading_size": "h1"
           }
         },
         "text_UxhmYM": {
           "type": "text",
           "settings": {
-            "text": "<p>We are your trusted neighborhood general store, offering everyday essentials, groceries, household items, snacks, and more at affordable prices. Our goal is to provide friendly service, quality products, and a convenient shopping experience for our community. Thank you for shopping with us!</p>"
+            "text": "<p><em><strong>At Omnify, we create smart everyday products designed to simplify and upgrade your daily routine. From innovative drinkware to modern lifestyle essentials, every product combines functionality, sleek design, and convenience for everyday use.</strong></em></p>"
           }
         }
       },
@@ -145,9 +145,9 @@
         "speed": 3,
         "text_spacing": 3,
         "text_size": "1.75",
-        "italic_text": false,
-        "uppercase_text": false,
-        "bold_text": false,
+        "italic_text": true,
+        "uppercase_text": true,
+        "bold_text": true,
         "color_scheme": "accent-1",
         "padding_top": 16,
         "padding_bottom": 16
