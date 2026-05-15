@@ -33,12 +33,6 @@
             "layout": "price_first"
           }
         },
-        "de244682-4323-4802-b4ba-b79b08e0c71d": {
-          "type": "emoji_benefits",
-          "settings": {
-            "benefits": "<p>🙌 Benefit</p><p>💪 Benefit</p><p>🌟 Benefit</p>"
-          }
-        },
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a": {
           "type": "variant_picker",
           "settings": {
@@ -46,6 +40,12 @@
             "enable_color_swatches": false,
             "custom_swatch_option_name": "",
             "enable_swatches_custom_colors": false
+          }
+        },
+        "custom_liquid_ibdJAm": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"padding: 12px; text-align: left; background-color: #f9f9f9; font-size: 15px; border-radius: 12px; margin-top: 10px; margin-bottom: 10px; line-height: 1.6;\">\n<span style=\"font-weight: bold;\">☕ One-Touch Automatic Stirring</span> – Mix coffee, protein shakes, and drinks effortlessly with smart magnetic stirring technology.<br><br>\n\n<span style=\"font-weight: bold;\">🔋 USB Rechargeable Convenience</span> – Recharge easily and enjoy smooth, consistent mixing anytime without batteries or spoons.<br><br>\n\n<span style=\"font-weight: bold;\">✨ Modern Minimal Design</span> – Stylish 380ml mug available in black and white, perfect for everyday use at home, work, or travel.\n</div>"
           }
         },
         "074f248d-8d73-4c8f-a97e-d8e82c5be5fc": {
@@ -124,21 +124,6 @@
             "padding_bottom": 10
           }
         },
-        "149aabfb-9fd8-4472-a633-6032dbe01ed0": {
-          "type": "reviews",
-          "settings": {
-            "display_stars": true,
-            "avatar_alignment": "top",
-            "author_1": "Author",
-            "text_1": "<p>Share positive thoughts and feedback from your customer.</p>",
-            "author_2": "Author",
-            "text_2": "<p>Share positive thoughts and feedback from your customer.</p>",
-            "author_3": "Author",
-            "text_3": "<p>Share positive thoughts and feedback from your customer.</p>",
-            "padding_top": 10,
-            "padding_bottom": 10
-          }
-        },
         "description": {
           "type": "description",
           "settings": {}
@@ -148,14 +133,13 @@
         "c5728eab-5b1d-44e7-8e74-220cfef92c9b",
         "title",
         "price",
-        "de244682-4323-4802-b4ba-b79b08e0c71d",
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a",
+        "custom_liquid_ibdJAm",
         "074f248d-8d73-4c8f-a97e-d8e82c5be5fc",
         "buy_buttons",
         "d505cdfe-d5cf-4aff-8e9e-abca6dae66eb",
         "98db29ee-a7dc-429e-8129-bf71131627da",
         "2edbf491-d07c-4718-b71e-18ffe22ab7dc",
-        "149aabfb-9fd8-4472-a633-6032dbe01ed0",
         "description"
       ],
       "settings": {
@@ -193,73 +177,17 @@
         "padding_bottom": 24
       }
     },
-    "d7112918-a6ed-4119-8565-5d4b7041284a": {
-      "type": "rich-text",
-      "blocks": {
-        "template--18472096170313__d7112918-a6ed-4119-8565-5d4b7041284a-16798653812b488ac7-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Talk about your brand</p>",
-            "heading_size": "h1"
-          }
-        },
-        "template--18472096170313__d7112918-a6ed-4119-8565-5d4b7041284a-16798653812b488ac7-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
-          }
-        },
-        "template--18472096170313__d7112918-a6ed-4119-8565-5d4b7041284a-16798653812b488ac7-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "template--18472096170313__d7112918-a6ed-4119-8565-5d4b7041284a-16798653812b488ac7-0",
-        "template--18472096170313__d7112918-a6ed-4119-8565-5d4b7041284a-16798653812b488ac7-1",
-        "template--18472096170313__d7112918-a6ed-4119-8565-5d4b7041284a-16798653812b488ac7-2"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "03c08e95-f0ce-4379-bc05-787da4136202": {
       "type": "horizontal-ticker",
       "blocks": {
-        "template--18472096170313__03c08e95-f0ce-4379-bc05-787da4136202-1679864525e35c34e4-0": {
-          "type": "text",
-          "settings": {
-            "title": "Shrine Theme"
-          }
-        },
-        "template--18472096170313__03c08e95-f0ce-4379-bc05-787da4136202-1679864525e35c34e4-1": {
-          "type": "text",
-          "settings": {
-            "title": "Shrine Theme"
-          }
-        },
         "template--18472096170313__03c08e95-f0ce-4379-bc05-787da4136202-1679864525e35c34e4-2": {
           "type": "text",
           "settings": {
-            "title": "Shrine Theme"
+            "title": "Smart sipping starts here"
           }
         }
       },
       "block_order": [
-        "template--18472096170313__03c08e95-f0ce-4379-bc05-787da4136202-1679864525e35c34e4-0",
-        "template--18472096170313__03c08e95-f0ce-4379-bc05-787da4136202-1679864525e35c34e4-1",
         "template--18472096170313__03c08e95-f0ce-4379-bc05-787da4136202-1679864525e35c34e4-2"
       ],
       "settings": {
@@ -272,6 +200,107 @@
         "color_scheme": "accent-1",
         "padding_top": 16,
         "padding_bottom": 16
+      }
+    },
+    "image_with_text_TdeNGD": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_pXyLwg": {
+          "type": "heading",
+          "settings": {
+            "heading": "Smart Automatic Stirring",
+            "heading_size": "h1"
+          }
+        },
+        "text_WTKyQb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Enjoy perfectly mixed drinks with one-touch magnetic stirring technology. No spoons, no clumps — just smooth coffee, protein shakes, and more in seconds.</p><h3></h3>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pXyLwg",
+        "text_WTKyQb"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/1778164938_phpl3t8ijn4712obBT4noB.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "section_color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "horizontal_ticker_hUeGA6": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "text_F7bWne": {
+          "type": "text",
+          "settings": {
+            "title": "Mix effortlessly, enjoy instantly"
+          }
+        }
+      },
+      "block_order": [
+        "text_F7bWne"
+      ],
+      "settings": {
+        "speed": 3,
+        "text_spacing": 3,
+        "text_size": "1.75",
+        "italic_text": false,
+        "uppercase_text": false,
+        "bold_text": false,
+        "color_scheme": "accent-1",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "image_with_text_QAxRFt": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_DcxHyr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Designed for Everyday Life",
+            "heading_size": "h1"
+          }
+        },
+        "text_Vc4pfT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>With a sleek minimal design, USB rechargeability, and 380ml capacity, the OMNIFY Smart Stirring Mug is built for convenience at home, work, or on the go.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_DcxHyr",
+        "text_Vc4pfT"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/1778152175_hf_20260507_110038_0f960a8d-4d86-4b39-a964-525cb470c65c.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "section_color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "6b7afe89-5595-4016-a10d-f260d82ca9cc": {
@@ -322,26 +351,6 @@
         "benefit_color_scheme": "accent-1",
         "checkmark_color": "#53af01",
         "icon_cells_color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "1dec15b6-e51f-4064-b412-acf7a98422ef": {
-      "type": "comparison-slider",
-      "custom_css": [],
-      "settings": {
-        "title": "Before & After slider",
-        "heading_size": "h1",
-        "text": "<p>Talk about how and why is your brand better than the others.</p>",
-        "layout": "slider_second",
-        "color_scheme": "background-1",
-        "before_label": "Before",
-        "after_label": "After",
-        "labels_color_scheme": "accent-1",
-        "line_color": "background-1",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -403,207 +412,13 @@
         "padding_bottom": 36
       }
     },
-    "93b0a974-5b22-49fe-9076-abdc86f89548": {
-      "type": "vertical-ticker",
-      "blocks": {
-        "template--18472096170313__93b0a974-5b22-49fe-9076-abdc86f89548-16798645834b53974d-0": {
-          "type": "text",
-          "settings": {
-            "title": "Shrine Theme"
-          }
-        },
-        "template--18472096170313__93b0a974-5b22-49fe-9076-abdc86f89548-16798645834b53974d-1": {
-          "type": "text",
-          "settings": {
-            "title": "Shrine Theme"
-          }
-        },
-        "template--18472096170313__93b0a974-5b22-49fe-9076-abdc86f89548-16798645834b53974d-2": {
-          "type": "text",
-          "settings": {
-            "title": "Shrine Theme"
-          }
-        },
-        "template--18472096170313__93b0a974-5b22-49fe-9076-abdc86f89548-16798645834b53974d-3": {
-          "type": "text",
-          "settings": {
-            "title": "Shrine Theme"
-          }
-        }
-      },
-      "block_order": [
-        "template--18472096170313__93b0a974-5b22-49fe-9076-abdc86f89548-16798645834b53974d-0",
-        "template--18472096170313__93b0a974-5b22-49fe-9076-abdc86f89548-16798645834b53974d-1",
-        "template--18472096170313__93b0a974-5b22-49fe-9076-abdc86f89548-16798645834b53974d-2",
-        "template--18472096170313__93b0a974-5b22-49fe-9076-abdc86f89548-16798645834b53974d-3"
-      ],
-      "settings": {
-        "number_of_rows": 8,
-        "speed": 3,
-        "text_size": "4",
-        "italic_text": false,
-        "uppercase_text": false,
-        "bold_text": false,
-        "ticker_color_scheme": "accent-1",
-        "layout": "ticker_second",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "display_content": "always",
-        "content_heading": "Vertical Ticker",
-        "content_heading_size": "h1",
-        "content_text": "<p>Talk about features, perks, or benefits of your brand or product </p>",
-        "button_label": "Button label",
-        "link": "",
-        "button_style_secondary": false,
-        "content_color_scheme": "background-1",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "content_padding_top": 36,
-        "content_padding_bottom": 24
-      }
-    },
-    "73c5de8e-7b83-4813-8812-d56eb3a987a3": {
-      "type": "horizontal-ticker",
-      "blocks": {
-        "template--18472096170313__73c5de8e-7b83-4813-8812-d56eb3a987a3-1679864525e35c34e4-0": {
-          "type": "text",
-          "settings": {
-            "title": "Shrine Theme"
-          }
-        },
-        "template--18472096170313__73c5de8e-7b83-4813-8812-d56eb3a987a3-1679864525e35c34e4-1": {
-          "type": "text",
-          "settings": {
-            "title": "Shrine Theme"
-          }
-        },
-        "template--18472096170313__73c5de8e-7b83-4813-8812-d56eb3a987a3-1679864525e35c34e4-2": {
-          "type": "text",
-          "settings": {
-            "title": "Shrine Theme"
-          }
-        }
-      },
-      "block_order": [
-        "template--18472096170313__73c5de8e-7b83-4813-8812-d56eb3a987a3-1679864525e35c34e4-0",
-        "template--18472096170313__73c5de8e-7b83-4813-8812-d56eb3a987a3-1679864525e35c34e4-1",
-        "template--18472096170313__73c5de8e-7b83-4813-8812-d56eb3a987a3-1679864525e35c34e4-2"
-      ],
-      "settings": {
-        "speed": 3,
-        "text_spacing": 3,
-        "text_size": "1.75",
-        "italic_text": false,
-        "uppercase_text": false,
-        "bold_text": false,
-        "color_scheme": "inverse",
-        "padding_top": 16,
-        "padding_bottom": 16
-      }
-    },
-    "64c96926-2c31-48fe-bd21-30941bc87822": {
-      "type": "results",
-      "blocks": {
-        "template--18472096170313__64c96926-2c31-48fe-bd21-30941bc87822-16798646483bf89b52-0": {
-          "type": "row",
-          "settings": {
-            "percentage": 90,
-            "row_text": "<p>Noticed that this product has significantly improved their life.</p>"
-          }
-        },
-        "template--18472096170313__64c96926-2c31-48fe-bd21-30941bc87822-16798646483bf89b52-1": {
-          "type": "row",
-          "settings": {
-            "percentage": 90,
-            "row_text": "<p>Noticed that this product has significantly improved their life.</p>"
-          }
-        },
-        "template--18472096170313__64c96926-2c31-48fe-bd21-30941bc87822-16798646483bf89b52-2": {
-          "type": "row",
-          "settings": {
-            "percentage": 90,
-            "row_text": "<p>Noticed that this product has significantly improved their life.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "template--18472096170313__64c96926-2c31-48fe-bd21-30941bc87822-16798646483bf89b52-0",
-        "template--18472096170313__64c96926-2c31-48fe-bd21-30941bc87822-16798646483bf89b52-1",
-        "template--18472096170313__64c96926-2c31-48fe-bd21-30941bc87822-16798646483bf89b52-2"
-      ],
-      "settings": {
-        "title": "Results",
-        "heading_size": "h1",
-        "text": "<p>Talk about results of your customers and how your product improved their life.</p>",
-        "color_scheme": "background-1",
-        "layout": "results_first",
-        "results_headline": "Results headline",
-        "results_headline_size": "h2",
-        "results_headline_alignment": "left",
-        "caption": "<p>Caption about the results and/or link for their proof.</p>",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "854b8c46-40a3-4c74-9b36-360886558b1f": {
-      "type": "testimonials",
-      "blocks": {
-        "template--18472096170313__854b8c46-40a3-4c74-9b36-360886558b1f-16798646670717cf42-0": {
-          "type": "column",
-          "settings": {
-            "title": "Heading",
-            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
-            "author": "Author"
-          }
-        },
-        "template--18472096170313__854b8c46-40a3-4c74-9b36-360886558b1f-16798646670717cf42-1": {
-          "type": "column",
-          "settings": {
-            "title": "Heading",
-            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
-            "author": "Author"
-          }
-        },
-        "template--18472096170313__854b8c46-40a3-4c74-9b36-360886558b1f-16798646670717cf42-2": {
-          "type": "column",
-          "settings": {
-            "title": "Heading",
-            "text": "<p>Share positive thoughts and feedback from your customer..</p>",
-            "author": "Author"
-          }
-        }
-      },
-      "block_order": [
-        "template--18472096170313__854b8c46-40a3-4c74-9b36-360886558b1f-16798646670717cf42-0",
-        "template--18472096170313__854b8c46-40a3-4c74-9b36-360886558b1f-16798646670717cf42-1",
-        "template--18472096170313__854b8c46-40a3-4c74-9b36-360886558b1f-16798646670717cf42-2"
-      ],
-      "settings": {
-        "title": "Testimonials",
-        "heading_size": "h1",
-        "text": "",
-        "image_width": "full",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "show_stars": true,
-        "show_quotes": true,
-        "background_style": "primary",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "17788359107be508bb": {
       "type": "apps",
       "blocks": {
         "judge_me_reviews_review_widget_fJCMTU": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
-            "review_data": "sample_data",
+            "review_data": "real_data",
             "max_width": 1200,
             "show_shop_reviews": false,
             "empty_state": "empty_widget"
@@ -621,15 +436,12 @@
   "order": [
     "main",
     "related-products",
-    "d7112918-a6ed-4119-8565-5d4b7041284a",
     "03c08e95-f0ce-4379-bc05-787da4136202",
+    "image_with_text_TdeNGD",
+    "horizontal_ticker_hUeGA6",
+    "image_with_text_QAxRFt",
     "6b7afe89-5595-4016-a10d-f260d82ca9cc",
-    "1dec15b6-e51f-4064-b412-acf7a98422ef",
     "e21ff573-e051-4bf7-867b-94765a3b8f11",
-    "93b0a974-5b22-49fe-9076-abdc86f89548",
-    "73c5de8e-7b83-4813-8812-d56eb3a987a3",
-    "64c96926-2c31-48fe-bd21-30941bc87822",
-    "854b8c46-40a3-4c74-9b36-360886558b1f",
     "17788359107be508bb"
   ]
 }
