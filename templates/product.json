@@ -443,17 +443,17 @@
         "template--18472096170313__e21ff573-e051-4bf7-867b-94765a3b8f11-16798645704e6a2246-0": {
           "type": "column",
           "settings": {
-            "icon": "heart",
-            "title": "Icon",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p><p></p>"
+            "icon": "truck",
+            "title": "delivery all over lebanon",
+            "text": "<p></p><p></p>"
           }
         },
         "template--18472096170313__e21ff573-e051-4bf7-867b-94765a3b8f11-16798645704e6a2246-1": {
           "type": "column",
           "settings": {
-            "icon": "heart",
-            "title": "Icon",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p><p></p>"
+            "icon": "chat_bubble",
+            "title": "24/7 support",
+            "text": "<p></p><p></p>"
           }
         }
       },
