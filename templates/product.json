@@ -309,7 +309,7 @@
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-0": {
           "type": "row",
           "settings": {
-            "benefit": "Benefit",
+            "benefit": "Automatic Stirring",
             "us": true,
             "others": false
           }
@@ -317,7 +317,7 @@
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-1": {
           "type": "row",
           "settings": {
-            "benefit": "Benefit",
+            "benefit": "Minimal Modern Design",
             "us": true,
             "others": false
           }
@@ -325,7 +325,15 @@
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-2": {
           "type": "row",
           "settings": {
-            "benefit": "Benefit",
+            "benefit": "Smooth Mixing Performance",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_CnHQJk": {
+          "type": "row",
+          "settings": {
+            "benefit": "Portable & Lightweight",
             "us": true,
             "others": false
           }
@@ -334,12 +342,13 @@
       "block_order": [
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-0",
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-1",
-        "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-2"
+        "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-2",
+        "row_CnHQJk"
       ],
       "settings": {
-        "title": "Comparison table",
+        "title": "Why Us?",
         "heading_size": "h1",
-        "text": "<p>Talk about how and why is your brand better than the others.</p>",
+        "text": "",
         "button_label": "",
         "link": "",
         "button_style_secondary": false,
@@ -361,36 +370,36 @@
         "collapsible_row_NeNVMC": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Does the mug stir automatically?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, it features one-touch automatic magnetic stirring.</p><p></p>",
             "page": ""
           }
         },
         "collapsible_row_fDTheE": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Can I use it for protein shakes?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, it works great for coffee, protein shakes, and other drinks.</p><p></p>",
             "page": ""
           }
         },
         "collapsible_row_fF8Cj3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Is it easy to clean?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, the mug is simple and convenient to clean.</p><p></p>",
             "page": ""
           }
         },
         "collapsible_row_8BdJ9j": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Is it rechargeable?",
             "icon": "question_mark",
-            "row_content": "",
+            "row_content": "<p>Yes, the mug is USB rechargeable.</p>",
             "page": ""
           }
         }
