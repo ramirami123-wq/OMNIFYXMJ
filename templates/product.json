@@ -59,7 +59,7 @@
         "custom_liquid_ibdJAm": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div style=\"padding: 12px; text-align: left; background-color: #f9f9f9; font-size: 15px; border-radius: 12px; margin-top: 10px; margin-bottom: 10px; line-height: 1.6;\">\n<span style=\"font-weight: bold;\">☕ One-Touch Automatic Stirring</span> – Mix coffee, protein shakes, and drinks effortlessly with smart magnetic stirring technology.<br><br>\n\n<span style=\"font-weight: bold;\">🔋 USB Rechargeable Convenience</span> – Recharge easily and enjoy smooth, consistent mixing anytime without batteries or spoons.<br><br>\n\n<span style=\"font-weight: bold;\">✨ Modern Minimal Design</span> – Stylish 380ml mug available in black and white, perfect for everyday use at home, work, or travel.\n</div>"
+            "custom_liquid": "☕ <b>One-Touch Self Stirring</b><br>\nMix coffee, protein shakes & more instantly.<br><br>\n🔋 <b>USB Rechargeable</b><br>\nRecharge easily with USB.<br><br>\n✨ <b>Modern Minimal Design</b><br>\nPerfect for home, work & travel."
           }
         },
         "074f248d-8d73-4c8f-a97e-d8e82c5be5fc": {
@@ -115,7 +115,7 @@
             "button_label": "Add to cart",
             "show_price": true,
             "show_price_badge": true,
-            "color_scheme": "background-1"
+            "color_scheme": "inverse"
           }
         },
         "98db29ee-a7dc-429e-8129-bf71131627da": {
