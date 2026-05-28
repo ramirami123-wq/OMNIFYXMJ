@@ -17,12 +17,12 @@
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_May_28_2026_03_03_58_PM.png",
             "heading": "",
-            "heading_size": "h0",
+            "heading_size": "h2",
             "subheading": "",
             "button_label": "",
             "link": "shopify://products/self-stirring-mug",
             "button_style_secondary": false,
-            "box_align": "bottom-left",
+            "box_align": "top-left",
             "show_text_box": false,
             "text_alignment": "left",
             "image_overlay_opacity": 0,
@@ -34,11 +34,13 @@
       "block_order": [
         "template--18472095940937__e6750b05-7703-4f69-ab7c-9ffb0acf18fb-16798645128eb8005e-0"
       ],
-      "custom_css": [],
+      "custom_css": [
+        "@media screen and (max-width: 749px) {.slideshow__slide {min-height: 200px !important; }}"
+      ],
       "settings": {
         "layout": "full_bleed",
         "slide_height": "adapt_image",
-        "slider_visual": "counter",
+        "slider_visual": "numbers",
         "auto_rotate": false,
         "change_slides_speed": 5,
         "show_text_below": false,
@@ -47,30 +49,31 @@
     },
     "featured_collection_YwEcUT": {
       "type": "featured-collection",
+      "custom_css": [],
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "title": "Featured collection",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "collection": "frontpage",
         "products_to_show": 2,
-        "columns_desktop": 3,
-        "full_width": true,
+        "columns_desktop": 1,
+        "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
         "color_scheme": "background-1",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "d8b7c7f2-8a7b-486d-b2c1-184eea98110d": {
