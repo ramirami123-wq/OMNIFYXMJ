@@ -160,9 +160,9 @@
         "collapsible_row_YXfTAn": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Are your products trusted?",
+            "heading": "How can I pay?",
             "icon": "check_mark",
-            "row_content": "<p>Yes, we provide trusted and reliable products for everyday needs.</p><p></p>",
+            "row_content": "<p>Payment can be done through cash on delivery or wish payment</p><p></p><p></p>",
             "page": ""
           }
         },
