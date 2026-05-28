@@ -35,7 +35,7 @@
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "background-1",
-        "logo_position": "top-center",
+        "logo_position": "middle-left",
         "menu": "main-menu",
         "highlight_active_link": true,
         "highlighted_link_color_scheme": "background-1",
