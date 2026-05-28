@@ -19,14 +19,14 @@
             "heading": "",
             "heading_size": "h0",
             "subheading": "",
-            "button_label": "",
+            "button_label": "BUY NOW",
             "link": "shopify://products/self-stirring-mug",
-            "button_style_secondary": true,
-            "box_align": "bottom-center",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
             "show_text_box": false,
             "text_alignment": "left",
             "image_overlay_opacity": 0,
-            "color_scheme": "accent-1",
+            "color_scheme": "accent-2",
             "text_alignment_mobile": "left"
           }
         }
@@ -50,7 +50,7 @@
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "title": "Featured collection",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -62,15 +62,15 @@
         "view_all_style": "solid",
         "enable_desktop_slider": false,
         "color_scheme": "background-1",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
-        "padding_top": 8,
-        "padding_bottom": 0
+        "padding_top": 28,
+        "padding_bottom": 36
       }
     },
     "d8b7c7f2-8a7b-486d-b2c1-184eea98110d": {
@@ -104,7 +104,7 @@
         "heading_yazzb7": {
           "type": "heading",
           "settings": {
-            "heading": "<h1>Who's omnify?</h1>",
+            "heading": "<h1>About  omnify?</h1>",
             "heading_size": "h1"
           }
         },
