@@ -40,13 +40,6 @@
             "text_style": "body"
           }
         },
-        "text_dAGAKU": {
-          "type": "text",
-          "settings": {
-            "text": "",
-            "text_style": "body"
-          }
-        },
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a": {
           "type": "variant_picker",
           "settings": {
@@ -108,6 +101,13 @@
             "uppercase_text": true
           }
         },
+        "text_dAGAKU": {
+          "type": "text",
+          "settings": {
+            "text": "<div style=\"display:flex; flex-direction:column; gap:8px; font-weight:700; color:#222; margin-top:10px;\">\n<div>🔒 Secure Payments</div>\n<div>🚚 Tracked Shipping </div>\n<div>💳 Cash On Delivery</div>\n<div>⭐ Premium Quality</div>\n</div>",
+            "text_style": "body"
+          }
+        },
         "d505cdfe-d5cf-4aff-8e9e-abca6dae66eb": {
           "type": "sticky_atc",
           "settings": {
@@ -128,14 +128,14 @@
             "display_icon": true,
             "icon_size": "medium",
             "icon_alignment": "top",
-            "message": "<p>Get it between 5 and <strong>7 days</strong>.</p>",
+            "message": "<p>Get it between<strong> 5 </strong>and <strong>7 days.</strong></p>",
             "min_shipping_days": 7,
             "max_shipping_days": 15,
             "date_format": "day_mm_dd",
             "days_labels": "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday",
             "months_labels": "January, February, March, April, May, June, July, August, September, October, November, December",
-            "padding_top": 10,
-            "padding_bottom": 10
+            "padding_top": 0,
+            "padding_bottom": 6
           }
         }
       },
@@ -144,11 +144,11 @@
         "title",
         "price",
         "text_AkgKmi",
-        "text_dAGAKU",
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a",
         "custom_liquid_ibdJAm",
         "074f248d-8d73-4c8f-a97e-d8e82c5be5fc",
         "buy_buttons",
+        "text_dAGAKU",
         "d505cdfe-d5cf-4aff-8e9e-abca6dae66eb",
         "98db29ee-a7dc-429e-8129-bf71131627da",
         "2edbf491-d07c-4718-b71e-18ffe22ab7dc"
