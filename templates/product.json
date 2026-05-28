@@ -137,10 +137,6 @@
             "padding_top": 10,
             "padding_bottom": 10
           }
-        },
-        "description": {
-          "type": "description",
-          "settings": {}
         }
       },
       "block_order": [
@@ -155,8 +151,7 @@
         "buy_buttons",
         "d505cdfe-d5cf-4aff-8e9e-abca6dae66eb",
         "98db29ee-a7dc-429e-8129-bf71131627da",
-        "2edbf491-d07c-4718-b71e-18ffe22ab7dc",
-        "description"
+        "2edbf491-d07c-4718-b71e-18ffe22ab7dc"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -231,7 +226,7 @@
         "text_WTKyQb": {
           "type": "text",
           "settings": {
-            "text": "<p>Enjoy perfectly mixed drinks with one-touch magnetic stirring technology. No spoons, no clumps — just smooth coffee, protein shakes, and more in seconds.</p><h3></h3>",
+            "text": "<p>   Enjoy perfectly mixed drinks with one-     touch magnetic stirring technology. No spoons, no clumps — just smooth coffee, protein shakes, and more in seconds.</p><h3></h3>",
             "text_style": "body"
           }
         }

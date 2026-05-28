@@ -19,28 +19,29 @@
             "heading": "",
             "heading_size": "h0",
             "subheading": "",
-            "button_label": "",
+            "button_label": "BUY",
             "link": "shopify://products/self-stirring-mug",
             "button_style_secondary": false,
-            "box_align": "top-left",
+            "box_align": "bottom-left",
             "show_text_box": false,
             "text_alignment": "left",
             "image_overlay_opacity": 0,
-            "color_scheme": "inverse",
-            "text_alignment_mobile": "right"
+            "color_scheme": "accent-2",
+            "text_alignment_mobile": "left"
           }
         }
       },
       "block_order": [
         "template--18472095940937__e6750b05-7703-4f69-ab7c-9ffb0acf18fb-16798645128eb8005e-0"
       ],
+      "custom_css": [],
       "settings": {
         "layout": "full_bleed",
         "slide_height": "adapt_image",
         "slider_visual": "counter",
         "auto_rotate": false,
         "change_slides_speed": 5,
-        "show_text_below": true,
+        "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
       }
     },
