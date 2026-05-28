@@ -3373,3 +3373,8 @@ details-disclosure > details {
 body {
   overflow-x: hidden !important;
 }
+#shopify-section-template--27222314254615__e6750b05-7703-4f69-ab7c-9ffb0acf18fb .button,
+#shopify-section-template--27222314254615__e6750b05-7703-4f69-ab7c-9ffb0acf18fb .btn {
+  padding: 10px 20px !important;
+  font-size: 13px !important;
+}
