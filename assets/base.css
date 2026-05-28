@@ -3378,4 +3378,13 @@ body {
   padding: 10px 20px !important;
   font-size: 13px !important;
 }
+@media screen and (max-width: 768px) {
 
+.shopify-payment-button__button {
+    height: 54px !important;
+    font-size: 20px !important;
+    padding: 0 18px !important;
+    border-radius: 16px !important;
+}
+
+}
