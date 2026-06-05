@@ -501,6 +501,12 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "1780666841f9804d89": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -514,6 +520,7 @@
     "collapsible_content_XrLw93",
     "17788359107be508bb",
     "e21ff573-e051-4bf7-867b-94765a3b8f11",
-    "177885579122fb6512"
+    "177885579122fb6512",
+    "1780666841f9804d89"
   ]
 }
