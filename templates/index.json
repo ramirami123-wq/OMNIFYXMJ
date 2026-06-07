@@ -50,7 +50,7 @@
       "custom_css": [],
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "title": "OUR BEST SELLER",
+        "title": "",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
