@@ -50,7 +50,7 @@
       "custom_css": [],
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "title": "CUSTOMER FAVORITE",
+        "title": "OUR BEST SELLER",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -66,7 +66,7 @@
         "image_ratio": "portrait",
         "show_secondary_image": false,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "enable_quick_add": false,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
