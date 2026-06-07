@@ -18,7 +18,7 @@
     "gradient_accent_1": "",
     "colors_accent_2": "#cea887",
     "gradient_accent_2": "linear-gradient(54deg, rgba(206, 168, 135, 1) 14%, rgba(105, 14, 14, 1) 85%)",
-    "colors_text": "#121212",
+    "colors_text": "#000000",
     "colors_outline_button_labels": "#cea887",
     "colors_background_1": "#ffffff",
     "gradient_background_1": "",
