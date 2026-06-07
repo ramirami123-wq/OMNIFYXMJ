@@ -328,7 +328,7 @@
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-1": {
           "type": "row",
           "settings": {
-            "benefit": "Minimal Modern Design",
+            "benefit": "easy recharge",
             "us": true,
             "others": false
           }
@@ -336,7 +336,7 @@
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-2": {
           "type": "row",
           "settings": {
-            "benefit": "Smooth Mixing Performance",
+            "benefit": "spill resistant lid",
             "us": true,
             "others": false
           }
@@ -344,7 +344,7 @@
         "row_CnHQJk": {
           "type": "row",
           "settings": {
-            "benefit": "Portable & Lightweight",
+            "benefit": "smooth mixing",
             "us": true,
             "others": false
           }
@@ -356,9 +356,10 @@
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-2",
         "row_CnHQJk"
       ],
+      "custom_css": [],
       "settings": {
-        "title": "Why Us?",
-        "heading_size": "h1",
+        "title": "Why Choose Omnify?",
+        "heading_size": "h2",
         "text": "",
         "button_label": "",
         "link": "",
@@ -366,8 +367,8 @@
         "layout": "table_second",
         "color_scheme": "accent-1",
         "logo_width": 75,
-        "us_label": "",
-        "others_label": "OTHERS",
+        "us_label": "omnify",
+        "others_label": "regular mugs",
         "benefit_color_scheme": "accent-1",
         "checkmark_color": "#53af01",
         "icon_cells_color_scheme": "background-1",
