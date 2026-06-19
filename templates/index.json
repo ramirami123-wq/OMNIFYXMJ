@@ -258,16 +258,25 @@
     "17788573511b28ffa9": {
       "type": "apps",
       "blocks": {
+        "judge_me_reviews_review_widget_homepage_xXmrpf": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget_homepage/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "product": "smart-nutrition-scale",
+            "review_data": "sample_data",
+            "max_width": 550
+          }
+        },
         "judge_me_reviews_review_widget_homepage_rt9Qq9": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget_homepage/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "product": "self-stirring-mug",
             "review_data": "sample_data",
-            "max_width": 1200
+            "max_width": 550
           }
         }
       },
       "block_order": [
+        "judge_me_reviews_review_widget_homepage_xXmrpf",
         "judge_me_reviews_review_widget_homepage_rt9Qq9"
       ],
       "settings": {
