@@ -52,7 +52,7 @@
         "custom_liquid_ibdJAm": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "AL"
+            "custom_liquid": "<div style=\"margin-top:20px;\">\n\n<p><strong>🥗 Smart Nutrition Tracking</strong><br>\nTrack calories and nutrients with precision.</p>\n\n<p><strong>📱 App Connected</strong><br>\nMonitor your meals directly from your phone.</p>\n\n<p><strong>⚖️ High Precision</strong><br>\nAccurate measurements for every ingredient.</p>\n\n<p><strong>✨ Premium Design</strong><br>\nDurable stainless steel construction.</p>\n\n</div>"
           }
         },
         "074f248d-8d73-4c8f-a97e-d8e82c5be5fc": {
@@ -219,14 +219,14 @@
         "heading_pXyLwg": {
           "type": "heading",
           "settings": {
-            "heading": "Smart Automatic Stirring",
+            "heading": "Track  Macros  Instantly",
             "heading_size": "h1"
           }
         },
         "text_WTKyQb": {
           "type": "text",
           "settings": {
-            "text": "<p>   Enjoy perfectly mixed drinks with one-     touch magnetic stirring technology. No spoons, no clumps — just smooth coffee, protein shakes, and more in seconds.</p><h3></h3>",
+            "text": "<p><strong>Omnify Nutrition Scale™</strong> helps you track calories, protein, carbs, fats, and more with precision. Simply weigh your food and sync with the app for smarter eating and healthier living. 🥗⚖️📱<br/><br/></p>",
             "text_style": "body"
           }
         }
@@ -237,7 +237,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/1778164938_phpl3t8ijn4712obBT4noB.jpg",
+        "image": "shopify://shop_images/ChatGPT_Image_Jun_19_2026_08_57_24_PM.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -282,14 +282,14 @@
         "heading_DcxHyr": {
           "type": "heading",
           "settings": {
-            "heading": "Designed for Everyday Life",
+            "heading": "Designed for Healthy Living",
             "heading_size": "h1"
           }
         },
         "text_Vc4pfT": {
           "type": "text",
           "settings": {
-            "text": "<p>With a sleek minimal design, USB rechargeability, and 380ml capacity, the OMNIFY Smart Stirring Mug is built for convenience at home, work, or on the go.</p>",
+            "text": "<p><br/>Featuring precision weighing, nutritional tracking, and app integration, <strong>the OMNIFY Smart Nutrition Scale</strong> makes healthy eating simple, accurate, and effortless every day. 🥗⚖️📱<br/><br/></p>",
             "text_style": "body"
           }
         }
@@ -300,7 +300,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/1778152175_hf_20260507_110038_0f960a8d-4d86-4b39-a964-525cb470c65c.png",
+        "image": "shopify://shop_images/ChatGPTImageJun19_2026_07_45_55PM.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -320,7 +320,7 @@
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-0": {
           "type": "row",
           "settings": {
-            "benefit": "Automatic Stirring",
+            "benefit": "Nutrition Tracking",
             "us": true,
             "others": false
           }
@@ -328,7 +328,7 @@
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-1": {
           "type": "row",
           "settings": {
-            "benefit": "easy recharge",
+            "benefit": "App Conectivity",
             "us": true,
             "others": false
           }
@@ -336,7 +336,7 @@
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-2": {
           "type": "row",
           "settings": {
-            "benefit": "spill resistant lid",
+            "benefit": "Meal Prep Optimization",
             "us": true,
             "others": false
           }
@@ -344,7 +344,7 @@
         "row_CnHQJk": {
           "type": "row",
           "settings": {
-            "benefit": "smooth mixing",
+            "benefit": "High Precision Sensors",
             "us": true,
             "others": false
           }
@@ -368,7 +368,7 @@
         "color_scheme": "accent-1",
         "logo_width": 75,
         "us_label": "omnify",
-        "others_label": "regular mugs",
+        "others_label": "other scales",
         "benefit_color_scheme": "accent-1",
         "checkmark_color": "#53af01",
         "icon_cells_color_scheme": "background-1",
@@ -382,18 +382,18 @@
         "collapsible_row_NeNVMC": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Does the mug stir automatically?",
+            "heading": "How to use it?",
             "icon": "question_mark",
-            "row_content": "<p>Yes, it features one-touch automatic magnetic stirring.</p><p></p>",
+            "row_content": "<p>You scan the qr code of the food if not available type it in the app and it shows everything on scale</p><p></p>",
             "page": ""
           }
         },
         "collapsible_row_fDTheE": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I use it for protein shakes?",
+            "heading": "How accurate is the scale?",
             "icon": "question_mark",
-            "row_content": "<p>Yes, it works great for coffee, protein shakes, and other drinks.</p><p></p>",
+            "row_content": "<p><br/>The scale uses high-precision sensors to deliver reliable measurements, making it perfect for meal prep, calorie counting, and fitness goals.<br/><br/></p><p></p>",
             "page": ""
           }
         },
@@ -402,7 +402,7 @@
           "settings": {
             "heading": "Is it easy to clean?",
             "icon": "question_mark",
-            "row_content": "<p>Yes, the mug is simple and convenient to clean.</p><p></p>",
+            "row_content": "<p><br/>Yes. The premium stainless steel surface is durable, water-resistant, and easy to wipe clean after use.<br/><br/></p><p></p>",
             "page": ""
           }
         },
@@ -411,7 +411,7 @@
           "settings": {
             "heading": "Is it rechargeable?",
             "icon": "question_mark",
-            "row_content": "<p>Yes, the mug is USB rechargeable.</p>",
+            "row_content": "<p>The scale is powered by batteries and is designed for long-lasting everyday use.</p>",
             "page": ""
           }
         }
