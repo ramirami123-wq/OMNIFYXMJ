@@ -52,7 +52,7 @@
         "custom_liquid_ibdJAm": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "☕ <b>One-Touch Self Stirring</b><br>\nMix coffee, protein shakes & more instantly.<br><br>\n🔋 <b>USB Rechargeable</b><br>\nRecharge easily with USB.<br><br>\n✨ <b>Modern Minimal Design</b><br>\nPerfect for home, work & travel."
+            "custom_liquid": "<div style=\"font-family: inherit; line-height: 1.6;\">\n\n  <p>❄️ <strong>Instant Cooling</strong><br>\n  Enjoy cool, refreshing air in seconds.</p>\n\n  <p>🔋 <strong>USB Rechargeable</strong><br>\n  Recharge easily with USB.</p>\n\n  <p>✨ <strong>Compact & Portable Design</strong><br>\n  Perfect for home, work & travel.</p>\n\n</div>"
           }
         },
         "074f248d-8d73-4c8f-a97e-d8e82c5be5fc": {
@@ -194,7 +194,7 @@
         "template--18472096170313__03c08e95-f0ce-4379-bc05-787da4136202-1679864525e35c34e4-2": {
           "type": "text",
           "settings": {
-            "title": "Smart sipping starts here"
+            "title": "❄️ Stay Cool All Summer Long"
           }
         }
       },
@@ -219,14 +219,14 @@
         "heading_pXyLwg": {
           "type": "heading",
           "settings": {
-            "heading": "Smart Automatic Stirring",
-            "heading_size": "h1"
+            "heading": "Powerful Cooling    Anywhere You Go",
+            "heading_size": "h2"
           }
         },
         "text_WTKyQb": {
           "type": "text",
           "settings": {
-            "text": "<p>   Enjoy perfectly mixed drinks with one-     touch magnetic stirring technology. No spoons, no clumps — just smooth coffee, protein shakes, and more in seconds.</p><h3></h3>",
+            "text": "<p><br/>Beat the heat with refreshing cool mist. Simply add water (and ice for extra cooling) to enjoy powerful airflow that keeps you comfortable wherever you are<br/><br/></p>",
             "text_style": "body"
           }
         }
@@ -237,7 +237,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/1778164938_phpl3t8ijn4712obBT4noB.jpg",
+        "image": "shopify://shop_images/ChatGPT_Image_Jun_30_2026_06_42_08_PM.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -257,7 +257,7 @@
         "text_F7bWne": {
           "type": "text",
           "settings": {
-            "title": "Mix effortlessly, enjoy instantly"
+            "title": "💨 FEEL THE DIFFERENCE INSTANTLY"
           }
         }
       },
@@ -282,14 +282,14 @@
         "heading_DcxHyr": {
           "type": "heading",
           "settings": {
-            "heading": "Designed for Everyday Life",
-            "heading_size": "h1"
+            "heading": "Add Ice                      Feel The Difference",
+            "heading_size": "h2"
           }
         },
         "text_Vc4pfT": {
           "type": "text",
           "settings": {
-            "text": "<p>With a sleek minimal design, USB rechargeability, and 380ml capacity, the OMNIFY Smart Stirring Mug is built for convenience at home, work, or on the go.</p>",
+            "text": "<p><br/>Fill the tank with water and add ice cubes for even colder air. Perfect for hot summer days at home, the office, or outdoors.<br/><br/></p>",
             "text_style": "body"
           }
         }
@@ -300,7 +300,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/1778152175_hf_20260507_110038_0f960a8d-4d86-4b39-a964-525cb470c65c.png",
+        "image": "shopify://shop_images/WhatsApp_Image_2026-06-30_at_6.31.00_PM_2.jpg",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -317,10 +317,18 @@
     "6b7afe89-5595-4016-a10d-f260d82ca9cc": {
       "type": "comparison-table",
       "blocks": {
+        "row_ADCwan": {
+          "type": "row",
+          "settings": {
+            "benefit": "3 wind speeds",
+            "us": true,
+            "others": false
+          }
+        },
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-0": {
           "type": "row",
           "settings": {
-            "benefit": "Automatic Stirring",
+            "benefit": "Instant Cooling",
             "us": true,
             "others": false
           }
@@ -328,7 +336,7 @@
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-1": {
           "type": "row",
           "settings": {
-            "benefit": "easy recharge",
+            "benefit": "Refreshing Mist Function",
             "us": true,
             "others": false
           }
@@ -336,7 +344,7 @@
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-2": {
           "type": "row",
           "settings": {
-            "benefit": "spill resistant lid",
+            "benefit": "Portable & Lightweight",
             "us": true,
             "others": false
           }
@@ -344,13 +352,14 @@
         "row_CnHQJk": {
           "type": "row",
           "settings": {
-            "benefit": "smooth mixing",
+            "benefit": "Perfect for Home, Office & Travel",
             "us": true,
             "others": false
           }
         }
       },
       "block_order": [
+        "row_ADCwan",
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-0",
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-1",
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-2",
@@ -368,7 +377,7 @@
         "color_scheme": "accent-1",
         "logo_width": 75,
         "us_label": "omnify",
-        "others_label": "regular mugs",
+        "others_label": "Regular Fan",
         "benefit_color_scheme": "accent-1",
         "checkmark_color": "#53af01",
         "icon_cells_color_scheme": "background-1",
@@ -382,27 +391,27 @@
         "collapsible_row_NeNVMC": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Does the mug stir automatically?",
+            "heading": "Does it really cool the air?",
             "icon": "question_mark",
-            "row_content": "<p>Yes, it features one-touch automatic magnetic stirring.</p><p></p>",
+            "row_content": "<p><br/>Yes! The fan uses water mist to provide a refreshing cooling effect, especially when ice is added.<br/><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_fDTheE": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I use it for protein shakes?",
+            "heading": "How long does the water last?",
             "icon": "question_mark",
-            "row_content": "<p>Yes, it works great for coffee, protein shakes, and other drinks.</p><p></p>",
+            "row_content": "<p><br/>The water tank provides several hours of cooling depending on the fan speed.<br/><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_fF8Cj3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Is it easy to clean?",
+            "heading": "How do I clean the air cooler?",
             "icon": "question_mark",
-            "row_content": "<p>Yes, the mug is simple and convenient to clean.</p><p></p>",
+            "row_content": "<p><br/>Cleaning is quick and easy. Empty the remaining water, rinse the tank with clean water, and wipe the exterior with a soft cloth. For best performance, clean the tank every few days with regular use and let it dry before refilling.<br/><br/></p>",
             "page": ""
           }
         },
@@ -411,7 +420,7 @@
           "settings": {
             "heading": "Is it rechargeable?",
             "icon": "question_mark",
-            "row_content": "<p>Yes, the mug is USB rechargeable.</p>",
+            "row_content": "<p><br/>Yes, it charges via USB so you can use it anywhere.<br/><br/></p>",
             "page": ""
           }
         }
