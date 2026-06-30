@@ -260,6 +260,7 @@
       "blocks": {
         "judge_me_reviews_review_widget_homepage_xXmrpf": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget_homepage/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {
             "product": "smart-nutrition-scale",
             "review_data": "sample_data",
@@ -268,6 +269,7 @@
         },
         "judge_me_reviews_review_widget_homepage_rt9Qq9": {
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget_homepage/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
           "settings": {
             "product": "self-stirring-mug",
             "review_data": "sample_data",
