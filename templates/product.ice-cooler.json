@@ -12,12 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "custom_liquid_UycAap": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div style=\"font-size:17px;line-height:2.2;font-weight:600;\">\n\n🧊 Ice Cooling<br>\n💨 Cool Mist<br>\n🔋 USB Rechargeable\n\n</div>"
-          }
-        },
         "c5728eab-5b1d-44e7-8e74-220cfef92c9b": {
           "type": "urgency",
           "settings": {
@@ -37,6 +31,12 @@
           "type": "price",
           "settings": {
             "layout": "price_first"
+          }
+        },
+        "custom_liquid_UycAap": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<strong>🧊 Instant Ice Cooling</strong><br>\n<strong>💨 Refreshing Mist</strong><br>\n<strong>🔋 USB Rechargeable</strong>"
           }
         },
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a": {
@@ -88,10 +88,10 @@
         }
       },
       "block_order": [
-        "custom_liquid_UycAap",
         "c5728eab-5b1d-44e7-8e74-220cfef92c9b",
         "title",
         "price",
+        "custom_liquid_UycAap",
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a",
         "buy_buttons",
         "d505cdfe-d5cf-4aff-8e9e-abca6dae66eb",
