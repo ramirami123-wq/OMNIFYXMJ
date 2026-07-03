@@ -12,6 +12,12 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "custom_liquid_UycAap": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"font-size:17px;line-height:2.2;font-weight:600;\">\n\n🧊 Ice Cooling<br>\n💨 Cool Mist<br>\n🔋 USB Rechargeable\n\n</div>"
+          }
+        },
         "c5728eab-5b1d-44e7-8e74-220cfef92c9b": {
           "type": "urgency",
           "settings": {
@@ -82,6 +88,7 @@
         }
       },
       "block_order": [
+        "custom_liquid_UycAap",
         "c5728eab-5b1d-44e7-8e74-220cfef92c9b",
         "title",
         "price",
