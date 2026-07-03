@@ -52,45 +52,7 @@
         "custom_liquid_ibdJAm": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div style=\"font-family: inherit; line-height: 1.6;\">\n\n  <p>❄️ <strong>Instant Cooling</strong><br>\n  Enjoy cool, refreshing air in seconds.</p>\n\n  <p>🔋 <strong>USB Rechargeable</strong><br>\n  Recharge easily with USB.</p>\n\n  <p>✨ <strong>Compact & Portable Design</strong><br>\n  Perfect for home, work & travel.</p>\n\n</div>"
-          }
-        },
-        "074f248d-8d73-4c8f-a97e-d8e82c5be5fc": {
-          "type": "quantity_selector",
-          "settings": {
-            "enable_quantity_discounts": false,
-            "headline": "BUNDLE & SAVE",
-            "preselected": "option_1",
-            "display_badge": "none",
-            "badge_text": "Most Popular",
-            "option_1_quantity": 1,
-            "option_1_label": "",
-            "option_1_benefit": "",
-            "option_1_caption": "You save [amount]",
-            "option_1_discount_type": "none",
-            "option_1_percentage_off": 0,
-            "option_1_fixed_amount_off": "0",
-            "option_2_quantity": 2,
-            "option_2_label": "",
-            "option_2_benefit": "",
-            "option_2_caption": "You save [amount]",
-            "option_2_discount_type": "none",
-            "option_2_percentage_off": 0,
-            "option_2_fixed_amount_off": "0",
-            "option_3_quantity": 3,
-            "option_3_label": "",
-            "option_3_benefit": "",
-            "option_3_caption": "You save [amount]",
-            "option_3_discount_type": "none",
-            "option_3_percentage_off": 0,
-            "option_3_fixed_amount_off": "0",
-            "option_4_quantity": 4,
-            "option_4_label": "",
-            "option_4_benefit": "",
-            "option_4_caption": "You save [amount]",
-            "option_4_discount_type": "none",
-            "option_4_percentage_off": 0,
-            "option_4_fixed_amount_off": "0"
+            "custom_liquid": "<div style=\"font-family: inherit; line-height: 1.6;\">\n\n  <p>❄️ <strong>Instant Cooling</strong><br>\n  Enjoy cool, refreshing air in seconds.</p>\n\n  <p>🔋 <strong>USB Rechargeable</strong><br>\n  Recharge easily with USB.</p>\n\n\n\n</div>"
           }
         },
         "buy_buttons": {
@@ -99,13 +61,6 @@
             "show_dynamic_checkout": true,
             "skip_cart": false,
             "uppercase_text": true
-          }
-        },
-        "text_dAGAKU": {
-          "type": "text",
-          "settings": {
-            "text": "<div style=\"display:flex; flex-direction:column; gap:8px; font-weight:700; color:#222; margin-top:10px;\">\n<div>🔒 Secure Payments</div>\n<div>🚚 Tracked Shipping </div>\n<div>💳 Cash On Delivery</div>\n<div>⭐ Premium Quality</div>\n</div>",
-            "text_style": "body"
           }
         },
         "d505cdfe-d5cf-4aff-8e9e-abca6dae66eb": {
@@ -146,9 +101,7 @@
         "text_AkgKmi",
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a",
         "custom_liquid_ibdJAm",
-        "074f248d-8d73-4c8f-a97e-d8e82c5be5fc",
         "buy_buttons",
-        "text_dAGAKU",
         "d505cdfe-d5cf-4aff-8e9e-abca6dae66eb",
         "98db29ee-a7dc-429e-8129-bf71131627da",
         "2edbf491-d07c-4718-b71e-18ffe22ab7dc"
