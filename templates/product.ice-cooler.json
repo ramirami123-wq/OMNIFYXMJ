@@ -39,6 +39,29 @@
             "custom_liquid": "<strong>🧊 Instant Ice Cooling</strong><br>\n<strong>💨 Refreshing Mist</strong><br>\n<strong>🔋 USB Rechargeable</strong>"
           }
         },
+        "section_vso_theme_sections_social_proof_pAjxF7": {
+          "type": "shopify://apps/section-vso-theme-sections/blocks/socialProof/06016590-3938-4460-bd08-bd58cf996a58",
+          "settings": {
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "verified_name_1": "Elie",
+            "verified_name_2": "Mohammad",
+            "additional_text": "and <strong>10,000+</strong> others love our products!",
+            "border_width": 1,
+            "border_color": "#E5E7EB",
+            "border_style": "solid",
+            "background_color": "#f8f9fa",
+            "text_color": "#333333",
+            "border_radius": 12,
+            "font_size": 14,
+            "image_size": 32,
+            "padding": 16,
+            "border_radius_mobile": 8,
+            "font_size_mobile": 12,
+            "image_size_mobile": 28,
+            "padding_mobile": 12
+          }
+        },
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a": {
           "type": "variant_picker",
           "settings": {
@@ -92,6 +115,7 @@
         "title",
         "price",
         "custom_liquid_UycAap",
+        "section_vso_theme_sections_social_proof_pAjxF7",
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a",
         "buy_buttons",
         "d505cdfe-d5cf-4aff-8e9e-abca6dae66eb",
