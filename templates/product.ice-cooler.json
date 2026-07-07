@@ -42,13 +42,13 @@
         "section_vso_theme_sections_social_proof_pAjxF7": {
           "type": "shopify://apps/section-vso-theme-sections/blocks/socialProof/06016590-3938-4460-bd08-bd58cf996a58",
           "settings": {
-            "margin_top": 0,
+            "margin_top": 4,
             "margin_bottom": 0,
             "verified_name_1": "Elie",
             "verified_name_2": "Mohammad",
             "additional_text": "and <strong>10,000+</strong> others love our products!",
             "border_width": 1,
-            "border_color": "#E5E7EB",
+            "border_color": "#e5e7eb",
             "border_style": "solid",
             "background_color": "#f8f9fa",
             "text_color": "#333333",
@@ -490,6 +490,7 @@
   },
   "order": [
     "main",
+    "17788359107be508bb",
     "related-products",
     "03c08e95-f0ce-4379-bc05-787da4136202",
     "image_with_text_TdeNGD",
@@ -497,7 +498,6 @@
     "image_with_text_QAxRFt",
     "6b7afe89-5595-4016-a10d-f260d82ca9cc",
     "collapsible_content_XrLw93",
-    "17788359107be508bb",
     "e21ff573-e051-4bf7-867b-94765a3b8f11",
     "177885579122fb6512",
     "1780666841f9804d89"
