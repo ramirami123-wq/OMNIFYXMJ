@@ -27,29 +27,6 @@
             "uppercase_title": false
           }
         },
-        "section_vso_theme_sections_social_proof_EzfGc7": {
-          "type": "shopify://apps/section-vso-theme-sections/blocks/socialProof/06016590-3938-4460-bd08-bd58cf996a58",
-          "settings": {
-            "margin_top": 0,
-            "margin_bottom": 0,
-            "verified_name_1": "Davie",
-            "verified_name_2": "Lucas",
-            "additional_text": "and <strong>10,000+</strong> others love our products!",
-            "border_width": 1,
-            "border_color": "#E5E7EB",
-            "border_style": "solid",
-            "background_color": "#f8f9fa",
-            "text_color": "#333333",
-            "border_radius": 12,
-            "font_size": 14,
-            "image_size": 32,
-            "padding": 16,
-            "border_radius_mobile": 8,
-            "font_size_mobile": 12,
-            "image_size_mobile": 28,
-            "padding_mobile": 12
-          }
-        },
         "price": {
           "type": "price",
           "settings": {
@@ -113,7 +90,6 @@
       "block_order": [
         "c5728eab-5b1d-44e7-8e74-220cfef92c9b",
         "title",
-        "section_vso_theme_sections_social_proof_EzfGc7",
         "price",
         "custom_liquid_UycAap",
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a",
