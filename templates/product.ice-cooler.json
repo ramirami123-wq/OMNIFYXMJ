@@ -27,6 +27,10 @@
             "uppercase_title": false
           }
         },
+        "judge_me_reviews_preview_badge_UJLjbj": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "price": {
           "type": "price",
           "settings": {
@@ -90,6 +94,7 @@
       "block_order": [
         "c5728eab-5b1d-44e7-8e74-220cfef92c9b",
         "title",
+        "judge_me_reviews_preview_badge_UJLjbj",
         "price",
         "custom_liquid_UycAap",
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a",
@@ -113,26 +118,6 @@
         "trust_badge_size": "medium",
         "padding_top": 24,
         "padding_bottom": 0
-      }
-    },
-    "17788359107be508bb": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_77zQmG": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "review_data": "real_data",
-            "max_width": 1200,
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget"
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_77zQmG"
-      ],
-      "settings": {
-        "include_margins": true
       }
     },
     "related-products": {
@@ -462,11 +447,30 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "17788359107be508bb": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_77zQmG": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_77zQmG"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
     "main",
-    "17788359107be508bb",
     "related-products",
     "03c08e95-f0ce-4379-bc05-787da4136202",
     "image_with_text_TdeNGD",
@@ -476,6 +480,7 @@
     "collapsible_content_XrLw93",
     "e21ff573-e051-4bf7-867b-94765a3b8f11",
     "177885579122fb6512",
-    "1780666841f9804d89"
+    "1780666841f9804d89",
+    "17788359107be508bb"
   ]
 }
