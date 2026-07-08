@@ -52,7 +52,7 @@
         "custom_liquid_ibdJAm": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "☕ <b>One-Touch Self Stirring</b><br>\nMix coffee, protein shakes & more instantly.<br><br>\n🔋 <b>USB Rechargeable</b><br>\nRecharge easily with USB.<br><br>\n✨ <b>Modern Minimal Design</b><br>\nPerfect for home, work & travel."
+            "custom_liquid": "🦟 <b>Fast Bite Relief</b><br>\nHelps relieve itching & discomfort from insect bites.<br><br>\n💨 <b>Powerful Suction</b><br>\nGently lifts irritants without chemicals.<br><br>\n🎒 <b>Compact & Reusable</b><br>\nPerfect for travel, camping & everyday use."
           }
         },
         "074f248d-8d73-4c8f-a97e-d8e82c5be5fc": {
@@ -219,14 +219,14 @@
         "heading_pXyLwg": {
           "type": "heading",
           "settings": {
-            "heading": "Smart Automatic Stirring",
+            "heading": "Instant Venom Relief.",
             "heading_size": "h1"
           }
         },
         "text_WTKyQb": {
           "type": "text",
           "settings": {
-            "text": "<p>   Enjoy perfectly mixed drinks with one-     touch magnetic stirring technology. No spoons, no clumps — just smooth coffee, protein shakes, and more in seconds.</p><h3></h3>",
+            "text": "<p><br/>A simple, chemical-free way to help relieve itching and discomfort from mosquito and insect bites. Lightweight, reusable, and perfect for home, travel, and the outdoors.</p>",
             "text_style": "body"
           }
         }
@@ -237,7 +237,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/1778164938_phpl3t8ijn4712obBT4noB.jpg",
+        "image": "shopify://shop_images/bugbite_usage_shopify_fill_square.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -282,14 +282,14 @@
         "heading_DcxHyr": {
           "type": "heading",
           "settings": {
-            "heading": "Designed for Everyday Life",
+            "heading": "Light and Reusable.",
             "heading_size": "h1"
           }
         },
         "text_Vc4pfT": {
           "type": "text",
           "settings": {
-            "text": "<p>With a sleek minimal design, USB rechargeability, and 380ml capacity, the OMNIFY Smart Stirring Mug is built for convenience at home, work, or on the go.</p>",
+            "text": "<p>Don't let bug bites ruin your day. Designed to help reduce itching and irritation with gentle suction, this compact tool is your must-have summer companion.<br/><br/></p>",
             "text_style": "body"
           }
         }
@@ -300,7 +300,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/1778152175_hf_20260507_110038_0f960a8d-4d86-4b39-a964-525cb470c65c.png",
+        "image": "shopify://shop_images/hf_20260708_085441_ffbd9207-1422-4058-9465-4a5f67df6d20.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
