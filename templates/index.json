@@ -45,6 +45,34 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "featured_collection_At8DnQ": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "☀️SUMMER ESSENTIALS",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "☀️-summer-essentials-☀️",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection_YwEcUT": {
       "type": "featured-collection",
       "custom_css": [],
@@ -292,6 +320,7 @@
   },
   "order": [
     "e6750b05-7703-4f69-ab7c-9ffb0acf18fb",
+    "featured_collection_At8DnQ",
     "featured_collection_YwEcUT",
     "d8b7c7f2-8a7b-486d-b2c1-184eea98110d",
     "rich_text_9bdKXe",
