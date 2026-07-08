@@ -27,17 +27,16 @@
             "uppercase_title": false
           }
         },
+        "custom_liquid_iMx3Lg": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"display:flex;align-items:center;gap:7px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;padding:0 0 4px 0;margin-top:-14px;flex-wrap:wrap;\">\n\n  <span style=\"color:#D4AF37;font-size:22px;letter-spacing:1px;line-height:1;\">\n    ★★★★★\n  </span>\n\n  <span style=\"font-size:16px;font-weight:700;color:#111;\">\n    Rated 4.9\n  </span>\n\n  <span style=\"font-size:15px;color:#666;\">\n    (127)\n  </span>\n\n  <span style=\"background:#EAF4FF;\n               color:#1E73BE;\n               font-size:11px;\n               font-weight:600;\n               padding:2px 7px;\n               border-radius:5px;\n               border:1px solid #C8DFFF;\n               line-height:1.2;\">\n    Happy Customers\n  </span>\n\n</div>"
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
             "layout": "price_first"
-          }
-        },
-        "text_AkgKmi": {
-          "type": "text",
-          "settings": {
-            "text": "🔥 FREE DELIVERY 🔥",
-            "text_style": "body"
           }
         },
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a": {
@@ -52,45 +51,7 @@
         "custom_liquid_ibdJAm": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "🦟 <b>Fast Bite Relief</b><br>\nHelps relieve itching & discomfort from insect bites.<br><br>\n💨 <b>Powerful Suction</b><br>\nGently lifts irritants without chemicals.<br><br>\n🎒 <b>Compact & Reusable</b><br>\nPerfect for travel, camping & everyday use."
-          }
-        },
-        "074f248d-8d73-4c8f-a97e-d8e82c5be5fc": {
-          "type": "quantity_selector",
-          "settings": {
-            "enable_quantity_discounts": false,
-            "headline": "BUNDLE & SAVE",
-            "preselected": "option_1",
-            "display_badge": "none",
-            "badge_text": "Most Popular",
-            "option_1_quantity": 1,
-            "option_1_label": "",
-            "option_1_benefit": "",
-            "option_1_caption": "You save [amount]",
-            "option_1_discount_type": "none",
-            "option_1_percentage_off": 0,
-            "option_1_fixed_amount_off": "0",
-            "option_2_quantity": 2,
-            "option_2_label": "",
-            "option_2_benefit": "",
-            "option_2_caption": "You save [amount]",
-            "option_2_discount_type": "none",
-            "option_2_percentage_off": 0,
-            "option_2_fixed_amount_off": "0",
-            "option_3_quantity": 3,
-            "option_3_label": "",
-            "option_3_benefit": "",
-            "option_3_caption": "You save [amount]",
-            "option_3_discount_type": "none",
-            "option_3_percentage_off": 0,
-            "option_3_fixed_amount_off": "0",
-            "option_4_quantity": 4,
-            "option_4_label": "",
-            "option_4_benefit": "",
-            "option_4_caption": "You save [amount]",
-            "option_4_discount_type": "none",
-            "option_4_percentage_off": 0,
-            "option_4_fixed_amount_off": "0"
+            "custom_liquid": "<div style=\"display:grid;grid-template-columns:repeat(2,1fr);gap:18px 12px;margin:18px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;\">\n\n  <div style=\"display:flex;align-items:center;gap:10px;\">\n    <div style=\"width:42px;height:42px;border-radius:50%;background:#F3E5D7;color:#B68B5B;display:flex;align-items:center;justify-content:center;font-size:21px;font-weight:700;\">\n      ✚\n    </div>\n    <span style=\"font-size:16px;font-weight:600;color:#222;\">Fast Itch Relief</span>\n  </div>\n\n  <div style=\"display:flex;align-items:center;gap:10px;\">\n    <div style=\"width:42px;height:42px;border-radius:50%;background:#F3E5D7;color:#B68B5B;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;\">\n      ◌\n    </div>\n    <span style=\"font-size:16px;font-weight:600;color:#222;\">Chemical-Free</span>\n  </div>\n\n  <div style=\"display:flex;align-items:center;gap:10px;\">\n    <div style=\"width:42px;height:42px;border-radius:50%;background:#F3E5D7;color:#B68B5B;display:flex;align-items:center;justify-content:center;font-size:21px;font-weight:700;\">\n      ↻\n    </div>\n    <span style=\"font-size:16px;font-weight:600;color:#222;\">Reusable Design</span>\n  </div>\n\n  <div style=\"display:flex;align-items:center;gap:10px;\">\n    <div style=\"width:42px;height:42px;border-radius:50%;background:#F3E5D7;color:#B68B5B;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;\">\n      ♡\n    </div>\n    <span style=\"font-size:16px;font-weight:600;color:#222;\">Kid-Friendly</span>\n  </div>\n\n</div>"
           }
         },
         "buy_buttons": {
@@ -99,13 +60,6 @@
             "show_dynamic_checkout": true,
             "skip_cart": false,
             "uppercase_text": true
-          }
-        },
-        "text_dAGAKU": {
-          "type": "text",
-          "settings": {
-            "text": "<div style=\"display:flex; flex-direction:column; gap:8px; font-weight:700; color:#222; margin-top:10px;\">\n<div>🔒 Secure Payments</div>\n<div>🚚 Tracked Shipping </div>\n<div>💳 Cash On Delivery</div>\n<div>⭐ Premium Quality</div>\n</div>",
-            "text_style": "body"
           }
         },
         "d505cdfe-d5cf-4aff-8e9e-abca6dae66eb": {
@@ -118,9 +72,11 @@
             "color_scheme": "inverse"
           }
         },
-        "98db29ee-a7dc-429e-8129-bf71131627da": {
-          "type": "payment_badges",
-          "settings": {}
+        "custom_liquid_KpDNkH": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"text-align:center;padding:14px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;\">\n  <div style=\"font-size:14px;font-weight:700;color:#222;\">\n    🔒 Verified Secure Checkout\n  </div>\n  <div style=\"font-size:13px;color:#777;margin-top:6px;\">\n    SSL Encrypted • Secure Payments\n  </div>\n</div>"
+          }
         },
         "2edbf491-d07c-4718-b71e-18ffe22ab7dc": {
           "type": "estimated_shipping",
@@ -142,15 +98,13 @@
       "block_order": [
         "c5728eab-5b1d-44e7-8e74-220cfef92c9b",
         "title",
+        "custom_liquid_iMx3Lg",
         "price",
-        "text_AkgKmi",
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a",
         "custom_liquid_ibdJAm",
-        "074f248d-8d73-4c8f-a97e-d8e82c5be5fc",
         "buy_buttons",
-        "text_dAGAKU",
         "d505cdfe-d5cf-4aff-8e9e-abca6dae66eb",
-        "98db29ee-a7dc-429e-8129-bf71131627da",
+        "custom_liquid_KpDNkH",
         "2edbf491-d07c-4718-b71e-18ffe22ab7dc"
       ],
       "settings": {
@@ -320,7 +274,7 @@
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-0": {
           "type": "row",
           "settings": {
-            "benefit": "Automatic Stirring",
+            "benefit": "easy to use",
             "us": true,
             "others": false
           }
@@ -328,7 +282,7 @@
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-1": {
           "type": "row",
           "settings": {
-            "benefit": "easy recharge",
+            "benefit": "chemical free",
             "us": true,
             "others": false
           }
@@ -336,7 +290,7 @@
         "template--18472096170313__6b7afe89-5595-4016-a10d-f260d82ca9cc-167986455514a8e470-2": {
           "type": "row",
           "settings": {
-            "benefit": "spill resistant lid",
+            "benefit": "fast itch relief",
             "us": true,
             "others": false
           }
@@ -344,7 +298,7 @@
         "row_CnHQJk": {
           "type": "row",
           "settings": {
-            "benefit": "smooth mixing",
+            "benefit": "safe for kids&adults",
             "us": true,
             "others": false
           }
@@ -368,7 +322,7 @@
         "color_scheme": "accent-1",
         "logo_width": 75,
         "us_label": "omnify",
-        "others_label": "regular mugs",
+        "others_label": "others",
         "benefit_color_scheme": "accent-1",
         "checkmark_color": "#53af01",
         "icon_cells_color_scheme": "background-1",
@@ -382,36 +336,36 @@
         "collapsible_row_NeNVMC": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Does the mug stir automatically?",
+            "heading": "How does it work?",
             "icon": "question_mark",
-            "row_content": "<p>Yes, it features one-touch automatic magnetic stirring.</p><p></p>",
+            "row_content": "<p><br/>The suction tool helps draw irritants closer to the skin's surface after a bug bite, which may help reduce itching and discomfort.<br/><br/></p>",
             "page": ""
           }
         },
         "collapsible_row_fDTheE": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I use it for protein shakes?",
+            "heading": "Does it work on all insect bites?",
             "icon": "question_mark",
-            "row_content": "<p>Yes, it works great for coffee, protein shakes, and other drinks.</p><p></p>",
+            "row_content": "<p><br/>It can be used on many common insect bites, such as mosquitoes, bees, wasps, horseflies, and ants. Results may vary depending on the bite and the individual.<br/><br/></p><p></p>",
             "page": ""
           }
         },
         "collapsible_row_fF8Cj3": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Is it easy to clean?",
+            "heading": "Does it use chemicals or medicine?",
             "icon": "question_mark",
-            "row_content": "<p>Yes, the mug is simple and convenient to clean.</p><p></p>",
+            "row_content": "<p><br/>No. It works using suction only—no creams, chemicals, or medications are required<br/><br/></p><p></p>",
             "page": ""
           }
         },
         "collapsible_row_8BdJ9j": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Is it rechargeable?",
+            "heading": "When should I use it?",
             "icon": "question_mark",
-            "row_content": "<p>Yes, the mug is USB rechargeable.</p>",
+            "row_content": "<p><br/>For best results, use it as soon as possible after noticing the bite.<br/><br/></p>",
             "page": ""
           }
         }
