@@ -12,19 +12,18 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "c5728eab-5b1d-44e7-8e74-220cfef92c9b": {
-          "type": "urgency",
-          "settings": {
-            "urgency": "HOT PRODUCT | LOW STOCK",
-            "color_scheme": "accent-1"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
             "text_size": "h1",
             "title_alignment": "left",
             "uppercase_title": false
+          }
+        },
+        "custom_liquid_ibdJAm": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"display:grid;grid-template-columns:repeat(2,1fr);gap:18px 12px;margin:18px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;\">\n\n  <div style=\"display:flex;align-items:center;gap:10px;\">\n    <div style=\"width:42px;height:42px;border-radius:50%;background:#F3E5D7;color:#B68B5B;display:flex;align-items:center;justify-content:center;font-size:21px;font-weight:700;\">\n      ✚\n    </div>\n    <span style=\"font-size:16px;font-weight:600;color:#222;\">Fast Itch Relief</span>\n  </div>\n\n  <div style=\"display:flex;align-items:center;gap:10px;\">\n    <div style=\"width:42px;height:42px;border-radius:50%;background:#F3E5D7;color:#B68B5B;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;\">\n      ◌\n    </div>\n    <span style=\"font-size:16px;font-weight:600;color:#222;\">Chemical-Free</span>\n  </div>\n\n  <div style=\"display:flex;align-items:center;gap:10px;\">\n    <div style=\"width:42px;height:42px;border-radius:50%;background:#F3E5D7;color:#B68B5B;display:flex;align-items:center;justify-content:center;font-size:21px;font-weight:700;\">\n      ↻\n    </div>\n    <span style=\"font-size:16px;font-weight:600;color:#222;\">Reusable Design</span>\n  </div>\n\n  <div style=\"display:flex;align-items:center;gap:10px;\">\n    <div style=\"width:42px;height:42px;border-radius:50%;background:#F3E5D7;color:#B68B5B;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;\">\n      ♡\n    </div>\n    <span style=\"font-size:16px;font-weight:600;color:#222;\">Kid-Friendly</span>\n  </div>\n\n</div>"
           }
         },
         "custom_liquid_iMx3Lg": {
@@ -54,12 +53,6 @@
             "show_dynamic_checkout": true,
             "skip_cart": false,
             "uppercase_text": true
-          }
-        },
-        "custom_liquid_ibdJAm": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div style=\"display:grid;grid-template-columns:repeat(2,1fr);gap:18px 12px;margin:18px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;\">\n\n  <div style=\"display:flex;align-items:center;gap:10px;\">\n    <div style=\"width:42px;height:42px;border-radius:50%;background:#F3E5D7;color:#B68B5B;display:flex;align-items:center;justify-content:center;font-size:21px;font-weight:700;\">\n      ✚\n    </div>\n    <span style=\"font-size:16px;font-weight:600;color:#222;\">Fast Itch Relief</span>\n  </div>\n\n  <div style=\"display:flex;align-items:center;gap:10px;\">\n    <div style=\"width:42px;height:42px;border-radius:50%;background:#F3E5D7;color:#B68B5B;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;\">\n      ◌\n    </div>\n    <span style=\"font-size:16px;font-weight:600;color:#222;\">Chemical-Free</span>\n  </div>\n\n  <div style=\"display:flex;align-items:center;gap:10px;\">\n    <div style=\"width:42px;height:42px;border-radius:50%;background:#F3E5D7;color:#B68B5B;display:flex;align-items:center;justify-content:center;font-size:21px;font-weight:700;\">\n      ↻\n    </div>\n    <span style=\"font-size:16px;font-weight:600;color:#222;\">Reusable Design</span>\n  </div>\n\n  <div style=\"display:flex;align-items:center;gap:10px;\">\n    <div style=\"width:42px;height:42px;border-radius:50%;background:#F3E5D7;color:#B68B5B;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;\">\n      ♡\n    </div>\n    <span style=\"font-size:16px;font-weight:600;color:#222;\">Kid-Friendly</span>\n  </div>\n\n</div>"
           }
         },
         "d505cdfe-d5cf-4aff-8e9e-abca6dae66eb": {
@@ -96,13 +89,12 @@
         }
       },
       "block_order": [
-        "c5728eab-5b1d-44e7-8e74-220cfef92c9b",
         "title",
+        "custom_liquid_ibdJAm",
         "custom_liquid_iMx3Lg",
         "price",
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a",
         "buy_buttons",
-        "custom_liquid_ibdJAm",
         "d505cdfe-d5cf-4aff-8e9e-abca6dae66eb",
         "custom_liquid_KpDNkH",
         "2edbf491-d07c-4718-b71e-18ffe22ab7dc"
@@ -148,7 +140,7 @@
         "template--18472096170313__03c08e95-f0ce-4379-bc05-787da4136202-1679864525e35c34e4-2": {
           "type": "text",
           "settings": {
-            "title": "Smart sipping starts here"
+            "title": "SUMMER ESSENTIAL"
           }
         }
       },
@@ -191,8 +183,8 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/bugbite_usage_shopify_fill_square.png",
-        "height": "adapt",
+        "image": "shopify://shop_images/WhatsApp_Image_2026-07-13_at_4.03.51_PM.jpg",
+        "height": "medium",
         "desktop_image_width": "medium",
         "layout": "image_first",
         "desktop_content_position": "top",
@@ -211,7 +203,7 @@
         "text_F7bWne": {
           "type": "text",
           "settings": {
-            "title": "Mix effortlessly, enjoy instantly"
+            "title": "INSTANT BITE RELIEF"
           }
         }
       },
@@ -254,7 +246,7 @@
       ],
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "image": "shopify://shop_images/hf_20260708_085441_ffbd9207-1422-4058-9465-4a5f67df6d20.png",
+        "image": "shopify://shop_images/ChatGPT_Image_Jul_8_2026_12_01_58_PM.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
@@ -462,6 +454,12 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "1783965721817ec194": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -476,6 +474,7 @@
     "17788359107be508bb",
     "e21ff573-e051-4bf7-867b-94765a3b8f11",
     "177885579122fb6512",
-    "1780666841f9804d89"
+    "1780666841f9804d89",
+    "1783965721817ec194"
   ]
 }
