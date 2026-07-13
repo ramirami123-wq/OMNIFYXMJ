@@ -12,13 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "c5728eab-5b1d-44e7-8e74-220cfef92c9b": {
-          "type": "urgency",
-          "settings": {
-            "urgency": "HOT PRODUCT | LOW STOCK",
-            "color_scheme": "accent-1"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -94,7 +87,6 @@
         }
       },
       "block_order": [
-        "c5728eab-5b1d-44e7-8e74-220cfef92c9b",
         "title",
         "custom_liquid_ggLNp3",
         "price",
