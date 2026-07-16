@@ -19,7 +19,7 @@
           "settings": {
             "text": "🚚 FREE DELIVERY ON ALL ORDERS",
             "text_alignment": "center",
-            "color_scheme": "accent-1",
+            "color_scheme": "inverse",
             "link": ""
           }
         }

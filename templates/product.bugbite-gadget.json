@@ -66,7 +66,7 @@
             "image_1": "shopify://shop_images/bugbitegif1-ezgif.com-video-to-gif-converter.gif",
             "image_2": "shopify://shop_images/gif21-ezgif.com-video-to-gif-converter.gif",
             "border_width": 1,
-            "border_color": "#E5E7EB",
+            "border_color": "#e5e7eb",
             "border_style": "solid",
             "background_color": "#f8f9fa",
             "text_color": "#333333",
@@ -180,7 +180,7 @@
         "italic_text": false,
         "uppercase_text": false,
         "bold_text": false,
-        "color_scheme": "accent-1",
+        "color_scheme": "inverse",
         "padding_top": 16,
         "padding_bottom": 16
       }
@@ -243,7 +243,7 @@
         "italic_text": false,
         "uppercase_text": false,
         "bold_text": false,
-        "color_scheme": "accent-1",
+        "color_scheme": "inverse",
         "padding_top": 16,
         "padding_bottom": 16
       }
@@ -337,7 +337,7 @@
         "link": "",
         "button_style_secondary": false,
         "layout": "table_second",
-        "color_scheme": "accent-1",
+        "color_scheme": "background-1",
         "logo_width": 75,
         "us_label": "omnify",
         "others_label": "others",
