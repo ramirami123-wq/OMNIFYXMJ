@@ -341,7 +341,7 @@
         "logo_width": 75,
         "us_label": "omnify",
         "others_label": "others",
-        "benefit_color_scheme": "accent-1",
+        "benefit_color_scheme": "inverse",
         "checkmark_color": "#53af01",
         "icon_cells_color_scheme": "background-1",
         "padding_top": 36,
