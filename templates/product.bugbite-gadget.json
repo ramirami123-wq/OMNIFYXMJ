@@ -15,13 +15,13 @@
         "custom_liquid_mtN74c": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div style=\"display:flex;justify-content:center;align-items:center;margin:10px 0;\">\n  <div style=\"display:inline-flex;align-items:center;padding:8px 14px;background:#000;color:#fff;border-radius:999px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;font-weight:700;letter-spacing:0.3px;\">\n    Stop the Itch Fast\n  </div>\n</div>"
+            "custom_liquid": "<div style=\"display:flex;justify-content:center;align-items:center;margin:10px 0;\">\n  <div style=\"display:inline-flex;align-items:center;padding:8px 14px;background:#000;color:#fff;border-radius:999px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:19px;font-weight:700;letter-spacing:0.3px;\">\n    Stop the Itch Fast\n  </div>\n</div>"
           }
         },
         "title": {
           "type": "title",
           "settings": {
-            "text_size": "h2",
+            "text_size": "h1",
             "title_alignment": "left",
             "uppercase_title": false
           }
