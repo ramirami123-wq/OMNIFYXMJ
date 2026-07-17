@@ -32,6 +32,14 @@
             "layout": "price_first"
           }
         },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "skip_cart": false,
+            "uppercase_text": true
+          }
+        },
         "custom_liquid_ibdJAm": {
           "type": "custom_liquid",
           "settings": {
@@ -45,14 +53,6 @@
             "enable_color_swatches": false,
             "custom_swatch_option_name": "",
             "enable_swatches_custom_colors": false
-          }
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "skip_cart": false,
-            "uppercase_text": true
           }
         },
         "section_vso_theme_sections_social_proof_mrEjeb": {
@@ -117,9 +117,9 @@
         "title",
         "custom_liquid_iMx3Lg",
         "price",
+        "buy_buttons",
         "custom_liquid_ibdJAm",
         "44f9cdc2-f4bf-466e-87d5-fb765ad4864a",
-        "buy_buttons",
         "section_vso_theme_sections_social_proof_mrEjeb",
         "d505cdfe-d5cf-4aff-8e9e-abca6dae66eb",
         "custom_liquid_KpDNkH",
