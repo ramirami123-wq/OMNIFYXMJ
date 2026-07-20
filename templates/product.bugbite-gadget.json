@@ -167,9 +167,47 @@
         "padding_bottom": 24
       }
     },
+    "178456372611ffd0dc": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_43bcbc7_7q88MA": {
+          "type": "ai_gen_block_43bcbc7",
+          "settings": {
+            "gif_image": "shopify://shop_images/Adobe_Express_-_WhatsApp_Video_2026-07-20_at_7.13.12_PM_1.gif",
+            "desktop_width_percent": 100,
+            "border_radius": 18,
+            "shadow_opacity": 0,
+            "shadow_vertical": 0,
+            "shadow_blur": 20,
+            "caption": "TUTORIAL",
+            "caption_alignment": "center",
+            "caption_vertical_position": 10,
+            "caption_size": 16,
+            "caption_weight": "600",
+            "caption_color": "#FDFDFD",
+            "caption_background": "#000000",
+            "caption_padding": 4,
+            "caption_border_radius": 16,
+            "padding_top": 4,
+            "padding_bottom": 24
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_43bcbc7_7q88MA"
+      ],
+      "settings": {}
+    },
     "03c08e95-f0ce-4379-bc05-787da4136202": {
       "type": "horizontal-ticker",
       "blocks": {
+        "text_H8yVWH": {
+          "type": "text",
+          "settings": {
+            "title": "Shrine Theme"
+          }
+        },
         "template--18472096170313__03c08e95-f0ce-4379-bc05-787da4136202-1679864525e35c34e4-2": {
           "type": "text",
           "settings": {
@@ -178,6 +216,7 @@
         }
       },
       "block_order": [
+        "text_H8yVWH",
         "template--18472096170313__03c08e95-f0ce-4379-bc05-787da4136202-1679864525e35c34e4-2"
       ],
       "settings": {
@@ -292,34 +331,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "178437005304968e15": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_fc52903_daaUCb": {
-          "type": "ai_gen_block_fc52903",
-          "settings": {
-            "gif_1": "shopify://shop_images/1783974032_bugbitegif1-ezgif.com-video-to-gif-converter.gif",
-            "caption_1": "",
-            "gif_2": "shopify://shop_images/1783974032_gif21-ezgif.com-video-to-gif-converter.gif",
-            "caption_2": "",
-            "desktop_width_percent": 100,
-            "gap": 40,
-            "section_padding": 36,
-            "aspect_ratio": "1/1",
-            "border_radius": 12,
-            "text_alignment": "center",
-            "caption_size": 14,
-            "caption_spacing": 12,
-            "caption_color": "#121212"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_fc52903_daaUCb"
-      ],
-      "settings": {}
     },
     "6b7afe89-5595-4016-a10d-f260d82ca9cc": {
       "type": "comparison-table",
@@ -514,11 +525,11 @@
   "order": [
     "main",
     "related-products",
+    "178456372611ffd0dc",
     "03c08e95-f0ce-4379-bc05-787da4136202",
     "image_with_text_TdeNGD",
     "horizontal_ticker_hUeGA6",
     "image_with_text_QAxRFt",
-    "178437005304968e15",
     "6b7afe89-5595-4016-a10d-f260d82ca9cc",
     "collapsible_content_XrLw93",
     "17788359107be508bb",
