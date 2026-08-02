@@ -17,7 +17,7 @@
           "settings": {
             "label": "Excellent",
             "rating": "4.8",
-            "review_count": "20,921",
+            "review_count": "350",
             "reviews_label": "reviews",
             "label_size": 14,
             "label_weight": "600"
@@ -34,7 +34,8 @@
         "pi_summary": {
           "type": "summary_line",
           "settings": {
-            "highlight": "probiotic + prebiotic synbiotic"
+            "summary_text": "Experience unparalleled comfort and support for a restful night's sleep.",
+            "highlight": "a restful night's sleep"
           }
         },
         "pi_low_stock": {
@@ -71,7 +72,7 @@
           "settings": {
             "show": true,
             "line_lead": "Get your order on",
-            "date_locale": "",
+            "date_locale": "en-US",
             "transit_min": 3,
             "transit_max": 6,
             "text_color": "#171717",
@@ -86,7 +87,7 @@
             "show": true,
             "rating_icon_style": "trustpilot",
             "rating": "4.8",
-            "review_count": "20,921",
+            "review_count": "350",
             "reviews_label": "reviews",
             "delivery_title": "Free delivery",
             "delivery_body": "on orders over $50",
@@ -114,22 +115,22 @@
         "pi_row_1": {
           "type": "collapsible_row",
           "settings": {
-            "title": "How does this synbiotic work?",
-            "content": "<p>It combines probiotic strains and prebiotic support to help maintain digestive balance.</p>"
+            "title": "How do I clean the Ergonomic Sleep Pillow?",
+            "content": "<p>The removable cover is machine washable, making it easy to maintain cleanliness. Simply unzip and wash on a gentle cycle.</p>"
           }
         },
         "pi_row_2": {
           "type": "collapsible_row",
           "settings": {
-            "title": "When should I take it?",
-            "content": "<p>Take daily, as directed on your product label.</p>"
+            "title": "Is the pillow suitable for all sleeping positions?",
+            "content": "<p>Yes, the Ergonomic Sleep Pillow is designed to support both back and side sleepers. Its unique shape promotes proper alignment regardless of your preferred position.</p>"
           }
         },
         "pi_row_3": {
           "type": "collapsible_row",
           "settings": {
-            "title": "How long until I notice results?",
-            "content": "<p>Many customers report noticeable changes after consistent daily use.</p>"
+            "title": "What materials are used in the pillow?",
+            "content": "<p>The pillow features high-density memory foam for optimal support and a soft, breathable cover for comfort and temperature regulation.</p>"
           }
         }
       },
@@ -158,9 +159,9 @@
         "benefit_bg_color": "#f3f3f3",
         "benefit_text_color": "#000000",
         "benefit_icon_color": "#000000",
-        "side_benefit_1": "Supports Gut Balance",
-        "side_benefit_2": "Reduces Bloating & Discomfort",
-        "side_benefit_3": "Supports Immune & Skin Health"
+        "side_benefit_1": "Supports neck and spine",
+        "side_benefit_2": "Adapts to your sleeping",
+        "side_benefit_3": "Removable, washable cover for"
       }
     },
     "amose_image_description": {
@@ -174,71 +175,22 @@
         "section_bg": "#f2f1ed",
         "text_color": "#000000",
         "muted_text_color": "#444444",
-        "eyebrow": "Science-backed support",
-        "heading": "A better way to support your routine.",
-        "description": "<p>This section is for longer supporting copy. Explain why your product is different, what makes it effective, and what customers can expect when using it consistently.</p>",
+        "eyebrow": "Designed for ultimate comfort",
+        "heading": "Elevate your sleep experience with this essential accessory.",
+        "description": "<p>The Ergonomic Sleep Pillow features premium memory foam that adapts to your unique shape, ensuring perfect support. Its breathable cover keeps you cool and fresh throughout the night.</p>",
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_2_2026_04_32_07_PM.png",
         "show_trustpilot": true,
         "trustpilot_label": "Excellent",
         "trustpilot_rating": "4.8",
-        "trustpilot_review_count": "20,921",
+        "trustpilot_review_count": "350",
         "trustpilot_reviews_label": "reviews",
         "trustpilot_label_size": 14,
         "trustpilot_label_weight": "600",
-        "star_rating_color": "#000000"
-      }
-    },
-    "amose_before_after": {
-      "type": "amose-before-after",
-      "blocks": {
-        "ba_step_1": {
-          "type": "step",
-          "settings": {
-            "kicker": "Weeks 1-2",
-            "title": "Gut Adjustment Begins",
-            "text": "<p>Your microbiome begins adapting to the probiotic strains. Some users notice less digestive discomfort as beneficial bacteria begin to balance the gut.</p>"
-          }
-        },
-        "ba_step_2": {
-          "type": "step",
-          "settings": {
-            "kicker": "Weeks 3-4",
-            "title": "Improved Digestive Balance",
-            "text": "<p>As microbial diversity improves, digestion may feel smoother and occasional bloating may decrease with consistent use.</p>"
-          }
-        },
-        "ba_step_3": {
-          "type": "step",
-          "settings": {
-            "kicker": "Months 2-3+",
-            "title": "Stronger Gut Support",
-            "text": "<p>With continued daily use, the microbiome becomes more balanced, helping support digestion, immune health, and overall gut wellness.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "ba_step_1",
-        "ba_step_2",
-        "ba_step_3"
-      ],
-      "settings": {
-        "max_width": 1200,
-        "padding_top": 56,
-        "padding_bottom": 56,
-        "image_radius": 14,
-        "image_aspect_ratio": "4 / 3",
-        "heading": "A Healthier Gut, Step by Step",
-        "subtitle": "See how consistent care can support your gut over time.",
-        "before_label": "Before",
-        "after_label": "After",
-        "badge_bg": "#000000",
-        "badge_text_color": "#ffffff",
-        "badge_radius": 6,
-        "slider_initial": 50,
-        "slider_bar_color": "#ffffff",
-        "handle_color": "#171717",
-        "section_bg": "#ffffff",
-        "text_color": "#171717",
-        "muted_text_color": "#525252"
+        "star_rating_row_label": "Rated",
+        "star_rating_value": "4.8",
+        "star_rating_color": "#000000",
+        "star_rating_review_count": "350",
+        "star_rating_reviews_label": "reviews"
       }
     },
     "amose_image_benefits_2": {
@@ -248,48 +200,54 @@
           "type": "point",
           "settings": {
             "side": "left",
-            "title": "Removes Chlorine & Impurities",
-            "text": "<p>Helps filter harsh chemicals and minerals commonly found in hard water.</p>"
+            "title": "Neck Pain Relief",
+            "text": "<p>Designed to alleviate neck pain by promoting proper alignment during sleep.</p>",
+            "phosphor_icon": "paint-brush"
           }
         },
         "iwb2_2": {
           "type": "point",
           "settings": {
             "side": "left",
-            "title": "Healthier Hair",
-            "text": "<p>Reduces buildup that can cause dullness, dryness, and breakage.</p>"
+            "title": "Memory Foam Comfort",
+            "text": "<p>High-density foam conforms to your shape, providing personalized support.</p>",
+            "phosphor_icon": "heart"
           }
         },
         "iwb2_3": {
           "type": "point",
           "settings": {
             "side": "left",
-            "title": "Softer Skin",
-            "text": "<p>Filtered water helps prevent dryness and irritation caused by hard water.</p>"
+            "title": "Breathable Design",
+            "text": "<p>The soft cover allows for airflow, keeping you cool throughout the night.</p>",
+            "phosphor_icon": "sparkle"
           }
         },
         "iwb2_4": {
           "type": "point",
           "settings": {
             "side": "right",
-            "title": "Stronger Hair Over Time",
-            "text": "<p>Less mineral buildup means healthier-looking hair and improved shine.</p>"
+            "title": "Easy Maintenance",
+            "text": "<p>The removable cover is machine washable, ensuring cleanliness and freshness.</p>",
+            "phosphor_icon": "magic-wand"
           }
         },
         "iwb2_5": {
           "type": "point",
           "settings": {
             "side": "right",
-            "title": "Improved Skin Hydration",
-            "text": "<p>Supports softer, smoother skin after every shower by reducing harsh minerals.</p>"
+            "title": "Versatile Use",
+            "text": "<p>Perfect for back and side sleepers, adapting to various sleeping positions.</p>",
+            "phosphor_icon": "drop-simple"
           }
         },
         "iwb2_6": {
           "type": "point",
           "settings": {
             "side": "right",
-            "title": "Easy 60-Second Installation",
-            "text": "<p>Simply screw it onto your existing shower arm—no tools required.</p>"
+            "title": "Durable Quality",
+            "text": "<p>Crafted with high-quality materials for long-lasting comfort and support.</p>",
+            "phosphor_icon": "hand-heart"
           }
         }
       },
@@ -314,8 +272,9 @@
         "muted_text_color": "#555555",
         "icon_bg": "#f2f1ed",
         "icon_color": "#000000",
-        "heading": "The Ultimate Showering Experience",
-        "subtitle": ""
+        "heading": "Key advantages of better sleep",
+        "subtitle": "Revolutionize your nightly rest and wake up refreshed.",
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_2_2026_04_19_07_PM.png"
       }
     },
     "amose_comparison_table": {
@@ -324,7 +283,7 @@
         "cmp_1": {
           "type": "row",
           "settings": {
-            "feature": "Removes chlorine",
+            "feature": "Ergonomic shape",
             "left_included": true,
             "right_included": false
           }
@@ -332,7 +291,7 @@
         "cmp_2": {
           "type": "row",
           "settings": {
-            "feature": "Reduces hard water minerals",
+            "feature": "Memory foam support",
             "left_included": true,
             "right_included": false
           }
@@ -340,7 +299,7 @@
         "cmp_3": {
           "type": "row",
           "settings": {
-            "feature": "Healthier hair",
+            "feature": "Breathable materials",
             "left_included": true,
             "right_included": false
           }
@@ -348,7 +307,7 @@
         "cmp_4": {
           "type": "row",
           "settings": {
-            "feature": "Softer skin",
+            "feature": "Removable cover",
             "left_included": true,
             "right_included": false
           }
@@ -356,7 +315,7 @@
         "cmp_5": {
           "type": "row",
           "settings": {
-            "feature": "Less scalp dryness",
+            "feature": "Versatile sleeping positions",
             "left_included": true,
             "right_included": false
           }
@@ -364,7 +323,7 @@
         "cmp_6": {
           "type": "row",
           "settings": {
-            "feature": "Better water quality",
+            "feature": "Durability",
             "left_included": true,
             "right_included": false
           }
@@ -382,11 +341,11 @@
         "max_width": 1200,
         "padding_top": 52,
         "padding_bottom": 52,
-        "heading": "Why Switch to Filtered Shower Water?",
-        "subtext": "<p>Hard water can damage your hair and skin over time. See why filtered water makes a difference.</p>",
-        "left_column_heading": "Filtered Showerhead",
-        "right_column_heading": "Regular Showerheads",
-        "button_label": "Upgrade your shower",
+        "heading": "How the Ergonomic Sleep Pillow compares",
+        "subtext": "<p>The Ergonomic Sleep Pillow is expertly designed to support your neck and spine, ensuring deeper, more restorative sleep. With its unique butterfly shape and high-density memory foam, it adapts to your body for lasting comfort.</p>",
+        "left_column_heading": "Ergonomic Sleep Pillow",
+        "right_column_heading": "Others",
+        "button_label": "Try the Ergonomic Sleep Pillow",
         "section_bg": "#ffffff",
         "text_color": "#000000",
         "subtext_color": "#000000",
@@ -406,45 +365,45 @@
         "review_1": {
           "type": "review",
           "settings": {
-            "quote": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
-            "verified_label": "Verified Rating",
-            "name": "Sarah M.",
+            "quote": "<p>I've finally found a pillow that supports my neck perfectly. No more waking up with pain!</p>",
+            "verified_label": "Verified customer",
+            "name": "Jessica M.",
             "rating": 5
           }
         },
         "review_2": {
           "type": "review",
           "settings": {
-            "quote": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
-            "verified_label": "Verified Rating",
-            "name": "Sarah M.",
+            "quote": "<p>This pillow has changed my sleep for the better. I feel so much more rested in the morning.</p>",
+            "verified_label": "Verified customer",
+            "name": "Michael T.",
             "rating": 5
           }
         },
         "review_3": {
           "type": "review",
           "settings": {
-            "quote": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
-            "verified_label": "Verified Rating",
-            "name": "Sarah M.",
+            "quote": "<p>Absolutely love this pillow! It keeps me cool and comfortable all night.</p>",
+            "verified_label": "Verified customer",
+            "name": "Samantha R.",
             "rating": 5
           }
         },
         "review_4": {
           "type": "review",
           "settings": {
-            "quote": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
-            "verified_label": "Verified Rating",
-            "name": "Sarah M.",
+            "quote": "<p>The Ergonomic Sleep Pillow is a game changer. I wish I had found it sooner!</p>",
+            "verified_label": "Verified customer",
+            "name": "David L.",
             "rating": 5
           }
         },
         "review_5": {
           "type": "review",
           "settings": {
-            "quote": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
-            "verified_label": "Verified Rating",
-            "name": "Sarah M.",
+            "quote": "<p>I was skeptical, but this pillow really does make a difference. My neck pain is gone!</p>",
+            "verified_label": "Verified customer",
+            "name": "Linda K.",
             "rating": 5
           }
         }
@@ -458,8 +417,8 @@
       ],
       "settings": {
         "trustpilot_stars_image": "",
-        "badge_label": "4.8/5 on +1,839 reviews.",
-        "heading": "Customer Reviews",
+        "badge_label": "4.8/5 on 350 reviews.",
+        "heading": "What they say about the Ergonomic Sleep Pillow",
         "max_width": 1400,
         "padding_top": 56,
         "padding_bottom": 56,
@@ -480,43 +439,43 @@
         "faq_1": {
           "type": "item",
           "settings": {
-            "question": "How do I use this product?",
-            "answer": "<p>Follow the directions on the label or as advised by your healthcare professional.</p>"
+            "question": "How do I clean the Ergonomic Sleep Pillow?",
+            "answer": "<p>The removable cover is machine washable, making it easy to maintain cleanliness. Simply unzip and wash on a gentle cycle.</p>"
           }
         },
         "faq_2": {
           "type": "item",
           "settings": {
-            "question": "What is your return policy?",
-            "answer": "<p>We accept returns within the timeframe stated in our store policy. Contact support for help with your order.</p>"
+            "question": "Is the pillow suitable for all sleeping positions?",
+            "answer": "<p>Yes, the Ergonomic Sleep Pillow is designed to support both back and side sleepers. Its unique shape promotes proper alignment regardless of your preferred position.</p>"
           }
         },
         "faq_3": {
           "type": "item",
           "settings": {
-            "question": "How long does shipping take?",
-            "answer": "<p>Delivery times vary by region. You will receive tracking information once your order ships.</p>"
+            "question": "What materials are used in the pillow?",
+            "answer": "<p>The pillow features high-density memory foam for optimal support and a soft, breathable cover for comfort and temperature regulation.</p>"
           }
         },
         "faq_4": {
           "type": "item",
           "settings": {
-            "question": "Is this product right for me?",
-            "answer": "<p>Please review the ingredients and consult a professional if you have specific health questions.</p>"
+            "question": "How long does it take to adapt to the pillow?",
+            "answer": "<p>Most users report a comfortable adjustment period of just a few nights as the memory foam conforms to their unique shape.</p>"
           }
         },
         "faq_5": {
           "type": "item",
           "settings": {
-            "question": "Where are orders shipped from?",
-            "answer": "<p>We ship from our fulfillment centers. Exact origin may appear on your tracking details.</p>"
+            "question": "Can the pillow help with neck pain?",
+            "answer": "<p>Many users have experienced relief from neck pain due to the pillow's ergonomic design, which promotes proper spinal alignment during sleep.</p>"
           }
         },
         "faq_6": {
           "type": "item",
           "settings": {
-            "question": "How can I contact support?",
-            "answer": "<p>Reach us through the contact page or reply to your order confirmation email.</p>"
+            "question": "Is there a warranty on the Ergonomic Sleep Pillow?",
+            "answer": "<p>Yes, the Ergonomic Sleep Pillow comes with a warranty that covers manufacturing defects, ensuring peace of mind with your purchase.</p>"
           }
         }
       },
@@ -540,7 +499,64 @@
         "badge_text_color": "#000000",
         "show_badge": true,
         "badge_label": "FAQs",
-        "heading": "Frequently Asked Questions"
+        "heading": "Frequently asked questions"
+      }
+    },
+    "amose_before_after": {
+      "type": "amose-before-after",
+      "blocks": {
+        "ba_step_1": {
+          "type": "step",
+          "settings": {
+            "kicker": "Weeks 1-2",
+            "title": "Initial Adjustment",
+            "text": "<p>During the first couple of weeks, users typically notice improved neck support as the memory foam begins to adapt to their body. This period is crucial for experiencing the pillow's full benefits.</p>"
+          }
+        },
+        "ba_step_2": {
+          "type": "step",
+          "settings": {
+            "kicker": "Weeks 3-4",
+            "title": "Enhanced Comfort",
+            "text": "<p>By this stage, most users report a significant reduction in neck pain and improved sleep quality. The pillow's ergonomic design starts to show its true potential in promoting restful sleep.</p>"
+          }
+        },
+        "ba_step_3": {
+          "type": "step",
+          "settings": {
+            "kicker": "Months 2+",
+            "title": "Long-Term Benefits",
+            "text": "<p>Over time, consistent use of the Ergonomic Sleep Pillow leads to long-lasting improvements in sleep posture and overall comfort. Users often experience deeper sleep cycles and wake up feeling refreshed.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ba_step_1",
+        "ba_step_2",
+        "ba_step_3"
+      ],
+      "settings": {
+        "max_width": 1200,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "image_radius": 14,
+        "image_aspect_ratio": "4 / 3",
+        "heading": "What to expect over time",
+        "subtitle": "Experience unparalleled comfort and support for a restful night's sleep.",
+        "image_before": "shopify://shop_images/ChatGPTImageAug2_2026_03_36_12PM.png",
+        "image_after": "shopify://shop_images/ChatGPT_Image_Aug_2_2026_04_19_07_PM.png",
+        "image": "shopify://shop_images/ChatGPTImageAug2_2026_03_47_32PM.png",
+        "before_label": "Before",
+        "after_label": "After",
+        "badge_bg": "#000000",
+        "badge_text_color": "#ffffff",
+        "badge_radius": 6,
+        "slider_initial": 50,
+        "slider_bar_color": "#ffffff",
+        "handle_color": "#171717",
+        "section_bg": "#ffffff",
+        "text_color": "#171717",
+        "muted_text_color": "#525252"
       }
     }
   },
