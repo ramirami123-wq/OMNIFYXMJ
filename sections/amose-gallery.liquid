@@ -1,0 +1,474 @@
+{%- liquid
+  assign s = section.settings
+  assign amose_install_origin = 'https://amosesection1-production.up.railway.app'
+  assign amose_status_script_url = amose_install_origin | append: '/amose-section-status.js'
+  assign amose_skip_install_mask = false
+  if request.design_mode
+    assign amose_skip_install_mask = true
+  endif
+  if theme.role == 'development'
+    assign amose_skip_install_mask = true
+  endif
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }}.amose-gallery-root {
+    --ag-bg: {{ s.section_bg | default: '#f5f5f5' }};
+    --ag-text: {{ s.text_color | default: '#000000' }};
+    --ag-btn-text: {{ s.button_text_color | default: '#000000' }};
+    --ag-btn-border: {{ s.button_border_color | default: '#000000' }};
+    --ag-track: {{ s.progress_track_color | default: '#e5e5e5' }};
+    --ag-thumb: {{ s.progress_thumb_color | default: '#000000' }};
+    --ag-nav-border: {{ s.nav_border_color | default: '#000000' }};
+    --ag-gap: {{ s.image_gap | default: 16 }}px;
+    --ag-radius: {{ s.image_radius | default: 16 }}px;
+    --ag-aspect: {{ s.image_aspect_ratio | default: '1 / 1' }};
+    --ag-heading-size: {{ s.heading_size | default: 28 }}px;
+    --ag-pad-x: clamp(16px, 3vw, 24px);
+    background: var(--ag-bg);
+    color: var(--ag-text);
+    padding-top: {{ s.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ s.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }}.amose-gallery-root {
+      padding-top: {{ s.padding_top }}px;
+      padding-bottom: {{ s.padding_bottom }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery {
+    max-width: {{ s.max_width | default: 1200 }}px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: clamp(20px, 3vw, 28px);
+    padding: 0 var(--ag-pad-x);
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__heading {
+    margin: 0;
+    font-size: clamp(22px, 2.6vw, var(--ag-heading-size));
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: {{ s.heading_weight | default: 700 }};
+    color: var(--ag-text);
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 10px 18px;
+    border: 1px solid var(--ag-btn-border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--ag-btn-text);
+    font-size: {{ s.button_font_size | default: 12 }}px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 1.2;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__cta:hover {
+    opacity: 0.72;
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__cta--hidden {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__rail {
+    display: flex;
+    gap: var(--ag-gap);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    padding: 0;
+    scroll-padding-left: var(--ag-pad-x);
+    box-sizing: border-box;
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__item {
+    flex: 0 0 calc((100% - (var(--ag-gap) * 2) - (var(--ag-pad-x) * 2)) / 3);
+    scroll-snap-align: start;
+    border-radius: var(--ag-radius);
+    overflow: hidden;
+    background: #ececec;
+    aspect-ratio: var(--ag-aspect);
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__item:first-child {
+    margin-left: var(--ag-pad-x);
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__item:last-child {
+    margin-right: var(--ag-pad-x);
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__item-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #e8e8e8 0%, #d4d4d4 100%);
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: clamp(18px, 2.5vw, 24px);
+    padding: 0 var(--ag-pad-x);
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__progress {
+    flex: 1;
+    min-width: 0;
+    height: 2px;
+    background: var(--ag-track);
+    border-radius: 999px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__progress-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 28%;
+    background: var(--ag-thumb);
+    border-radius: 999px;
+    will-change: left, width;
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid var(--ag-nav-border);
+    background: transparent;
+    color: var(--ag-nav-border);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__nav-btn:hover {
+    opacity: 0.7;
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__nav-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+
+  #shopify-section-{{ section.id }} .amose-gallery__nav-btn svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .amose-gallery__item {
+      flex-basis: calc((100% - var(--ag-gap) - var(--ag-pad-x)) / 1.75);
+    }
+
+    #shopify-section-{{ section.id }} .amose-gallery__item:last-child {
+      margin-right: 0;
+    }
+
+    #shopify-section-{{ section.id }} .amose-gallery__header {
+      flex-wrap: wrap;
+    }
+
+    #shopify-section-{{ section.id }} .amose-gallery__cta {
+      padding: 9px 14px;
+      font-size: 11px;
+    }
+
+    #shopify-section-{{ section.id }} .amose-gallery__nav-btn {
+      width: 36px;
+      height: 36px;
+    }
+  }
+{%- endstyle -%}
+
+{%- unless amose_skip_install_mask -%}
+{%- style -%}
+  #shopify-section-{{ section.id }}.amose-section-checking {
+    display: none !important;
+  }
+{%- endstyle -%}
+{%- endunless -%}
+
+<div class="amose-gallery" data-amose-gallery>
+  <div class="amose-gallery__header">
+    {% if s.heading != blank %}
+      <h2 class="amose-gallery__heading">{{ s.heading | escape }}</h2>
+    {% else %}
+      <span></span>
+    {% endif %}
+
+    {% if s.show_button and s.button_label != blank %}
+      {% if s.button_link != blank %}
+        <a class="amose-gallery__cta" href="{{ s.button_link }}">{{ s.button_label | escape }}</a>
+      {% else %}
+        <span class="amose-gallery__cta">{{ s.button_label | escape }}</span>
+      {% endif %}
+    {% endif %}
+  </div>
+
+  <div class="amose-gallery__rail" data-amose-gallery-rail role="list" aria-label="{{ s.heading | default: 'Gallery' | escape }}">
+    {% for block in section.blocks %}
+      {% if block.type == 'image' %}
+        <div class="amose-gallery__item" role="listitem" {{ block.shopify_attributes }}>
+          {% if block.settings.image != blank %}
+            {% if block.settings.link != blank %}
+              <a class="amose-gallery__item-link" href="{{ block.settings.link }}">
+                <img
+                  src="{{ block.settings.image | image_url: width: 900 }}"
+                  alt="{{ block.settings.alt_text | default: block.settings.image.alt | escape }}"
+                  loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                  width="{{ block.settings.image.width }}"
+                  height="{{ block.settings.image.height }}"
+                >
+              </a>
+            {% else %}
+              <img
+                src="{{ block.settings.image | image_url: width: 900 }}"
+                alt="{{ block.settings.alt_text | default: block.settings.image.alt | escape }}"
+                loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.height }}"
+              >
+            {% endif %}
+          {% else %}
+            <div class="amose-gallery__placeholder" aria-hidden="true"></div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="amose-gallery__controls">
+    <div class="amose-gallery__progress" aria-hidden="true">
+      <div class="amose-gallery__progress-thumb" data-amose-gallery-thumb></div>
+    </div>
+    <div class="amose-gallery__nav">
+      <button type="button" class="amose-gallery__nav-btn" data-amose-gallery-prev aria-label="Previous images">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button type="button" class="amose-gallery__nav-btn" data-amose-gallery-next aria-label="Next images">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var root = document.getElementById("shopify-section-{{ section.id }}");
+    if (!root) return;
+    var rail = root.querySelector("[data-amose-gallery-rail]");
+    var thumb = root.querySelector("[data-amose-gallery-thumb]");
+    var prev = root.querySelector("[data-amose-gallery-prev]");
+    var next = root.querySelector("[data-amose-gallery-next]");
+    if (!rail || !thumb || !prev || !next) return;
+
+    function updateProgress() {
+      var max = rail.scrollWidth - rail.clientWidth;
+      if (max <= 1) {
+        thumb.style.width = "100%";
+        thumb.style.left = "0%";
+        prev.disabled = true;
+        next.disabled = true;
+        return;
+      }
+      var thumbWidth = Math.max((rail.clientWidth / rail.scrollWidth) * 100, 12);
+      var travel = 100 - thumbWidth;
+      var progress = rail.scrollLeft / max;
+      thumb.style.width = thumbWidth + "%";
+      thumb.style.left = (progress * travel) + "%";
+      prev.disabled = rail.scrollLeft <= 2;
+      next.disabled = rail.scrollLeft >= max - 2;
+    }
+
+    function scrollByPage(direction) {
+      var amount = Math.max(rail.clientWidth * 0.72, 200);
+      rail.scrollBy({ left: direction * amount, behavior: "smooth" });
+    }
+
+    prev.addEventListener("click", function () { scrollByPage(-1); });
+    next.addEventListener("click", function () { scrollByPage(1); });
+    rail.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    updateProgress();
+  })();
+</script>
+
+{%- unless amose_skip_install_mask -%}
+<script>
+  window.__AmoseInstallCheckPageStart = window.__AmoseInstallCheckPageStart || Date.now();
+  window.__AmoseInstallCheckOrigin = {{ amose_install_origin | json }};
+  window.AmoseSectionStatus = window.AmoseSectionStatus || [];
+  window.AmoseSectionStatus.push({
+    shop: {{ shop.permanent_domain | json }},
+    sectionId: {{ section.id | json }},
+    sectionType: "gallery"
+  });
+
+  window.AmoseStatusLoaderInserted = window.AmoseStatusLoaderInserted || false;
+  if (!window.AmoseStatusLoaderInserted) {
+    window.AmoseStatusLoaderInserted = true;
+    var script = document.createElement("script");
+    script.src = {{ amose_status_script_url | json }};
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+</script>
+{%- endunless -%}
+
+{% schema %}
+{
+  "name": "Gallery",
+  "tag": "section",
+  "class": "amose-gallery-root",
+  "max_blocks": 16,
+  "settings": [
+    { "type": "range", "id": "max_width", "min": 960, "max": 1600, "step": 20, "unit": "px", "label": "Max width", "default": 1200 },
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our gallery" },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 18,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 28
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Heading weight",
+      "default": "700",
+      "options": [
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" }
+      ]
+    },
+    { "type": "checkbox", "id": "show_button", "label": "Show button", "default": true },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Follow us" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Button font size",
+      "default": 12
+    },
+    { "type": "header", "content": "Images" },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Image format",
+      "default": "1 / 1",
+      "options": [
+        { "value": "1 / 1", "label": "1:1 (Square)" },
+        { "value": "3 / 4", "label": "3:4 (Portrait)" },
+        { "value": "4 / 5", "label": "4:5 (Portrait)" },
+        { "value": "2 / 3", "label": "2:3 (Portrait)" }
+      ]
+    },
+    { "type": "range", "id": "image_gap", "min": 8, "max": 32, "step": 1, "unit": "px", "label": "Image gap", "default": 16 },
+    { "type": "range", "id": "image_radius", "min": 0, "max": 32, "step": 1, "unit": "px", "label": "Image radius", "default": 16 },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "section_bg", "label": "Background", "default": "#f5f5f5" },
+    { "type": "color", "id": "text_color", "label": "Heading color", "default": "#000000" },
+    { "type": "color", "id": "button_text_color", "label": "Button text", "default": "#000000" },
+    { "type": "color", "id": "button_border_color", "label": "Button border", "default": "#000000" },
+    { "type": "color", "id": "progress_track_color", "label": "Progress track", "default": "#e5e5e5" },
+    { "type": "color", "id": "progress_thumb_color", "label": "Progress thumb", "default": "#000000" },
+    { "type": "color", "id": "nav_border_color", "label": "Arrow border", "default": "#000000" },
+    { "type": "header", "content": "Layout" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding bottom", "default": 40 }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "alt_text", "label": "Alt text", "default": "Gallery image" },
+        { "type": "url", "id": "link", "label": "Link (optional)" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gallery",
+      "blocks": [
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" }
+      ]
+    }
+  ]
+}
+{% endschema %}

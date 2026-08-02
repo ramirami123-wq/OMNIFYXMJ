@@ -1,0 +1,372 @@
+{%- liquid
+  assign s = section.settings
+  assign amose_install_origin = 'https://amosesection1-production.up.railway.app'
+  assign amose_status_script_url = amose_install_origin | append: '/amose-section-status.js'
+  assign amose_skip_install_mask = false
+  if request.design_mode
+    assign amose_skip_install_mask = true
+  endif
+  if theme.role == 'development'
+    assign amose_skip_install_mask = true
+  endif
+  assign item_count = 0
+  for block in section.blocks
+    if block.settings.message != blank
+      assign item_count = item_count | plus: 1
+    endif
+  endfor
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }}[class*="amose-"] {
+    font-size: 16px;
+  }
+  #shopify-section-{{ section.id }}.amose-scrolling-announcement-root {
+    --amose-sa-bg: {{ s.banner_bg }};
+    --amose-sa-text: {{ s.text_color }};
+    --amose-sa-gap: {{ s.item_gap }}px;
+    --amose-sa-duration: {{ s.scroll_speed }}s;
+    background: var(--amose-sa-bg);
+    color: var(--amose-sa-text);
+    padding-top: {{ s.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ s.padding_bottom | times: 0.75 | round: 0 }}px;
+    margin: 0 !important;
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }}.amose-scrolling-announcement-root {
+      padding-top: {{ s.padding_top }}px;
+      padding-bottom: {{ s.padding_bottom }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .amose-sa__rail {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .amose-sa__track {
+    display: flex;
+    width: max-content;
+    gap: var(--amose-sa-gap);
+    align-items: center;
+    will-change: transform;
+  }
+
+  #shopify-section-{{ section.id }} .amose-sa__track[data-animate="true"] {
+    animation: amose-scroll-announcement-{{ section.id }} var(--amose-sa-duration) linear infinite;
+  }
+
+  #shopify-section-{{ section.id }} .amose-sa__track[data-pause-hover="true"]:hover {
+    animation-play-state: paused;
+  }
+
+  #shopify-section-{{ section.id }} .amose-sa__group {
+    display: flex;
+    align-items: center;
+    gap: var(--amose-sa-gap);
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .amose-sa__item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--amose-sa-gap);
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  #shopify-section-{{ section.id }} .amose-sa__message {
+    margin: 0;
+    font-size: clamp(13px, 1.05vw, 16px);
+    line-height: 1.4;
+    font-weight: {{ s.font_weight | default: 600 }};
+    letter-spacing: -0.01em;
+    color: var(--amose-sa-text);
+  }
+
+  #shopify-section-{{ section.id }} .amose-sa__link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  #shopify-section-{{ section.id }} .amose-sa__link:hover .amose-sa__message {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  #shopify-section-{{ section.id }} .amose-sa__sep {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.55;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .amose-sa__static {
+    max-width: {{ s.max_width }}px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 32px);
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  @keyframes amose-scroll-announcement-{{ section.id }} {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - (var(--amose-sa-gap) / 2)));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #shopify-section-{{ section.id }} .amose-sa__track[data-animate="true"] {
+      animation: none;
+    }
+  }
+{%- endstyle -%}
+
+{%- unless amose_skip_install_mask -%}
+{%- style -%}
+  #shopify-section-{{ section.id }}.amose-section-checking {
+    display: none !important;
+  }
+{%- endstyle -%}
+{%- endunless -%}
+
+{%- if item_count == 0 -%}
+  <div class="amose-sa__static">
+    <p class="amose-sa__message">{{ s.fallback_message | default: 'Add announcement texts in the theme editor.' | escape }}</p>
+  </div>
+{%- elsif item_count == 1 -%}
+  <div class="amose-sa__static">
+    {%- for block in section.blocks -%}
+      {%- if block.settings.message == blank -%}{%- continue -%}{%- endif -%}
+      {%- if block.settings.link != blank -%}
+        <a class="amose-sa__link" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
+          <p class="amose-sa__message">{{ block.settings.message | escape }}</p>
+        </a>
+      {%- else -%}
+        <p class="amose-sa__message" {{ block.shopify_attributes }}>{{ block.settings.message | escape }}</p>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- else -%}
+  <div class="amose-sa__rail" aria-label="Scrolling announcements">
+    <div
+      class="amose-sa__track"
+      role="presentation"
+      data-animate="true"
+      data-pause-hover="{% if s.pause_on_hover %}true{% else %}false{% endif %}"
+    >
+      <div class="amose-sa__group">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.message == blank -%}{%- continue -%}{%- endif -%}
+          <div class="amose-sa__item" {{ block.shopify_attributes }}>
+            {%- if block.settings.link != blank -%}
+              <a class="amose-sa__link" href="{{ block.settings.link }}">
+                <p class="amose-sa__message">{{ block.settings.message | escape }}</p>
+              </a>
+            {%- else -%}
+              <p class="amose-sa__message">{{ block.settings.message | escape }}</p>
+            {%- endif -%}
+            {%- if s.show_separator -%}
+              <span class="amose-sa__sep" aria-hidden="true"></span>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+      <div class="amose-sa__group" aria-hidden="true">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.message == blank -%}{%- continue -%}{%- endif -%}
+          <div class="amose-sa__item">
+            {%- if block.settings.link != blank -%}
+              <a class="amose-sa__link" href="{{ block.settings.link }}" tabindex="-1">
+                <p class="amose-sa__message">{{ block.settings.message | escape }}</p>
+              </a>
+            {%- else -%}
+              <p class="amose-sa__message">{{ block.settings.message | escape }}</p>
+            {%- endif -%}
+            {%- if s.show_separator -%}
+              <span class="amose-sa__sep" aria-hidden="true"></span>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{%- unless amose_skip_install_mask -%}
+<script>
+  window.__AmoseInstallCheckPageStart = window.__AmoseInstallCheckPageStart || Date.now();
+  window.__AmoseInstallCheckOrigin = {{ amose_install_origin | json }};
+  window.AmoseSectionStatus = window.AmoseSectionStatus || [];
+  window.AmoseSectionStatus.push({
+    shop: {{ shop.permanent_domain | json }},
+    sectionId: {{ section.id | json }},
+    sectionType: "scrolling-announcement"
+  });
+
+  window.AmoseStatusLoaderInserted = window.AmoseStatusLoaderInserted || false;
+
+  if (!window.AmoseStatusLoaderInserted) {
+    window.AmoseStatusLoaderInserted = true;
+    var script = document.createElement("script");
+    script.src = {{ amose_status_script_url | json }};
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+</script>
+{%- endunless -%}
+
+{% schema %}
+{
+  "name": "Scrolling announcement",
+  "tag": "section",
+  "class": "amose-scrolling-announcement-root",
+  "max_blocks": 20,
+  "settings": [
+    {
+      "type": "color",
+      "id": "banner_bg",
+      "label": "Background",
+      "default": "#785aaf"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "min": 8,
+      "max": 60,
+      "step": 1,
+      "unit": "s",
+      "label": "Scroll speed",
+      "default": 28,
+      "info": "Lower = faster"
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "min": 16,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Space between texts",
+      "default": 36
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "default": "600",
+      "options": [
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_separator",
+      "label": "Show separator dots",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "fallback_message",
+      "label": "Empty state message",
+      "default": "Add announcement texts in the theme editor."
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 960,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "label": "Max width (single text)",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 14
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "message",
+          "label": "Message",
+          "default": "Free shipping on orders over $50"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link (optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scrolling announcement",
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "message": "Free shipping on orders over $50"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "message": "30-day money-back guarantee"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "message": "New arrivals just dropped — shop now"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

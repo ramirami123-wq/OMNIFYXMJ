@@ -1,0 +1,556 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "amose_product_information": {
+      "type": "amose-product-information-2",
+      "blocks": {
+        "pi_tp": {
+          "type": "trustpilot_row",
+          "settings": {
+            "label": "Excellent",
+            "rating": "4.8",
+            "review_count": "20,921",
+            "reviews_label": "reviews",
+            "label_size": 14,
+            "label_weight": "600"
+          }
+        },
+        "pi_title": {
+          "type": "title",
+          "settings": {}
+        },
+        "pi_price": {
+          "type": "price",
+          "settings": {}
+        },
+        "pi_summary": {
+          "type": "summary_line",
+          "settings": {
+            "highlight": "probiotic + prebiotic synbiotic"
+          }
+        },
+        "pi_low_stock": {
+          "type": "low_stock",
+          "settings": {
+            "show": true,
+            "show_number": true,
+            "lead": "Low stock, only ",
+            "tail": " left",
+            "stock_min": 4,
+            "stock_max": 22,
+            "tick_min_sec": 15,
+            "tick_max_sec": 30,
+            "pause_min_sec": 45,
+            "pause_extra_sec": 60,
+            "accent_color": "#dc2626",
+            "text_color": "#171717",
+            "font_size": 14,
+            "margin_top": 6,
+            "margin_bottom": 0
+          }
+        },
+        "pi_buy": {
+          "type": "buy_buttons",
+          "settings": {
+            "button_text": "Add to cart",
+            "button_bg": "#000000",
+            "button_text_color": "#ffffff",
+            "button_radius": 15
+          }
+        },
+        "pi_shipping": {
+          "type": "shipping_eta",
+          "settings": {
+            "show": true,
+            "line_lead": "Get your order on",
+            "date_locale": "",
+            "transit_min": 3,
+            "transit_max": 6,
+            "text_color": "#171717",
+            "muted_color": "#525252",
+            "font_size": 14,
+            "margin_top": 14
+          }
+        },
+        "pi_trust": {
+          "type": "trust_container",
+          "settings": {
+            "show": true,
+            "rating_icon_style": "trustpilot",
+            "rating": "4.8",
+            "review_count": "20,921",
+            "reviews_label": "reviews",
+            "delivery_title": "Free delivery",
+            "delivery_body": "on orders over $50",
+            "guarantee_title": "30-day guarantee",
+            "guarantee_body": "— full refund, no hassle",
+            "bg_color": "#ffffff",
+            "border_color": "#e8e8ec",
+            "text_color": "#0a0a0a",
+            "rating_color": "#0a0a0a",
+            "divider_color": "#e8e8ec",
+            "star_color": "#000000",
+            "padding": 18,
+            "border_radius": 12,
+            "star_size": 16,
+            "star_gap": 8,
+            "font_size": 14,
+            "margin_top": 12,
+            "margin_bottom": 0
+          }
+        },
+        "pi_desc": {
+          "type": "description",
+          "settings": {}
+        },
+        "pi_row_1": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "How does this synbiotic work?",
+            "content": "<p>It combines probiotic strains and prebiotic support to help maintain digestive balance.</p>"
+          }
+        },
+        "pi_row_2": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "When should I take it?",
+            "content": "<p>Take daily, as directed on your product label.</p>"
+          }
+        },
+        "pi_row_3": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "How long until I notice results?",
+            "content": "<p>Many customers report noticeable changes after consistent daily use.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "pi_tp",
+        "pi_title",
+        "pi_price",
+        "pi_summary",
+        "pi_low_stock",
+        "pi_buy",
+        "pi_shipping",
+        "pi_trust",
+        "pi_row_1",
+        "pi_row_2",
+        "pi_row_3"
+      ],
+      "settings": {
+        "max_width": 1200,
+        "padding_top": 32,
+        "padding_bottom": 24,
+        "media_radius": 14,
+        "section_bg": "#ffffff",
+        "text_color": "#000000",
+        "muted_text_color": "#444444",
+        "border_color": "#cccccc",
+        "benefit_bg_color": "#f3f3f3",
+        "benefit_text_color": "#000000",
+        "benefit_icon_color": "#000000",
+        "side_benefit_1": "Supports Gut Balance",
+        "side_benefit_2": "Reduces Bloating & Discomfort",
+        "side_benefit_3": "Supports Immune & Skin Health"
+      }
+    },
+    "amose_image_description": {
+      "type": "amose-image-with-description",
+      "settings": {
+        "max_width": 1200,
+        "image_radius": 20,
+        "image_aspect_ratio": "1 / 1",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "section_bg": "#f2f1ed",
+        "text_color": "#000000",
+        "muted_text_color": "#444444",
+        "eyebrow": "Science-backed support",
+        "heading": "A better way to support your routine.",
+        "description": "<p>This section is for longer supporting copy. Explain why your product is different, what makes it effective, and what customers can expect when using it consistently.</p>",
+        "show_trustpilot": true,
+        "trustpilot_label": "Excellent",
+        "trustpilot_rating": "4.8",
+        "trustpilot_review_count": "20,921",
+        "trustpilot_reviews_label": "reviews",
+        "trustpilot_label_size": 14,
+        "trustpilot_label_weight": "600",
+        "star_rating_color": "#000000"
+      }
+    },
+    "amose_before_after": {
+      "type": "amose-before-after",
+      "blocks": {
+        "ba_step_1": {
+          "type": "step",
+          "settings": {
+            "kicker": "Weeks 1-2",
+            "title": "Gut Adjustment Begins",
+            "text": "<p>Your microbiome begins adapting to the probiotic strains. Some users notice less digestive discomfort as beneficial bacteria begin to balance the gut.</p>"
+          }
+        },
+        "ba_step_2": {
+          "type": "step",
+          "settings": {
+            "kicker": "Weeks 3-4",
+            "title": "Improved Digestive Balance",
+            "text": "<p>As microbial diversity improves, digestion may feel smoother and occasional bloating may decrease with consistent use.</p>"
+          }
+        },
+        "ba_step_3": {
+          "type": "step",
+          "settings": {
+            "kicker": "Months 2-3+",
+            "title": "Stronger Gut Support",
+            "text": "<p>With continued daily use, the microbiome becomes more balanced, helping support digestion, immune health, and overall gut wellness.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ba_step_1",
+        "ba_step_2",
+        "ba_step_3"
+      ],
+      "settings": {
+        "max_width": 1200,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "image_radius": 14,
+        "image_aspect_ratio": "4 / 3",
+        "heading": "A Healthier Gut, Step by Step",
+        "subtitle": "See how consistent care can support your gut over time.",
+        "before_label": "Before",
+        "after_label": "After",
+        "badge_bg": "#000000",
+        "badge_text_color": "#ffffff",
+        "badge_radius": 6,
+        "slider_initial": 50,
+        "slider_bar_color": "#ffffff",
+        "handle_color": "#171717",
+        "section_bg": "#ffffff",
+        "text_color": "#171717",
+        "muted_text_color": "#525252"
+      }
+    },
+    "amose_image_benefits_2": {
+      "type": "amose-image-with-benefits-2",
+      "blocks": {
+        "iwb2_1": {
+          "type": "point",
+          "settings": {
+            "side": "left",
+            "title": "Removes Chlorine & Impurities",
+            "text": "<p>Helps filter harsh chemicals and minerals commonly found in hard water.</p>"
+          }
+        },
+        "iwb2_2": {
+          "type": "point",
+          "settings": {
+            "side": "left",
+            "title": "Healthier Hair",
+            "text": "<p>Reduces buildup that can cause dullness, dryness, and breakage.</p>"
+          }
+        },
+        "iwb2_3": {
+          "type": "point",
+          "settings": {
+            "side": "left",
+            "title": "Softer Skin",
+            "text": "<p>Filtered water helps prevent dryness and irritation caused by hard water.</p>"
+          }
+        },
+        "iwb2_4": {
+          "type": "point",
+          "settings": {
+            "side": "right",
+            "title": "Stronger Hair Over Time",
+            "text": "<p>Less mineral buildup means healthier-looking hair and improved shine.</p>"
+          }
+        },
+        "iwb2_5": {
+          "type": "point",
+          "settings": {
+            "side": "right",
+            "title": "Improved Skin Hydration",
+            "text": "<p>Supports softer, smoother skin after every shower by reducing harsh minerals.</p>"
+          }
+        },
+        "iwb2_6": {
+          "type": "point",
+          "settings": {
+            "side": "right",
+            "title": "Easy 60-Second Installation",
+            "text": "<p>Simply screw it onto your existing shower arm—no tools required.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "iwb2_1",
+        "iwb2_2",
+        "iwb2_3",
+        "iwb2_4",
+        "iwb2_5",
+        "iwb2_6"
+      ],
+      "settings": {
+        "max_width": 1400,
+        "image_column_max": 400,
+        "image_radius": 20,
+        "icon_size": 44,
+        "icon_overlap": 22,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "section_bg": "#ffffff",
+        "text_color": "#000000",
+        "muted_text_color": "#555555",
+        "icon_bg": "#f2f1ed",
+        "icon_color": "#000000",
+        "heading": "The Ultimate Showering Experience",
+        "subtitle": ""
+      }
+    },
+    "amose_comparison_table": {
+      "type": "amose-comparison-table",
+      "blocks": {
+        "cmp_1": {
+          "type": "row",
+          "settings": {
+            "feature": "Removes chlorine",
+            "left_included": true,
+            "right_included": false
+          }
+        },
+        "cmp_2": {
+          "type": "row",
+          "settings": {
+            "feature": "Reduces hard water minerals",
+            "left_included": true,
+            "right_included": false
+          }
+        },
+        "cmp_3": {
+          "type": "row",
+          "settings": {
+            "feature": "Healthier hair",
+            "left_included": true,
+            "right_included": false
+          }
+        },
+        "cmp_4": {
+          "type": "row",
+          "settings": {
+            "feature": "Softer skin",
+            "left_included": true,
+            "right_included": false
+          }
+        },
+        "cmp_5": {
+          "type": "row",
+          "settings": {
+            "feature": "Less scalp dryness",
+            "left_included": true,
+            "right_included": false
+          }
+        },
+        "cmp_6": {
+          "type": "row",
+          "settings": {
+            "feature": "Better water quality",
+            "left_included": true,
+            "right_included": false
+          }
+        }
+      },
+      "block_order": [
+        "cmp_1",
+        "cmp_2",
+        "cmp_3",
+        "cmp_4",
+        "cmp_5",
+        "cmp_6"
+      ],
+      "settings": {
+        "max_width": 1200,
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "heading": "Why Switch to Filtered Shower Water?",
+        "subtext": "<p>Hard water can damage your hair and skin over time. See why filtered water makes a difference.</p>",
+        "left_column_heading": "Filtered Showerhead",
+        "right_column_heading": "Regular Showerheads",
+        "button_label": "Upgrade your shower",
+        "section_bg": "#ffffff",
+        "text_color": "#000000",
+        "subtext_color": "#000000",
+        "line_color": "#000000",
+        "highlight_bg": "#f2f1ed",
+        "check_bg": "#000000",
+        "check_icon": "#ffffff",
+        "cross_bg": "rgba(0,0,0,0.5)",
+        "cross_icon": "#f2f1ed",
+        "button_bg": "#000000",
+        "button_text": "#ffffff"
+      }
+    },
+    "amose_customer_reviews": {
+      "type": "amose-trustpilot-reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "quote": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
+            "verified_label": "Verified Rating",
+            "name": "Sarah M.",
+            "rating": 5
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "quote": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
+            "verified_label": "Verified Rating",
+            "name": "Sarah M.",
+            "rating": 5
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "quote": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
+            "verified_label": "Verified Rating",
+            "name": "Sarah M.",
+            "rating": 5
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "quote": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
+            "verified_label": "Verified Rating",
+            "name": "Sarah M.",
+            "rating": 5
+          }
+        },
+        "review_5": {
+          "type": "review",
+          "settings": {
+            "quote": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>",
+            "verified_label": "Verified Rating",
+            "name": "Sarah M.",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4",
+        "review_5"
+      ],
+      "settings": {
+        "trustpilot_stars_image": "",
+        "badge_label": "4.8/5 on +1,839 reviews.",
+        "heading": "Customer Reviews",
+        "max_width": 1400,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "section_bg": "#f2f1ed",
+        "text_color": "#000000",
+        "muted_color": "#444444",
+        "card_bg": "#ffffff",
+        "card_border": "#858585",
+        "avatar_bg": "#000000",
+        "avatar_text": "#ffffff",
+        "arrow_bg": "#f7f6f3",
+        "arrow_text": "#000000"
+      }
+    },
+    "amose_faq": {
+      "type": "amose-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "item",
+          "settings": {
+            "question": "How do I use this product?",
+            "answer": "<p>Follow the directions on the label or as advised by your healthcare professional.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We accept returns within the timeframe stated in our store policy. Contact support for help with your order.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "item",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Delivery times vary by region. You will receive tracking information once your order ships.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "item",
+          "settings": {
+            "question": "Is this product right for me?",
+            "answer": "<p>Please review the ingredients and consult a professional if you have specific health questions.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "item",
+          "settings": {
+            "question": "Where are orders shipped from?",
+            "answer": "<p>We ship from our fulfillment centers. Exact origin may appear on your tracking details.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "item",
+          "settings": {
+            "question": "How can I contact support?",
+            "answer": "<p>Reach us through the contact page or reply to your order confirmation email.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ],
+      "settings": {
+        "max_width": 1400,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "section_bg": "#ffffff",
+        "text_color": "#000000",
+        "muted_color": "#444444",
+        "divider_color": "#cccccc",
+        "badge_bg": "#f2f1ed",
+        "badge_text_color": "#000000",
+        "show_badge": true,
+        "badge_label": "FAQs",
+        "heading": "Frequently Asked Questions"
+      }
+    }
+  },
+  "order": [
+    "amose_product_information",
+    "amose_image_description",
+    "amose_before_after",
+    "amose_image_benefits_2",
+    "amose_comparison_table",
+    "amose_customer_reviews",
+    "amose_faq"
+  ]
+}

@@ -1,0 +1,509 @@
+{%- liquid
+  assign s = section.settings
+  assign amose_install_origin = 'https://amosesection1-production.up.railway.app'
+  assign amose_status_script_url = amose_install_origin | append: '/amose-section-status.js'
+  assign amose_skip_install_mask = false
+  if request.design_mode
+    assign amose_skip_install_mask = true
+  endif
+  if theme.role == 'development'
+    assign amose_skip_install_mask = true
+  endif
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }}.amose-stats-image-root {
+    --asi2-page-bg: {{ s.section_bg | default: '#ffffff' }};
+    --asi2-panel-bg: {{ s.panel_bg | default: '#f7f4ef' }};
+    --asi2-stat: {{ s.stat_color | default: '#e83e8c' }};
+    --asi2-label: {{ s.label_color | default: '#3a3a3a' }};
+    --asi2-disclaimer: {{ s.disclaimer_color | default: '#8a8a8a' }};
+    --asi2-radius: {{ s.corner_radius | default: 20 }}px;
+    --asi2-gap: {{ s.column_gap | default: 12 }}px;
+    --asi2-pad-x: clamp(16px, 3vw, 28px);
+    background: var(--asi2-page-bg);
+    padding-top: {{ s.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ s.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }}.amose-stats-image-root {
+      padding-top: {{ s.padding_top }}px;
+      padding-bottom: {{ s.padding_bottom }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .amose-asi2 {
+    max-width: {{ s.max_width | default: 1200 }}px;
+    margin: 0 auto;
+    padding: 0 var(--asi2-pad-x);
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .amose-asi2 {
+      {% if s.desktop_width == 'full' %}
+        padding: 0;
+        max-width: none;
+      {% endif %}
+    }
+  }
+
+  #shopify-section-{{ section.id }} .amose-asi2__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--asi2-gap);
+    align-items: stretch;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .amose-asi2__layout {
+      grid-template-columns: 1fr 1fr;
+      min-height: {{ s.min_height | default: 520 }}px;
+    }
+
+    #shopify-section-{{ section.id }} .amose-asi2__panel {
+      {% if s.image_position == 'left' %}
+        order: 2;
+      {% else %}
+        order: 1;
+      {% endif %}
+    }
+
+    #shopify-section-{{ section.id }} .amose-asi2__media {
+      {% if s.image_position == 'left' %}
+        order: 1;
+      {% else %}
+        order: 2;
+      {% endif %}
+    }
+  }
+
+  #shopify-section-{{ section.id }} .amose-asi2__panel {
+    background: var(--asi2-panel-bg);
+    {% if s.column_gap == 0 %}
+      {% if s.image_position == 'left' %}
+        border-radius: 0 var(--asi2-radius) var(--asi2-radius) 0;
+      {% else %}
+        border-radius: var(--asi2-radius) 0 0 var(--asi2-radius);
+      {% endif %}
+    {% else %}
+      border-radius: var(--asi2-radius);
+    {% endif %}
+    padding: clamp(28px, 4vw, 48px) clamp(24px, 3.5vw, 44px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    min-height: 0;
+    box-sizing: border-box;
+  }
+
+  #shopify-section-{{ section.id }} .amose-asi2__stats {
+    display: flex;
+    flex-direction: column;
+    gap: {{ s.stat_gap | default: 28 }}px;
+  }
+
+  #shopify-section-{{ section.id }} .amose-asi2__stat {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .amose-asi2__value {
+    margin: 0 0 6px;
+    font-size: clamp(36px, 4.2vw, {{ s.stat_size | default: 56 }}px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-weight: {{ s.stat_weight | default: 700 }};
+    color: var(--asi2-stat);
+  }
+
+  #shopify-section-{{ section.id }} .amose-asi2__label {
+    margin: 0;
+    font-size: {{ s.label_size | default: 13 }}px;
+    line-height: 1.35;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--asi2-label);
+    max-width: 28ch;
+  }
+
+  #shopify-section-{{ section.id }} .amose-asi2__disclaimer {
+    margin: 0;
+    font-size: {{ s.disclaimer_size | default: 12 }}px;
+    line-height: 1.45;
+    font-style: italic;
+    color: var(--asi2-disclaimer);
+    max-width: 42ch;
+  }
+
+  #shopify-section-{{ section.id }} .amose-asi2__media {
+    position: relative;
+    {% if s.column_gap == 0 %}
+      {% if s.image_position == 'left' %}
+        border-radius: var(--asi2-radius) 0 0 var(--asi2-radius);
+      {% else %}
+        border-radius: 0 var(--asi2-radius) var(--asi2-radius) 0;
+      {% endif %}
+    {% else %}
+      border-radius: var(--asi2-radius);
+    {% endif %}
+    overflow: hidden;
+    background: #e5e5e5;
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: {{ s.image_aspect_ratio | default: '1 / 1' }};
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .amose-asi2__media {
+      min-height: 0;
+      height: auto;
+      aspect-ratio: {{ s.desktop_image_aspect_ratio | default: '4 / 5' }};
+      align-self: stretch;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .amose-asi2__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .amose-asi2__placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    background: linear-gradient(145deg, #e8e8e8 0%, #d4d4d4 100%);
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .amose-asi2 {
+      {% if s.mobile_width == 'full' %}
+        padding: 0;
+        max-width: none;
+      {% else %}
+        padding: 0 var(--asi2-pad-x);
+      {% endif %}
+    }
+
+    #shopify-section-{{ section.id }} .amose-asi2__layout {
+      gap: 0;
+    }
+
+    #shopify-section-{{ section.id }} .amose-asi2__media {
+      {% if s.mobile_image_position == 'after' %}
+        order: 2;
+      {% else %}
+        order: 1;
+      {% endif %}
+      min-height: 0;
+      aspect-ratio: {{ s.image_aspect_ratio | default: '1 / 1' }};
+      {% if s.mobile_width == 'full' %}
+        border-radius: 0;
+      {% elsif s.mobile_image_position == 'after' %}
+        border-radius: 0 0 var(--asi2-radius) var(--asi2-radius);
+      {% else %}
+        border-radius: var(--asi2-radius) var(--asi2-radius) 0 0;
+      {% endif %}
+    }
+
+    #shopify-section-{{ section.id }} .amose-asi2__panel {
+      {% if s.mobile_image_position == 'after' %}
+        order: 1;
+      {% else %}
+        order: 2;
+      {% endif %}
+      padding: 24px 22px 22px;
+      gap: 24px;
+      {% if s.mobile_width == 'full' %}
+        border-radius: 0;
+      {% elsif s.mobile_image_position == 'after' %}
+        border-radius: var(--asi2-radius) var(--asi2-radius) 0 0;
+      {% else %}
+        border-radius: 0 0 var(--asi2-radius) var(--asi2-radius);
+      {% endif %}
+    }
+
+    #shopify-section-{{ section.id }} .amose-asi2__stats {
+      gap: {{ s.stat_gap | default: 28 | times: 0.85 | round: 0 }}px;
+    }
+
+    #shopify-section-{{ section.id }} .amose-asi2__value {
+      font-size: clamp(32px, 9vw, 44px);
+    }
+
+    #shopify-section-{{ section.id }} .amose-asi2__label {
+      max-width: none;
+    }
+  }
+{%- endstyle -%}
+
+{%- unless amose_skip_install_mask -%}
+{%- style -%}
+  #shopify-section-{{ section.id }}.amose-section-checking {
+    display: none !important;
+  }
+{%- endstyle -%}
+{%- endunless -%}
+
+<div class="amose-asi2">
+  <div class="amose-asi2__layout">
+    <div class="amose-asi2__panel">
+      <div class="amose-asi2__stats">
+        {% for block in section.blocks %}
+          {% if block.type == 'stat' %}
+            <div class="amose-asi2__stat" {{ block.shopify_attributes }}>
+              {% if block.settings.value != blank %}
+                <p class="amose-asi2__value">{{ block.settings.value | escape }}</p>
+              {% endif %}
+              {% if block.settings.label != blank %}
+                <p class="amose-asi2__label">{{ block.settings.label | escape }}</p>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {% if s.disclaimer != blank %}
+        <p class="amose-asi2__disclaimer">{{ s.disclaimer | escape }}</p>
+      {% endif %}
+    </div>
+
+    <div class="amose-asi2__media">
+      {% if s.image != blank %}
+        <img
+          src="{{ s.image | image_url: width: 1600 }}"
+          alt="{{ s.image.alt | escape }}"
+          width="{{ s.image.width }}"
+          height="{{ s.image.height }}"
+          loading="lazy"
+        >
+      {% else %}
+        <div class="amose-asi2__placeholder" aria-hidden="true"></div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{%- unless amose_skip_install_mask -%}
+<script>
+  window.__AmoseInstallCheckPageStart = window.__AmoseInstallCheckPageStart || Date.now();
+  window.__AmoseInstallCheckOrigin = {{ amose_install_origin | json }};
+  window.AmoseSectionStatus = window.AmoseSectionStatus || [];
+  window.AmoseSectionStatus.push({
+    shop: {{ shop.permanent_domain | json }},
+    sectionId: {{ section.id | json }},
+    sectionType: "stats-with-image"
+  });
+
+  window.AmoseStatusLoaderInserted = window.AmoseStatusLoaderInserted || false;
+  if (!window.AmoseStatusLoaderInserted) {
+    window.AmoseStatusLoaderInserted = true;
+    var script = document.createElement("script");
+    script.src = {{ amose_status_script_url | json }};
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+</script>
+{%- endunless -%}
+
+{% schema %}
+{
+  "name": "Stats with image",
+  "tag": "section",
+  "class": "amose-stats-image-root",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "range", "id": "max_width", "min": 960, "max": 1600, "step": 20, "unit": "px", "label": "Max width", "default": 1200 },
+    { "type": "header", "content": "Content" },
+    {
+      "type": "textarea",
+      "id": "disclaimer",
+      "label": "Disclaimer",
+      "default": "*Based on a 32-subject consumer perception study after 2 weeks of use."
+    },
+    {
+      "type": "range",
+      "id": "stat_size",
+      "min": 32,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "label": "Stat size",
+      "default": 56
+    },
+    {
+      "type": "select",
+      "id": "stat_weight",
+      "label": "Stat weight",
+      "default": "700",
+      "options": [
+        { "value": "600", "label": "Semi-bold" },
+        { "value": "700", "label": "Bold" },
+        { "value": "800", "label": "Extra bold" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "label_size",
+      "min": 11,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Label size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "stat_gap",
+      "min": 12,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap between stats",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "disclaimer_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Disclaimer size",
+      "default": 12
+    },
+    { "type": "header", "content": "Image" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position (desktop)",
+      "default": "right",
+      "options": [
+        { "value": "right", "label": "Right" },
+        { "value": "left", "label": "Left" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_position",
+      "label": "Image position (mobile)",
+      "default": "before",
+      "options": [
+        { "value": "before", "label": "Before content" },
+        { "value": "after", "label": "After content" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Mobile image format",
+      "default": "1 / 1",
+      "options": [
+        { "value": "1 / 1", "label": "1:1 (Square)" },
+        { "value": "4 / 5", "label": "4:5 (Portrait)" },
+        { "value": "3 / 4", "label": "3:4 (Portrait)" },
+        { "value": "16 / 10", "label": "16:10 (Landscape)" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_aspect_ratio",
+      "label": "Desktop image format",
+      "default": "4 / 5",
+      "options": [
+        { "value": "1 / 1", "label": "1:1 (Square)" },
+        { "value": "4 / 5", "label": "4:5 (Portrait)" },
+        { "value": "3 / 4", "label": "3:4 (Portrait)" },
+        { "value": "16 / 10", "label": "16:10 (Landscape)" }
+      ]
+    },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select",
+      "id": "desktop_width",
+      "label": "Desktop width",
+      "default": "container",
+      "options": [
+        { "value": "container", "label": "In container" },
+        { "value": "full", "label": "Full width" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_width",
+      "label": "Mobile width",
+      "default": "container",
+      "options": [
+        { "value": "container", "label": "In container" },
+        { "value": "full", "label": "Full width" }
+      ]
+    },
+    { "type": "range", "id": "corner_radius", "min": 0, "max": 40, "step": 1, "unit": "px", "label": "Corner radius", "default": 20 },
+    { "type": "range", "id": "column_gap", "min": 0, "max": 32, "step": 1, "unit": "px", "label": "Column gap", "default": 12 },
+    { "type": "range", "id": "min_height", "min": 400, "max": 720, "step": 10, "unit": "px", "label": "Desktop min height", "default": 520 },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding bottom", "default": 40 },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "section_bg", "label": "Section background", "default": "#ffffff" },
+    { "type": "color", "id": "panel_bg", "label": "Content panel", "default": "#f7f4ef" },
+    { "type": "color", "id": "stat_color", "label": "Stat color", "default": "#e83e8c" },
+    { "type": "color", "id": "label_color", "label": "Label color", "default": "#3a3a3a" },
+    { "type": "color", "id": "disclaimer_color", "label": "Disclaimer color", "default": "#8a8a8a" }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Statistic",
+      "settings": [
+        { "type": "text", "id": "value", "label": "Stat", "default": "100%" },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "SAID IT GAVE CHEEKS A NATURAL GLOW"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stats with image",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "value": "100%",
+            "label": "SAID IT GAVE CHEEKS A NATURAL GLOW"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "value": "97%",
+            "label": "SAID IT MELTS INTO SKIN + BLENDS SEAMLESSLY"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "value": "94%",
+            "label": "SAID IT WORKS WELL ON CHEEKS + LIPS"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "value": "3 out of 4",
+            "label": "SAID THE BLUSH FEELS HYDRATING"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

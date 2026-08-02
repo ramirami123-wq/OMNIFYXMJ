@@ -1,0 +1,854 @@
+{%- liquid
+  assign s = section.settings
+  assign amose_install_origin = 'https://amosesection1-production.up.railway.app'
+  assign amose_status_script_url = amose_install_origin | append: '/amose-section-status.js'
+  assign amose_skip_install_mask = false
+  if request.design_mode
+    assign amose_skip_install_mask = true
+  endif
+  if theme.role == 'development'
+    assign amose_skip_install_mask = true
+  endif
+  assign ba_slider_start = s.slider_initial | default: 50
+  assign img_before = s.image_before
+  if img_before == blank
+    assign img_before = s.image
+  endif
+  assign img_after = s.image_after
+  assign show_compare = false
+  if img_before != blank and img_after != blank
+    assign show_compare = true
+  endif
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }}.amose-ba3-root {
+    --ba3-page-bg: {{ s.section_bg | default: '#ffffff' }};
+    --ba3-panel-bg: {{ s.panel_bg | default: '#f2f1ed' }};
+    --ba3-text: {{ s.text_color | default: '#1a1a1a' }};
+    --ba3-muted: {{ s.muted_text_color | default: '#6b6b6b' }};
+    --ba3-handle: {{ s.handle_color | default: '#171717' }};
+    --ba3-slider-bar: {{ s.slider_bar_color | default: '#ffffff' }};
+    --ba3-badge-bg: {{ s.badge_bg | default: '#ffffff' }};
+    --ba3-badge-text: {{ s.badge_text_color | default: '#171717' }};
+    --ba3-badge-radius: {{ s.badge_radius | default: 6 }}px;
+    --ba3-radius: {{ s.corner_radius | default: 20 }}px;
+    --ba3-gap: {{ s.column_gap | default: 12 }}px;
+    --ba3-pad-x: clamp(16px, 3vw, 28px);
+    --ba3-pos: {{ ba_slider_start }}%;
+    background: var(--ba3-page-bg);
+    color: var(--ba3-text);
+    padding-top: {{ s.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ s.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }}.amose-ba3-root {
+      padding-top: {{ s.padding_top }}px;
+      padding-bottom: {{ s.padding_bottom }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3 {
+    max-width: {{ s.max_width | default: 1200 }}px;
+    margin: 0 auto;
+    padding: 0 var(--ba3-pad-x);
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .amose-ba3 {
+      {% if s.desktop_width == 'full' %}
+        padding: 0;
+        max-width: none;
+      {% endif %}
+    }
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--ba3-gap);
+    align-items: stretch;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .amose-ba3__layout {
+      grid-template-columns: 1fr 1fr;
+      min-height: {{ s.min_height | default: 520 }}px;
+    }
+
+    #shopify-section-{{ section.id }} .amose-ba3__panel {
+      {% if s.image_position == 'left' %}
+        order: 2;
+      {% else %}
+        order: 1;
+      {% endif %}
+    }
+
+    #shopify-section-{{ section.id }} .amose-ba3__media {
+      {% if s.image_position == 'left' %}
+        order: 1;
+      {% else %}
+        order: 2;
+      {% endif %}
+    }
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__panel {
+    background: var(--ba3-panel-bg);
+    {% if s.column_gap == 0 %}
+      {% if s.image_position == 'left' %}
+        border-radius: 0 var(--ba3-radius) var(--ba3-radius) 0;
+      {% else %}
+        border-radius: var(--ba3-radius) 0 0 var(--ba3-radius);
+      {% endif %}
+    {% else %}
+      border-radius: var(--ba3-radius);
+    {% endif %}
+    padding: clamp(28px, 4vw, 48px) clamp(24px, 3.5vw, 44px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 0;
+    box-sizing: border-box;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__title {
+    margin: 0 0 10px;
+    text-align: {{ s.heading_alignment | default: 'left' }};
+    font-size: clamp(24px, 2.8vw, {{ s.heading_size | default: 34 }}px);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__sub {
+    margin: 0 0 22px;
+    text-align: {{ s.heading_alignment | default: 'left' }};
+    {% if s.heading_alignment == 'center' %}
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 36ch;
+    {% elsif s.heading_alignment == 'right' %}
+      margin-left: auto;
+      max-width: 36ch;
+    {% else %}
+      max-width: 40ch;
+    {% endif %}
+    color: var(--ba3-muted);
+    font-size: {{ s.body_size | default: 15 }}px;
+    line-height: 1.5;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__sub p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__steps {
+    display: grid;
+    gap: clamp(14px, 2vw, 20px);
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__step {
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__kicker {
+    margin: 0 0 2px;
+    font-size: 13px;
+    color: var(--ba3-muted);
+    line-height: 1.25;
+    font-weight: 500;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__step-title {
+    margin: 0 0 4px;
+    font-size: clamp(17px, 1.8vw, 22px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__step-text,
+  #shopify-section-{{ section.id }} .amose-ba3__step-text p {
+    margin: 0;
+    color: var(--ba3-muted);
+    line-height: 1.45;
+    font-size: {{ s.body_size | default: 15 }}px;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__media {
+    position: relative;
+    {% if s.column_gap == 0 %}
+      {% if s.image_position == 'left' %}
+        border-radius: var(--ba3-radius) 0 0 var(--ba3-radius);
+      {% else %}
+        border-radius: 0 var(--ba3-radius) var(--ba3-radius) 0;
+      {% endif %}
+    {% else %}
+      border-radius: var(--ba3-radius);
+    {% endif %}
+    overflow: hidden;
+    background: #e5e5e5;
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: {{ s.image_aspect_ratio | default: '1 / 1' }};
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .amose-ba3__media {
+      min-height: 0;
+      height: auto;
+      aspect-ratio: {{ s.desktop_image_aspect_ratio | default: '4 / 5' }};
+      align-self: stretch;
+    }
+
+    #shopify-section-{{ section.id }} .amose-ba3__panel {
+      align-self: stretch;
+      height: 100%;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__compare {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__compare-single {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__compare-single img,
+  #shopify-section-{{ section.id }} .amose-ba3__compare-single .placeholder-svg,
+  #shopify-section-{{ section.id }} .amose-ba3__compare-after,
+  #shopify-section-{{ section.id }} .amose-ba3__before-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__compare-after {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__before-clip {
+    position: absolute;
+    inset: 0;
+    clip-path: inset(0 calc(100% - var(--ba3-pos, 50%)) 0 0);
+    pointer-events: none;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__before-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--ba3-pos, 50%);
+    width: 44px;
+    margin-left: -22px;
+    z-index: 2;
+    cursor: ew-resize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 0;
+    padding: 0;
+    color: var(--ba3-handle);
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__handle:focus-visible {
+    outline: 2px solid var(--ba3-text);
+    outline-offset: 2px;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__handle-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 5px;
+    transform: translateX(-50%);
+    background: var(--ba3-slider-bar);
+    border-radius: 2px;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.9),
+      0 0 12px rgba(0, 0, 0, 0.18);
+    pointer-events: none;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__handle-knob {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ba3-handle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__handle-icon {
+    font-size: 22px;
+    line-height: 1;
+    display: inline-block;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__ba-labels {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__ba-label {
+    position: absolute;
+    bottom: 12px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: var(--ba3-badge-radius);
+    background: var(--ba3-badge-bg);
+    color: var(--ba3-badge-text);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__ba-label--before {
+    left: 12px;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__ba-label--after {
+    right: 12px;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba3__placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    background: linear-gradient(145deg, #e8e8e8 0%, #d4d4d4 100%);
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .amose-ba3 {
+      {% if s.mobile_width == 'full' %}
+        padding: 0;
+        max-width: none;
+      {% else %}
+        padding: 0 var(--ba3-pad-x);
+      {% endif %}
+    }
+
+    #shopify-section-{{ section.id }} .amose-ba3__layout {
+      gap: 0;
+    }
+
+    #shopify-section-{{ section.id }} .amose-ba3__media {
+      {% if s.mobile_image_position == 'after' %}
+        order: 2;
+      {% else %}
+        order: 1;
+      {% endif %}
+      min-height: 0;
+      aspect-ratio: {{ s.image_aspect_ratio | default: '1 / 1' }};
+      {% if s.mobile_width == 'full' %}
+        border-radius: 0;
+      {% elsif s.mobile_image_position == 'after' %}
+        border-radius: 0 0 var(--ba3-radius) var(--ba3-radius);
+      {% else %}
+        border-radius: var(--ba3-radius) var(--ba3-radius) 0 0;
+      {% endif %}
+    }
+
+    #shopify-section-{{ section.id }} .amose-ba3__panel {
+      {% if s.mobile_image_position == 'after' %}
+        order: 1;
+      {% else %}
+        order: 2;
+      {% endif %}
+      padding: 24px 20px;
+      {% if s.mobile_width == 'full' %}
+        border-radius: 0;
+      {% elsif s.mobile_image_position == 'after' %}
+        border-radius: var(--ba3-radius) var(--ba3-radius) 0 0;
+      {% else %}
+        border-radius: 0 0 var(--ba3-radius) var(--ba3-radius);
+      {% endif %}
+    }
+
+    #shopify-section-{{ section.id }} .amose-ba3__title {
+      font-size: clamp(24px, 7vw, 30px);
+    }
+
+    #shopify-section-{{ section.id }} .amose-ba3__sub {
+      max-width: none;
+      margin-bottom: 18px;
+    }
+  }
+{%- endstyle -%}
+
+{%- unless amose_skip_install_mask -%}
+{%- style -%}
+  #shopify-section-{{ section.id }}.amose-section-checking {
+    display: none !important;
+  }
+{%- endstyle -%}
+{%- endunless -%}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+
+<div class="amose-ba3">
+  <div class="amose-ba3__layout">
+    <div class="amose-ba3__panel">
+      {% if s.heading != blank %}
+        <h2 class="amose-ba3__title">{{ s.heading | escape }}</h2>
+      {% endif %}
+      {% if s.subtext != blank %}
+        <div class="amose-ba3__sub rte">{{ s.subtext }}</div>
+      {% endif %}
+
+      <div class="amose-ba3__steps">
+        {% for block in section.blocks %}
+          {% if block.type == 'step' %}
+            <div class="amose-ba3__step" {{ block.shopify_attributes }}>
+              {% if block.settings.kicker != blank %}
+                <p class="amose-ba3__kicker">{{ block.settings.kicker | escape }}</p>
+              {% endif %}
+              {% if block.settings.title != blank %}
+                <h3 class="amose-ba3__step-title">{{ block.settings.title | escape }}</h3>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <div class="amose-ba3__step-text rte">{{ block.settings.text }}</div>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="amose-ba3__media">
+      {% if show_compare %}
+        <div
+          class="amose-ba3__compare"
+          data-amose-ba3-compare
+          data-section-id="{{ section.id }}"
+          data-initial="{{ ba_slider_start }}"
+        >
+          <img
+            class="amose-ba3__compare-after"
+            src="{{ img_after | image_url: width: 1400 }}"
+            alt="{{ img_after.alt | default: s.after_label | default: 'After' | escape }}"
+            width="{{ img_after.width }}"
+            height="{{ img_after.height }}"
+            loading="lazy"
+          >
+          <div class="amose-ba3__before-clip">
+            <img
+              class="amose-ba3__before-img"
+              src="{{ img_before | image_url: width: 1400 }}"
+              alt="{{ img_before.alt | default: s.before_label | default: 'Before' | escape }}"
+              width="{{ img_before.width }}"
+              height="{{ img_before.height }}"
+              loading="lazy"
+            >
+          </div>
+          {% if s.before_label != blank or s.after_label != blank %}
+            <div class="amose-ba3__ba-labels" aria-hidden="true">
+              {% if s.before_label != blank %}
+                <span class="amose-ba3__ba-label amose-ba3__ba-label--before">{{ s.before_label | escape }}</span>
+              {% endif %}
+              {% if s.after_label != blank %}
+                <span class="amose-ba3__ba-label amose-ba3__ba-label--after">{{ s.after_label | escape }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
+          <button
+            type="button"
+            class="amose-ba3__handle"
+            aria-label="Drag to compare before and after"
+            data-amose-ba3-handle
+          >
+            <span class="amose-ba3__handle-line" aria-hidden="true"></span>
+            <span class="amose-ba3__handle-knob" aria-hidden="true">
+              <i class="ph ph-arrows-out-line-horizontal amose-ba3__handle-icon" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+      {% elsif img_before != blank %}
+        <div class="amose-ba3__compare-single">
+          <img
+            src="{{ img_before | image_url: width: 1400 }}"
+            alt="{{ img_before.alt | default: s.heading | escape }}"
+            width="{{ img_before.width }}"
+            height="{{ img_before.height }}"
+            loading="lazy"
+          >
+        </div>
+      {% elsif img_after != blank %}
+        <div class="amose-ba3__compare-single">
+          <img
+            src="{{ img_after | image_url: width: 1400 }}"
+            alt="{{ img_after.alt | default: s.heading | escape }}"
+            width="{{ img_after.width }}"
+            height="{{ img_after.height }}"
+            loading="lazy"
+          >
+        </div>
+      {% else %}
+        <div class="amose-ba3__compare-single">
+          <div class="amose-ba3__placeholder" aria-hidden="true"></div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% if show_compare %}
+  <script>
+    (function () {
+      var sectionId = {{ section.id | json }};
+      var sel = '#shopify-section-' + sectionId + ' [data-amose-ba3-compare]';
+
+      function clamp(n, min, max) {
+        return Math.min(max, Math.max(min, n));
+      }
+
+      function readPct(str) {
+        var n = parseFloat(String(str || '').replace('%', ''));
+        return isNaN(n) ? 50 : n;
+      }
+
+      function setPos(root, pct) {
+        pct = clamp(pct, 0, 100);
+        root.style.setProperty('--ba3-pos', pct + '%');
+        var btn = root.querySelector('[data-amose-ba3-handle]');
+        if (btn) btn.setAttribute('aria-valuenow', String(Math.round(pct)));
+      }
+
+      function initCompare(root) {
+        if (!root || root.getAttribute('data-amose-ba3-ready')) return;
+        root.setAttribute('data-amose-ba3-ready', '1');
+        var handle = root.querySelector('[data-amose-ba3-handle]');
+        if (handle) {
+          handle.setAttribute('role', 'slider');
+          handle.setAttribute('aria-valuemin', '0');
+          handle.setAttribute('aria-valuemax', '100');
+          var ini = readPct(root.getAttribute('data-initial'));
+          setPos(root, ini);
+        }
+
+        function pctFromClientX(clientX) {
+          var r = root.getBoundingClientRect();
+          if (r.width <= 0) return 50;
+          return ((clientX - r.left) / r.width) * 100;
+        }
+
+        var dragging = false;
+
+        function onPointerMove(e) {
+          if (!dragging) return;
+          e.preventDefault();
+          setPos(root, pctFromClientX(e.clientX));
+        }
+
+        function onPointerUp() {
+          dragging = false;
+          document.removeEventListener('pointermove', onPointerMove);
+          document.removeEventListener('pointerup', onPointerUp);
+          document.removeEventListener('pointercancel', onPointerUp);
+        }
+
+        root.addEventListener('pointerdown', function (e) {
+          if (e.target.closest('[data-amose-ba3-handle]')) return;
+          dragging = true;
+          root.setPointerCapture(e.pointerId);
+          setPos(root, pctFromClientX(e.clientX));
+          document.addEventListener('pointermove', onPointerMove, { passive: false });
+          document.addEventListener('pointerup', onPointerUp);
+          document.addEventListener('pointercancel', onPointerUp);
+        });
+
+        if (handle) {
+          handle.addEventListener('pointerdown', function (e) {
+            e.stopPropagation();
+            dragging = true;
+            handle.setPointerCapture(e.pointerId);
+            document.addEventListener('pointermove', onPointerMove, { passive: false });
+            document.addEventListener('pointerup', onPointerUp);
+            document.addEventListener('pointercancel', onPointerUp);
+          });
+
+          handle.addEventListener('keydown', function (e) {
+            var cur = readPct(getComputedStyle(root).getPropertyValue('--ba3-pos'));
+            var step = e.shiftKey ? 10 : 3;
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+              e.preventDefault();
+              setPos(root, cur - step);
+            } else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+              e.preventDefault();
+              setPos(root, cur + step);
+            } else if (e.key === 'Home') {
+              e.preventDefault();
+              setPos(root, 0);
+            } else if (e.key === 'End') {
+              e.preventDefault();
+              setPos(root, 100);
+            }
+          });
+        }
+      }
+
+      function run() {
+        var el = document.querySelector(sel);
+        if (el) initCompare(el);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', run);
+      } else {
+        run();
+      }
+
+      document.addEventListener('shopify:section:load', function (e) {
+        if (e.detail && String(e.detail.sectionId) === String(sectionId)) {
+          var el = document.querySelector(sel);
+          if (el) {
+            el.removeAttribute('data-amose-ba3-ready');
+            initCompare(el);
+          }
+        }
+      });
+    })();
+  </script>
+{% endif %}
+
+{%- unless amose_skip_install_mask -%}
+<script>
+  window.__AmoseInstallCheckPageStart = window.__AmoseInstallCheckPageStart || Date.now();
+  window.__AmoseInstallCheckOrigin = {{ amose_install_origin | json }};
+  window.AmoseSectionStatus = window.AmoseSectionStatus || [];
+  window.AmoseSectionStatus.push({
+    shop: {{ shop.permanent_domain | json }},
+    sectionId: {{ section.id | json }},
+    sectionType: "before-after-3"
+  });
+
+  window.AmoseStatusLoaderInserted = window.AmoseStatusLoaderInserted || false;
+  if (!window.AmoseStatusLoaderInserted) {
+    window.AmoseStatusLoaderInserted = true;
+    var script = document.createElement("script");
+    script.src = {{ amose_status_script_url | json }};
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+</script>
+{%- endunless -%}
+
+{% schema %}
+{
+  "name": "Before and after 3",
+  "tag": "section",
+  "class": "amose-ba3-root",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "range", "id": "max_width", "min": 960, "max": 1600, "step": 20, "unit": "px", "label": "Max width", "default": 1200 },
+    { "type": "header", "content": "Content" },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "See the difference"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 22,
+      "max": 44,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 34
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading & description alignment",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "<p>Drag the slider to compare results over time.</p>"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "min": 13,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Body size",
+      "default": 15
+    },
+    { "type": "header", "content": "Images" },
+    { "type": "image_picker", "id": "image_before", "label": "Before image" },
+    { "type": "image_picker", "id": "image_after", "label": "After image" },
+    { "type": "image_picker", "id": "image", "label": "Image (legacy)", "info": "Used only if Before image is empty." },
+    { "type": "text", "id": "before_label", "label": "Before label", "default": "Before" },
+    { "type": "text", "id": "after_label", "label": "After label", "default": "After" },
+    {
+      "type": "range",
+      "id": "slider_initial",
+      "min": 5,
+      "max": 95,
+      "step": 1,
+      "unit": "%",
+      "label": "Slider start position",
+      "default": 50
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position (desktop)",
+      "default": "right",
+      "options": [
+        { "value": "right", "label": "Right" },
+        { "value": "left", "label": "Left" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_image_position",
+      "label": "Image position (mobile)",
+      "default": "before",
+      "options": [
+        { "value": "before", "label": "Above content" },
+        { "value": "after", "label": "Below content" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_aspect_ratio",
+      "label": "Mobile image format",
+      "default": "1 / 1",
+      "options": [
+        { "value": "1 / 1", "label": "Square (1:1)" },
+        { "value": "4 / 5", "label": "Portrait (4:5)" },
+        { "value": "3 / 4", "label": "Portrait (3:4)" },
+        { "value": "4 / 3", "label": "Landscape (4:3)" },
+        { "value": "16 / 10", "label": "Landscape (16:10)" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_aspect_ratio",
+      "label": "Desktop image format",
+      "default": "4 / 5",
+      "options": [
+        { "value": "1 / 1", "label": "Square (1:1)" },
+        { "value": "4 / 5", "label": "Portrait (4:5)" },
+        { "value": "3 / 4", "label": "Portrait (3:4)" },
+        { "value": "4 / 3", "label": "Landscape (4:3)" },
+        { "value": "16 / 10", "label": "Landscape (16:10)" }
+      ]
+    },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select",
+      "id": "desktop_width",
+      "label": "Desktop width",
+      "default": "container",
+      "options": [
+        { "value": "container", "label": "In container" },
+        { "value": "full", "label": "Full width" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_width",
+      "label": "Mobile width",
+      "default": "container",
+      "options": [
+        { "value": "container", "label": "In container" },
+        { "value": "full", "label": "Full width" }
+      ]
+    },
+    { "type": "range", "id": "corner_radius", "min": 0, "max": 40, "step": 1, "unit": "px", "label": "Corner radius", "default": 20 },
+    { "type": "range", "id": "column_gap", "min": 0, "max": 32, "step": 1, "unit": "px", "label": "Column gap", "default": 12 },
+    { "type": "range", "id": "min_height", "min": 400, "max": 720, "step": 10, "unit": "px", "label": "Desktop min height", "default": 520 },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding bottom", "default": 40 },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "section_bg", "label": "Section background", "default": "#ffffff" },
+    { "type": "color", "id": "panel_bg", "label": "Content panel", "default": "#f2f1ed" },
+    { "type": "color", "id": "text_color", "label": "Text", "default": "#1a1a1a" },
+    { "type": "color", "id": "muted_text_color", "label": "Muted text", "default": "#6b6b6b" },
+    { "type": "color", "id": "badge_bg", "label": "Before/After badge background", "default": "#ffffff" },
+    { "type": "color", "id": "badge_text_color", "label": "Before/After badge text", "default": "#171717" },
+    { "type": "range", "id": "badge_radius", "min": 0, "max": 28, "step": 1, "unit": "px", "label": "Badge radius", "default": 6 },
+    { "type": "color", "id": "slider_bar_color", "label": "Slider bar", "default": "#ffffff" },
+    { "type": "color", "id": "handle_color", "label": "Slider knob & icons", "default": "#171717" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "kicker", "label": "Small label", "default": "Weeks 1-2" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Gut Adjustment Begins" },
+        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Your microbiome begins adapting. Some users notice less digestive discomfort as beneficial bacteria begin to balance the gut.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before and after 3",
+      "blocks": [
+        { "type": "step" },
+        {
+          "type": "step",
+          "settings": {
+            "kicker": "Weeks 3-4",
+            "title": "Improved Digestive Balance",
+            "text": "<p>As microbial diversity improves, digestion may feel smoother and occasional bloating may decrease with consistent use.</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "kicker": "Months 2-3+",
+            "title": "Stronger Gut Support",
+            "text": "<p>With continued daily use, the microbiome becomes more balanced, helping support digestion, immune health, and overall gut wellness.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

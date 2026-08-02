@@ -1,0 +1,416 @@
+{%- liquid
+  assign s = section.settings
+  assign amose_install_origin = 'https://amosesection1-production.up.railway.app'
+  assign amose_status_script_url = amose_install_origin | append: '/amose-section-status.js'
+  assign amose_skip_install_mask = false
+  if request.design_mode
+    assign amose_skip_install_mask = true
+  endif
+  if theme.role == 'development'
+    assign amose_skip_install_mask = true
+  endif
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }}.amose-faq3-root {
+    --faq3-page-bg: {{ s.section_bg | default: '#f2f1ed' }};
+    --faq3-panel-bg: {{ s.panel_bg | default: '#ffffff' }};
+    --faq3-text: {{ s.text_color | default: '#1a1a1a' }};
+    --faq3-muted: {{ s.muted_color | default: '#6b6b6b' }};
+    --faq3-line: {{ s.line_color | default: '#e0ded9' }};
+    --faq3-icon: {{ s.icon_color | default: '#1a1a1a' }};
+    --faq3-radius: {{ s.corner_radius | default: 20 }}px;
+    --faq3-pad-x: clamp(16px, 3vw, 28px);
+    background: var(--faq3-page-bg);
+    color: var(--faq3-text);
+    padding-top: {{ s.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ s.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }}.amose-faq3-root {
+      padding-top: {{ s.padding_top }}px;
+      padding-bottom: {{ s.padding_bottom }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3 {
+    max-width: {{ s.max_width | default: 900 }}px;
+    margin: 0 auto;
+    padding: 0 var(--faq3-pad-x);
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .amose-faq3 {
+      {% if s.desktop_width == 'full' %}
+        padding: 0;
+        max-width: none;
+      {% endif %}
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .amose-faq3 {
+      {% if s.mobile_width == 'full' %}
+        padding: 0;
+        max-width: none;
+      {% endif %}
+    }
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__panel {
+    background: var(--faq3-panel-bg);
+    border-radius: var(--faq3-radius);
+    padding: clamp(28px, 4vw, 44px) clamp(22px, 3.2vw, 40px);
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .amose-faq3--full-desktop .amose-faq3__panel {
+      border-radius: 0;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .amose-faq3--full-mobile .amose-faq3__panel {
+      border-radius: 0;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__heading {
+    margin: 0 0 {% if s.subtext != blank %}10px{% else %}28px{% endif %};
+    text-align: {{ s.heading_alignment | default: 'left' }};
+    font-size: clamp(24px, 2.8vw, {{ s.heading_size | default: 34 }}px);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    color: var(--faq3-text);
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__sub {
+    margin: 0 0 28px;
+    text-align: {{ s.heading_alignment | default: 'left' }};
+    {% if s.heading_alignment == 'center' %}
+      margin-left: auto;
+      margin-right: auto;
+    {% elsif s.heading_alignment == 'right' %}
+      margin-left: auto;
+      margin-right: 0;
+    {% endif %}
+    max-width: 42ch;
+    color: var(--faq3-muted);
+    font-size: {{ s.body_size | default: 15 }}px;
+    line-height: 1.55;
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__sub p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__item {
+    margin: 0;
+    border-top: 1px solid var(--faq3-line);
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__item:first-child {
+    border-top: 0;
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__item summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 0;
+    cursor: pointer;
+    font-size: clamp(15px, 1.2vw, 17px);
+    line-height: 1.35;
+    font-weight: 600;
+    color: var(--faq3-text);
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__item summary:focus-visible {
+    outline: 2px solid var(--faq3-text);
+    outline-offset: 2px;
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__question {
+    flex: 1;
+    text-align: left;
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    color: var(--faq3-icon);
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__icon::before,
+  #shopify-section-{{ section.id }} .amose-faq3__icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: currentColor;
+    border-radius: 1px;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__icon::before {
+    width: 14px;
+    height: 2px;
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__icon::after {
+    width: 2px;
+    height: 14px;
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__item[open] .amose-faq3__icon::after {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__answer {
+    padding: 0 0 18px;
+    margin-top: -4px;
+    font-size: {{ s.body_size | default: 15 }}px;
+    line-height: 1.55;
+    color: var(--faq3-muted);
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__answer p {
+    margin: 0 0 0.75em;
+  }
+
+  #shopify-section-{{ section.id }} .amose-faq3__answer p:last-child {
+    margin-bottom: 0;
+  }
+{%- endstyle -%}
+
+{%- unless amose_skip_install_mask -%}
+{%- style -%}
+  #shopify-section-{{ section.id }}.amose-section-checking {
+    display: none !important;
+  }
+{%- endstyle -%}
+{%- endunless -%}
+
+<div class="amose-faq3{% if s.desktop_width == 'full' %} amose-faq3--full-desktop{% endif %}{% if s.mobile_width == 'full' %} amose-faq3--full-mobile{% endif %}" data-amose-faq3>
+  <div class="amose-faq3__panel">
+    {% if s.heading != blank %}
+      <h2 class="amose-faq3__heading">{{ s.heading | escape }}</h2>
+    {% endif %}
+    {% if s.subtext != blank %}
+      <div class="amose-faq3__sub rte">{{ s.subtext }}</div>
+    {% endif %}
+
+    <div class="amose-faq3__list">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'item' %}
+            <details
+              class="amose-faq3__item"
+              {% if forloop.first and s.open_first %}open{% endif %}
+              {{ block.shopify_attributes }}
+            >
+              <summary>
+                <span class="amose-faq3__question">{{ block.settings.question | escape }}</span>
+                <span class="amose-faq3__icon" aria-hidden="true"></span>
+              </summary>
+              {% if block.settings.answer != blank %}
+                <div class="amose-faq3__answer rte">{{ block.settings.answer }}</div>
+              {% endif %}
+            </details>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{%- unless amose_skip_install_mask -%}
+<script>
+  window.__AmoseInstallCheckPageStart = window.__AmoseInstallCheckPageStart || Date.now();
+  window.__AmoseInstallCheckOrigin = {{ amose_install_origin | json }};
+  window.AmoseSectionStatus = window.AmoseSectionStatus || [];
+  window.AmoseSectionStatus.push({
+    shop: {{ shop.permanent_domain | json }},
+    sectionId: {{ section.id | json }},
+    sectionType: "faq-3"
+  });
+
+  window.AmoseStatusLoaderInserted = window.AmoseStatusLoaderInserted || false;
+  if (!window.AmoseStatusLoaderInserted) {
+    window.AmoseStatusLoaderInserted = true;
+    var script = document.createElement("script");
+    script.src = {{ amose_status_script_url | json }};
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+</script>
+{%- endunless -%}
+
+{% schema %}
+{
+  "name": "FAQ 3",
+  "tag": "section",
+  "class": "amose-faq3-root",
+  "max_blocks": 16,
+  "settings": [
+    { "type": "range", "id": "max_width", "min": 640, "max": 1600, "step": 20, "unit": "px", "label": "Max width", "default": 900 },
+    { "type": "header", "content": "Content" },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently asked questions"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 22,
+      "max": 44,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 34
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading & description alignment",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "<p>Everything you need to know before you order.</p>"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "min": 13,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Body size",
+      "default": 15
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first",
+      "label": "Open first item by default",
+      "default": true
+    },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select",
+      "id": "desktop_width",
+      "label": "Desktop width",
+      "default": "container",
+      "options": [
+        { "value": "container", "label": "In container" },
+        { "value": "full", "label": "Full width" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_width",
+      "label": "Mobile width",
+      "default": "container",
+      "options": [
+        { "value": "container", "label": "In container" },
+        { "value": "full", "label": "Full width" }
+      ]
+    },
+    { "type": "range", "id": "corner_radius", "min": 0, "max": 40, "step": 1, "unit": "px", "label": "Corner radius", "default": 20 },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding bottom", "default": 40 },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "section_bg", "label": "Section background", "default": "#f2f1ed" },
+    { "type": "color", "id": "panel_bg", "label": "Panel background", "default": "#ffffff" },
+    { "type": "color", "id": "text_color", "label": "Heading / questions", "default": "#1a1a1a" },
+    { "type": "color", "id": "muted_color", "label": "Answers / subtext", "default": "#6b6b6b" },
+    { "type": "color", "id": "line_color", "label": "Row divider", "default": "#e0ded9" },
+    { "type": "color", "id": "icon_color", "label": "Icon color", "default": "#1a1a1a" }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "FAQ item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How do I use this product?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Follow the directions on the label or as advised by your healthcare professional.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ 3",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "question": "How do I use this product?",
+            "answer": "<p>Follow the directions on the label or as advised by your healthcare professional.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Most orders ship within 1–2 business days and arrive in 3–7 days depending on your location.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We offer hassle-free returns within 30 days of delivery if you’re not completely satisfied.</p>"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "question": "Is this product safe for sensitive skin?",
+            "answer": "<p>Yes — it’s formulated with gentle ingredients. If you have concerns, patch-test first or ask your dermatologist.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
