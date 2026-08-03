@@ -28,8 +28,8 @@
             "badge_text": "Happy Customers",
             "badge_bg": "#FDFDFD",
             "badge_text_color": "#25BE2A",
-            "badge_radius": 4,
-            "badge_size": 13,
+            "badge_radius": 5,
+            "badge_size": 12,
             "align_web": "flex-start",
             "gap": 8,
             "wrapper_margin_top": 8,
@@ -43,16 +43,10 @@
             "text_color": "#000000"
           }
         },
-        "custom_liquid_N7KbcG": {
+        "custom_liquid_yh8tUw": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": ""
-          }
-        },
-        "custom_liquid_eezNpi": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": ""
+            "custom_liquid": "<style>\n.product__title::after {\n  content: \"Relieves Neck Pain\";\n  display: inline-block;\n  margin-left: 10px;\n  padding: 6px 10px;\n  background: #eef5ed;\n  color: #315b38;\n  border-radius: 20px;\n  font-size: 12px;\n  font-weight: 700;\n}\n</style>"
           }
         },
         "pi_price": {
@@ -115,6 +109,23 @@
             "button_radius": 15
           }
         },
+        "benefits_with_icons_zDKQhq": {
+          "type": "benefits_with_icons",
+          "settings": {
+            "benefit_1": "",
+            "benefit_2": "30-day hassle-free returns",
+            "benefit_3": "Secure checkout & buyer protection",
+            "icon_1": "heart",
+            "icon_2": "shield-check",
+            "icon_3": "rocket-launch",
+            "icon_color": "#16a34a",
+            "text_color": "#171717",
+            "font_size": 14,
+            "row_gap": 10,
+            "wrapper_margin_top": 8,
+            "wrapper_margin_bottom": 8
+          }
+        },
         "pi_shipping": {
           "type": "shipping_eta",
           "settings": {
@@ -161,12 +172,12 @@
       "block_order": [
         "star_badge_iFdwAm",
         "pi_title",
-        "custom_liquid_N7KbcG",
-        "custom_liquid_eezNpi",
+        "custom_liquid_yh8tUw",
         "pi_price",
         "pi_summary",
         "pi_low_stock",
         "pi_buy",
+        "benefits_with_icons_zDKQhq",
         "pi_shipping",
         "pi_trust"
       ],
@@ -198,71 +209,50 @@
         "side_benefit_icon_3": "default"
       }
     },
-    "amose_scrolling_ugc_videos_krcmcT": {
-      "type": "amose-scrolling-ugc-videos",
+    "blocks_znRqLn": {
+      "type": "_blocks",
       "blocks": {
-        "video_Uz7xFz": {
-          "type": "video",
+        "ai_gen_block_9dfe6cc_UcNcKT": {
+          "type": "ai_gen_block_9dfe6cc",
           "settings": {
-            "video_url": "https://www.tiktok.com/@rose_valenciia/video/7501823705358601515?is_from_webapp=1&sender_device=pc&web_id=7615206072321066504",
-            "caption": "How I got rid of my double chin in only a few weeks"
-          }
-        },
-        "video_H6KL4E": {
-          "type": "video",
-          "settings": {
-            "video_url": "",
-            "caption": "Green light routine"
-          }
-        },
-        "video_jL8n8q": {
-          "type": "video",
-          "settings": {
-            "video_url": "",
-            "caption": "Daily check-in"
-          }
-        },
-        "video_h7X4Je": {
-          "type": "video",
-          "settings": {
-            "video_url": "",
-            "caption": "Red light therapy"
-          }
-        },
-        "video_pBkFXQ": {
-          "type": "video",
-          "settings": {
-            "video_url": "",
-            "caption": "Night routine result"
-          }
+            "heading": "See our products in action",
+            "subheading": "Watch how our customers use our products",
+            "heading_size": 32,
+            "subheading_size": 16,
+            "heading_color": "#121212",
+            "subheading_color": "#666666",
+            "text_alignment": "center",
+            "spacing_below_heading": 30,
+            "columns_desktop": 6,
+            "columns_mobile": "3",
+            "grid_gap": 10,
+            "max_container_width": 700,
+            "aspect_ratio": "9 / 16",
+            "desktop_width_percent": 100,
+            "section_padding": 40,
+            "video_border_radius": 8,
+            "video_background": "#f4f4f4",
+            "video_1": "shopify://files/videos/snaptik_7501823705358601515_v3.mp4",
+            "caption_1": "",
+            "video_2": "shopify://files/videos/snaptik_7541130598383914271_v3.mp4",
+            "caption_2": "",
+            "video_3": "shopify://files/videos/snaptik_7588487517872196886_v3.mp4",
+            "caption_3": "",
+            "video_4": "shopify://files/videos/snaptik_7574251664165653791_v3.mp4",
+            "caption_4": "",
+            "video_5": "shopify://files/videos/snaptik_7411992409984339230_v3.mp4",
+            "caption_5": "",
+            "video_6": "shopify://files/videos/snaptik_7664948785251962134_v3.mp4",
+            "caption_6": ""
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "video_Uz7xFz",
-        "video_H6KL4E",
-        "video_jL8n8q",
-        "video_h7X4Je",
-        "video_pBkFXQ"
+        "ai_gen_block_9dfe6cc_UcNcKT"
       ],
-      "name": "Scrolling UGC Videos",
-      "settings": {
-        "max_width": 1320,
-        "kicker": "4.7/5 | Viral Product",
-        "rating_style": "normal",
-        "trustpilot_stars_image": "",
-        "heading": "What Our Followers Think",
-        "subheading": "Find quick answers to the most common questions about our product.",
-        "star_color": "#5f46af",
-        "video_aspect_ratio": "9 / 16",
-        "card_gap": 10,
-        "video_radius": 12,
-        "scroll_speed": 28,
-        "section_bg": "#ffffff",
-        "text_color": "#171717",
-        "muted_text_color": "#5c5f62",
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
+      "name": "Video showcase grid",
+      "settings": {}
     },
     "amose_image_description": {
       "type": "amose-image-with-description",
@@ -676,7 +666,7 @@
   },
   "order": [
     "amose_product_information",
-    "amose_scrolling_ugc_videos_krcmcT",
+    "blocks_znRqLn",
     "amose_image_description",
     "178571769172912dac",
     "amose_before_after",
