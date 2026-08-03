@@ -551,10 +551,10 @@
       "custom_css": [],
       "name": "Reviews with image",
       "settings": {
-        "max_width": 1320,
-        "heading": "",
-        "heading_size": 30,
-        "subheading": "REVIEWS",
+        "max_width": 1200,
+        "heading": "CUSTOMER  REVIEWS",
+        "heading_size": 31,
+        "subheading": "",
         "section_bg": "#ffffff",
         "card_bg": "#ffffff",
         "text_color": "#000000",
@@ -564,10 +564,10 @@
         "trustpilot_stars_image": "",
         "show_images": true,
         "image_aspect_ratio": "1 / 1",
-        "card_radius": 12,
-        "card_gap": 16,
-        "padding_top": 28,
-        "padding_bottom": 28
+        "card_radius": 20,
+        "card_gap": 6,
+        "padding_top": 16,
+        "padding_bottom": 48
       }
     },
     "amose_faq": {
