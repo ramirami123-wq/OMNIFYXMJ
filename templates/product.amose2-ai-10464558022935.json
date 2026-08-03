@@ -33,6 +33,18 @@
             "text_color": "#000000"
           }
         },
+        "custom_liquid_N7KbcG": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "custom_liquid_eezNpi": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
         "pi_price": {
           "type": "price",
           "settings": {
@@ -117,7 +129,7 @@
             "review_count": "350",
             "reviews_label": "reviews",
             "delivery_title": "Free delivery",
-            "delivery_body": "on orders over $50",
+            "delivery_body": "on all orders",
             "guarantee_title": "30-day guarantee",
             "guarantee_body": "— full refund, no hassle",
             "bg_color": "#ffffff",
@@ -139,6 +151,8 @@
       "block_order": [
         "pi_tp",
         "pi_title",
+        "custom_liquid_N7KbcG",
+        "custom_liquid_eezNpi",
         "pi_price",
         "pi_summary",
         "pi_low_stock",
@@ -146,6 +160,7 @@
         "pi_shipping",
         "pi_trust"
       ],
+      "custom_css": [],
       "settings": {
         "product_handle": "sample-product",
         "max_width": 1200,

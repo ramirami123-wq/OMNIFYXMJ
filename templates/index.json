@@ -485,6 +485,10 @@
         "border_thickness": 0,
         "lazy": true
       }
+    },
+    "1785716603d85a3b78": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
@@ -498,6 +502,7 @@
     "bb0df407-4b1e-45f0-a6fa-a64b51c078eb",
     "17788573511b28ffa9",
     "177996007530c003c1",
-    "ss_product_vidoes_RUfTTp"
+    "ss_product_vidoes_RUfTTp",
+    "1785716603d85a3b78"
   ]
 }
