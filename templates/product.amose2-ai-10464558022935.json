@@ -25,7 +25,7 @@
             "text_color": "#111111",
             "count_color": "#9ca3af",
             "show_badge": true,
-            "badge_text": "Happy Customers",
+            "badge_text": "",
             "badge_bg": "#FDFDFD",
             "badge_text_color": "#25BE2A",
             "badge_radius": 5,
@@ -46,7 +46,7 @@
         "custom_liquid_yh8tUw": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<style>\n.product__title::after {\n  content: \"Relieves Neck Pain\";\n  display: inline-block;\n  margin-left: 10px;\n  padding: 6px 10px;\n  background: #eef5ed;\n  color: #315b38;\n  border-radius: 20px;\n  font-size: 12px;\n  font-weight: 700;\n}\n</style>"
+            "custom_liquid": "<div style=\"\n  display:inline-flex;\n  align-items:center;\n  background:#eef5ed;\n  color:#315b38;\n  padding:7px 12px;\n  border-radius:20px;\n  font-size:13px;\n  font-weight:700;\n  margin-top:6px;\n\">\n  Supports Your Neck & Spine\n</div>"
           }
         },
         "pi_price": {
@@ -109,23 +109,6 @@
             "button_radius": 15
           }
         },
-        "benefits_with_icons_zDKQhq": {
-          "type": "benefits_with_icons",
-          "settings": {
-            "benefit_1": "",
-            "benefit_2": "30-day hassle-free returns",
-            "benefit_3": "Secure checkout & buyer protection",
-            "icon_1": "heart",
-            "icon_2": "shield-check",
-            "icon_3": "rocket-launch",
-            "icon_color": "#16a34a",
-            "text_color": "#171717",
-            "font_size": 14,
-            "row_gap": 10,
-            "wrapper_margin_top": 8,
-            "wrapper_margin_bottom": 8
-          }
-        },
         "pi_shipping": {
           "type": "shipping_eta",
           "settings": {
@@ -143,7 +126,7 @@
         "pi_trust": {
           "type": "trust_container",
           "settings": {
-            "show": false,
+            "show": true,
             "rating_icon_style": "trustpilot",
             "rating": "",
             "badge_image": "",
@@ -177,7 +160,6 @@
         "pi_summary",
         "pi_low_stock",
         "pi_buy",
-        "benefits_with_icons_zDKQhq",
         "pi_shipping",
         "pi_trust"
       ],
@@ -268,7 +250,7 @@
         "eyebrow": "Designed for ultimate comfort",
         "heading": "Elevate your sleep experience with this essential accessory.",
         "description": "<p>The Ergonomic Sleep Pillow features premium memory foam that adapts to your unique shape, ensuring perfect support. Its breathable cover keeps you cool and fresh throughout the night.</p>",
-        "image": "shopify://shop_images/ChatGPT_Image_Aug_2_2026_04_32_07_PM.png",
+        "image": "shopify://shop_images/shopping.webp",
         "show_trustpilot": true,
         "trustpilot_label": "Excellent",
         "trustpilot_rating": "4.9",
@@ -520,78 +502,72 @@
         "button_text": "#ffffff"
       }
     },
-    "amose_customer_reviews": {
-      "type": "amose-trustpilot-reviews",
+    "amose_reviews_with_image_7HrED9": {
+      "type": "amose-reviews-with-image",
       "blocks": {
-        "review_1": {
+        "review_TAAHJX": {
           "type": "review",
           "settings": {
-            "quote": "<p>I've finally found a pillow that supports my neck perfectly. No more waking up with pain!</p>",
-            "verified_label": "Verified customer",
-            "name": "Jessica M.",
-            "rating": 5
+            "image": "shopify://shop_images/ChatGPT_Image_Aug_3_2026_04_30_30_AM.png",
+            "rating": 5,
+            "quote": "ktir helo hayda l product seret fi2 kel yom bala ma e3tal ham min l pain",
+            "author": "Jessica"
           }
         },
-        "review_2": {
+        "review_67agbk": {
           "type": "review",
           "settings": {
-            "quote": "<p>This pillow has changed my sleep for the better. I feel so much more rested in the morning.</p>",
-            "verified_label": "Verified customer",
-            "name": "Michael T.",
-            "rating": 5
+            "image": "shopify://shop_images/ChatGPT_Image_Aug_3_2026_04_31_47_AM.png",
+            "rating": 5,
+            "quote": "hayda l pillow ghayar kil sleep routine taba3e wow",
+            "author": "fatima"
           }
         },
-        "review_3": {
+        "review_fDUQ64": {
           "type": "review",
           "settings": {
-            "quote": "<p>Absolutely love this pillow! It keeps me cool and comfortable all night.</p>",
-            "verified_label": "Verified customer",
-            "name": "Samantha R.",
-            "rating": 5
+            "image": "shopify://shop_images/ChatGPT_Image_Aug_3_2026_04_32_08_AM.png",
+            "rating": 5,
+            "quote": "wow awal ma seret nem 3leya khaf waja3 l ra2be",
+            "author": "ahmad"
           }
         },
-        "review_4": {
+        "review_QjzUET": {
           "type": "review",
           "settings": {
-            "quote": "<p>The Ergonomic Sleep Pillow is a game changer. I wish I had found it sooner!</p>",
-            "verified_label": "Verified customer",
-            "name": "David L.",
-            "rating": 5
-          }
-        },
-        "review_5": {
-          "type": "review",
-          "settings": {
-            "quote": "<p>I was skeptical, but this pillow really does make a difference. My neck pain is gone!</p>",
-            "verified_label": "Verified customer",
-            "name": "Linda K.",
-            "rating": 5
+            "image": "shopify://shop_images/ChatGPT_Image_Aug_3_2026_04_35_09_AM.png",
+            "rating": 5,
+            "quote": "Woslitne lyom w saraha l quality ktir a7la men ma kent metwa2e3. Jarrabta w 7asset ra2bte merta7a aktar men awal layle",
+            "author": "peter"
           }
         }
       },
       "block_order": [
-        "review_1",
-        "review_2",
-        "review_3",
-        "review_4",
-        "review_5"
+        "review_TAAHJX",
+        "review_67agbk",
+        "review_fDUQ64",
+        "review_QjzUET"
       ],
+      "custom_css": [],
+      "name": "Reviews with image",
       "settings": {
-        "trustpilot_stars_image": "",
-        "badge_label": "4.8/5 on 350 reviews.",
-        "heading": "What they say about the Ergonomic Sleep Pillow",
-        "max_width": 1400,
-        "padding_top": 56,
-        "padding_bottom": 56,
-        "section_bg": "#f2f1ed",
-        "text_color": "#000000",
-        "muted_color": "#444444",
+        "max_width": 1320,
+        "heading": "",
+        "heading_size": 30,
+        "subheading": "REVIEWS",
+        "section_bg": "#ffffff",
         "card_bg": "#ffffff",
-        "card_border": "#858585",
-        "avatar_bg": "#000000",
-        "avatar_text": "#ffffff",
-        "arrow_bg": "#f7f6f3",
-        "arrow_text": "#000000"
+        "text_color": "#000000",
+        "muted_text_color": "#000000",
+        "star_color": "#171717",
+        "rating_style": "normal",
+        "trustpilot_stars_image": "",
+        "show_images": true,
+        "image_aspect_ratio": "1 / 1",
+        "card_radius": 12,
+        "card_gap": 16,
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     },
     "amose_faq": {
@@ -672,7 +648,7 @@
     "amose_before_after",
     "amose_image_benefits_2",
     "amose_comparison_table",
-    "amose_customer_reviews",
+    "amose_reviews_with_image_7HrED9",
     "amose_faq"
   ]
 }
