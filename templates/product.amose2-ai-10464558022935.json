@@ -12,18 +12,28 @@
     "amose_product_information": {
       "type": "amose-product-information-2",
       "blocks": {
-        "pi_tp": {
-          "type": "trustpilot_row",
+        "star_badge_iFdwAm": {
+          "type": "star_badge",
           "settings": {
-            "label": "Excellent",
-            "rating": "4.9",
-            "badge_image": "",
-            "review_count": "326",
-            "reviews_label": "reviews",
-            "label_size": 14,
-            "label_weight": "600",
-            "padding_top": 0,
-            "padding_bottom": 0
+            "rating_label": "Rated",
+            "rating_value": "4.7",
+            "reviews_count": "137",
+            "star_size": 16,
+            "empty_star_color": "#e5e7eb",
+            "star_color": "#CBA61F",
+            "text_size": 14,
+            "text_color": "#111111",
+            "count_color": "#9ca3af",
+            "show_badge": true,
+            "badge_text": "Happy Customers",
+            "badge_bg": "#FDFDFD",
+            "badge_text_color": "#25BE2A",
+            "badge_radius": 4,
+            "badge_size": 13,
+            "align_web": "flex-start",
+            "gap": 8,
+            "wrapper_margin_top": 8,
+            "wrapper_margin_bottom": 8
           }
         },
         "pi_title": {
@@ -122,12 +132,12 @@
         "pi_trust": {
           "type": "trust_container",
           "settings": {
-            "show": true,
+            "show": false,
             "rating_icon_style": "trustpilot",
-            "rating": "4.8",
+            "rating": "",
             "badge_image": "",
-            "review_count": "350",
-            "reviews_label": "reviews",
+            "review_count": "",
+            "reviews_label": "",
             "delivery_title": "Free delivery",
             "delivery_body": "on all orders",
             "guarantee_title": "30-day guarantee",
@@ -149,7 +159,7 @@
         }
       },
       "block_order": [
-        "pi_tp",
+        "star_badge_iFdwAm",
         "pi_title",
         "custom_liquid_N7KbcG",
         "custom_liquid_eezNpi",
@@ -188,6 +198,72 @@
         "side_benefit_icon_3": "default"
       }
     },
+    "amose_scrolling_ugc_videos_krcmcT": {
+      "type": "amose-scrolling-ugc-videos",
+      "blocks": {
+        "video_Uz7xFz": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.tiktok.com/@rose_valenciia/video/7501823705358601515?is_from_webapp=1&sender_device=pc&web_id=7615206072321066504",
+            "caption": "How I got rid of my double chin in only a few weeks"
+          }
+        },
+        "video_H6KL4E": {
+          "type": "video",
+          "settings": {
+            "video_url": "",
+            "caption": "Green light routine"
+          }
+        },
+        "video_jL8n8q": {
+          "type": "video",
+          "settings": {
+            "video_url": "",
+            "caption": "Daily check-in"
+          }
+        },
+        "video_h7X4Je": {
+          "type": "video",
+          "settings": {
+            "video_url": "",
+            "caption": "Red light therapy"
+          }
+        },
+        "video_pBkFXQ": {
+          "type": "video",
+          "settings": {
+            "video_url": "",
+            "caption": "Night routine result"
+          }
+        }
+      },
+      "block_order": [
+        "video_Uz7xFz",
+        "video_H6KL4E",
+        "video_jL8n8q",
+        "video_h7X4Je",
+        "video_pBkFXQ"
+      ],
+      "name": "Scrolling UGC Videos",
+      "settings": {
+        "max_width": 1320,
+        "kicker": "4.7/5 | Viral Product",
+        "rating_style": "normal",
+        "trustpilot_stars_image": "",
+        "heading": "What Our Followers Think",
+        "subheading": "Find quick answers to the most common questions about our product.",
+        "star_color": "#5f46af",
+        "video_aspect_ratio": "9 / 16",
+        "card_gap": 10,
+        "video_radius": 12,
+        "scroll_speed": 28,
+        "section_bg": "#ffffff",
+        "text_color": "#171717",
+        "muted_text_color": "#5c5f62",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
     "amose_image_description": {
       "type": "amose-image-with-description",
       "settings": {
@@ -221,6 +297,12 @@
         "star_rating_reviews_label": "reviews",
         "star_rating_label_size": 14,
         "star_rating_label_weight": "600"
+      }
+    },
+    "178571769172912dac": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
       }
     },
     "amose_before_after": {
@@ -594,7 +676,9 @@
   },
   "order": [
     "amose_product_information",
+    "amose_scrolling_ugc_videos_krcmcT",
     "amose_image_description",
+    "178571769172912dac",
     "amose_before_after",
     "amose_image_benefits_2",
     "amose_comparison_table",
