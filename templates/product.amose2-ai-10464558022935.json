@@ -17,7 +17,7 @@
           "settings": {
             "rating_label": "Rated",
             "rating_value": "4.7",
-            "reviews_count": "137",
+            "reviews_count": "1370",
             "star_size": 16,
             "empty_star_color": "#e5e7eb",
             "star_color": "#cba61f",
@@ -136,7 +136,7 @@
             "rating_icon_style": "trustpilot",
             "rating": "",
             "badge_image": "",
-            "review_count": "",
+            "review_count": "1370",
             "reviews_label": "",
             "delivery_title": "Free delivery",
             "delivery_body": "on all orders",
