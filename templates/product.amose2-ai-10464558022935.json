@@ -63,12 +63,6 @@
             "sale_badge_font_size": 12
           }
         },
-        "custom_liquid_Ht9N7V": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<style>\n.pillow-proof {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 7px;\n  width: fit-content;\n  margin: 10px auto;\n  padding: 8px 14px;\n  border: 1px solid #e4d5ae;\n  border-radius: 50px;\n  background: linear-gradient(135deg, #fffdf7, #f8f1df);\n  color: #171717;\n  font-size: 13px;\n  font-weight: 700;\n  line-height: 1.3;\n  text-align: center;\n  box-shadow: 0 3px 10px rgba(0,0,0,.06);\n}\n\n.pillow-proof__icon {\n  color: #d39d24;\n  font-size: 15px;\n}\n\n.pillow-proof strong {\n  color: #b67c00;\n  font-weight: 800;\n}\n\n@media (max-width: 480px) {\n  .pillow-proof {\n    font-size: 12px;\n    padding: 7px 11px;\n  }\n}\n</style>\n\n<div class=\"pillow-proof\">\n  <span class=\"pillow-proof__icon\">★</span>\n  <span><strong>#1 Pillow in the USA</strong> — Now Available in Lebanon</span>\n</div>"
-          }
-        },
         "pi_summary": {
           "type": "summary_line",
           "settings": {
@@ -98,6 +92,12 @@
             "font_size": 14,
             "margin_top": 6,
             "margin_bottom": 0
+          }
+        },
+        "custom_liquid_Ht9N7V": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n.pillow-proof {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 7px;\n  width: fit-content;\n  margin: 10px auto;\n  padding: 8px 14px;\n  border: 1px solid #e4d5ae;\n  border-radius: 50px;\n  background: linear-gradient(135deg, #fffdf7, #f8f1df);\n  color: #171717;\n  font-size: 13px;\n  font-weight: 700;\n  line-height: 1.3;\n  text-align: center;\n  box-shadow: 0 3px 10px rgba(0,0,0,.06);\n}\n\n.pillow-proof__icon {\n  color: #d39d24;\n  font-size: 15px;\n}\n\n.pillow-proof strong {\n  color: #b67c00;\n  font-weight: 800;\n}\n\n@media (max-width: 480px) {\n  .pillow-proof {\n    font-size: 12px;\n    padding: 7px 11px;\n  }\n}\n</style>\n\n<div class=\"pillow-proof\">\n  <span class=\"pillow-proof__icon\">★</span>\n  <span><strong>#1 Pillow in the USA</strong> — Now Available in Lebanon</span>\n</div>"
           }
         },
         "pi_buy": {
@@ -163,9 +163,9 @@
         "pi_title",
         "custom_liquid_yh8tUw",
         "pi_price",
-        "custom_liquid_Ht9N7V",
         "pi_summary",
         "pi_low_stock",
+        "custom_liquid_Ht9N7V",
         "pi_buy",
         "pi_shipping",
         "pi_trust"
