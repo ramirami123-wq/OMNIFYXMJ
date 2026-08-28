@@ -1,0 +1,1682 @@
+{%- comment -%}
+  WARNING: UNAUTHORIZED MODIFICATION PROHIBITED
+  This code is proprietary property of Versio Studio. Any unauthorized tampering,
+  alteration, or distribution of this file is strictly forbidden and will be prosecuted to the maximum extent permitted by law.
+  All modifications are logged.
+
+  If you require assistance or have questions regarding this code, please contact support@versio.studio.
+{%- endcomment -%}
+
+{%- liquid
+  assign enable_advanced_settings = section.settings.enable_advanced_settings
+
+  assign section_bg_type = section.settings.section_bg_type
+  assign section_bg_color = section.settings.section_bg_color
+  assign section_bg_gradient = section.settings.section_bg_gradient
+  assign full_width_desktop = section.settings.full_width_desktop
+  assign section_border_radius = section.settings.section_border_radius
+  assign section_border_radius_mobile = section.settings.section_border_radius_mobile
+  assign section_padding_top = section.settings.section_padding_top
+  assign section_padding_bottom = section.settings.section_padding_bottom
+  assign section_padding_top_mobile = section.settings.section_padding_top_mobile
+  assign section_padding_bottom_mobile = section.settings.section_padding_bottom_mobile
+  assign section_horizontal_padding = section.settings.section_horizontal_padding
+  assign section_horizontal_padding_mobile = section.settings.section_horizontal_padding_mobile
+  assign section_max_width = section.settings.section_max_width
+
+  assign margin_top = section.settings.margin_top
+  assign margin_bottom = section.settings.margin_bottom
+  assign margin_top_mobile = section.settings.margin_top_mobile
+  assign margin_bottom_mobile = section.settings.margin_bottom_mobile
+
+  assign heading = section.settings.heading
+  assign heading_size = section.settings.heading_size
+  assign heading_size_mobile = section.settings.heading_size_mobile
+  assign heading_color = section.settings.heading_color
+  assign heading_custom = section.settings.heading_custom
+  assign heading_font = section.settings.heading_font
+  assign heading_height = section.settings.heading_height
+  assign heading_align = section.settings.heading_align
+  assign title_margin_bottom_desktop = section.settings.title_margin_bottom_desktop
+
+  assign percentage_size = section.settings.percentage_size
+  assign percentage_size_mobile = section.settings.percentage_size_mobile
+  assign percentage_color = section.settings.percentage_color
+
+  assign card_title_size = section.settings.card_title_size
+  assign card_title_size_mobile = section.settings.card_title_size_mobile
+  assign card_title_color = section.settings.card_title_color
+  assign card_title_custom = section.settings.card_title_custom
+  assign card_title_font = section.settings.card_title_font
+  assign card_title_height = section.settings.card_title_height
+
+  assign card_description_size = section.settings.card_description_size
+  assign card_description_size_mobile = section.settings.card_description_size_mobile
+  assign card_description_color = section.settings.card_description_color
+  assign card_description_custom = section.settings.card_description_custom
+  assign card_description_font = section.settings.card_description_font
+  assign card_description_height = section.settings.card_description_height
+
+  assign card_text_align = section.settings.card_text_align
+  assign card_elements_spacing = section.settings.card_elements_spacing
+
+  assign items_per_row = section.settings.items_per_row
+  assign items_per_row_tablet = section.settings.items_per_row_tablet
+  assign items_per_row_mobile = section.settings.items_per_row_mobile
+  assign items_gap = section.settings.items_gap
+  assign desktop_peek_percentage = section.settings.desktop_peek_percentage
+  assign mobile_peek_percentage = section.settings.mobile_peek_percentage
+
+  assign card_padding_vertical = section.settings.card_padding_vertical
+  assign card_padding_horizontal = section.settings.card_padding_horizontal
+  assign card_border_radius = section.settings.card_border_radius
+  assign card_border_width = section.settings.card_border_width
+  assign card_border_color = section.settings.card_border_color
+  assign card_bg_color = section.settings.card_bg_color
+
+  assign enable_autoplay = section.settings.enable_autoplay
+  assign autoplay_speed = section.settings.autoplay_speed
+  assign scroll_behavior = section.settings.scroll_behavior
+
+  assign enable_navigation_desktop = section.settings.enable_navigation_desktop
+  assign enable_navigation_mobile = section.settings.enable_navigation_mobile
+  assign nav_margin_top = section.settings.nav_margin_top
+  assign nav_line_height = section.settings.nav_line_height
+  assign nav_line_color = section.settings.nav_line_color
+  assign nav_line_border_radius = section.settings.nav_line_border_radius
+  assign nav_line_arrow_gap = section.settings.nav_line_arrow_gap
+  assign nav_arrow_size = section.settings.nav_arrow_size
+  assign nav_arrow_gap = section.settings.nav_arrow_gap
+  assign nav_arrow_color = section.settings.nav_arrow_color
+  assign nav_arrow_border_color = section.settings.nav_arrow_border_color
+  assign nav_arrow_bg = section.settings.nav_arrow_bg
+  assign nav_arrow_border_width = section.settings.nav_arrow_border_width
+  assign transition_duration = section.settings.transition_duration
+  assign progress_bg_color = section.settings.progress_bg_color
+  assign progress_filled_color = section.settings.progress_filled_color
+
+  assign lazy = section.settings.lazy
+-%}
+
+{%- style -%}
+  {{ heading_font | font_face: font_display: 'swap' }}
+  {{ card_title_font | font_face: font_display: 'swap' }}
+  {{ card_description_font | font_face: font_display: 'swap' }}
+
+  /* ── Section root (mobile-first) ── */
+  #shopify-section-{{ section.id }} {
+    --section-border-radius: {{ section_border_radius_mobile }}px;
+    --section-horizontal-padding: var(--page-margin, 16px);
+    margin-top: {{ margin_top_mobile }}px;
+    margin-bottom: {{ margin_bottom_mobile }}px;
+    border-radius: var(--section-border-radius);
+    padding: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    html:has(#shopify-section-{{ section.id }}) {
+      overflow-x: hidden;
+    }
+    #shopify-section-{{ section.id }} {
+      overflow: visible;
+    }
+    #shopify-section-{{ section.id }} > .vso-card-carousel__container {
+      grid-column: 1 / -1;
+      background: transparent;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      overflow: hidden;
+    }
+  }
+
+  {% if enable_advanced_settings %}
+    #shopify-section-{{ section.id }} {
+      --section-horizontal-padding: {{ section_horizontal_padding_mobile }}px;
+    }
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} {
+      {% if section_bg_type == 'gradient' %}
+        background: {{ section_bg_gradient }};
+      {% else %}
+        background-color: {{ section_bg_color }};
+      {% endif %}
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      --section-border-radius: {% if full_width_desktop %}0{% else %}{{ section_border_radius }}{% endif %}px;
+      --section-horizontal-padding: 0px;
+      margin-top: {{ margin_top }}px;
+      margin-bottom: {{ margin_bottom }}px;
+      {% if full_width_desktop %}
+        {% if section_bg_type == 'gradient' %}
+          background: {{ section_bg_gradient }};
+        {% else %}
+          background-color: {{ section_bg_color }};
+        {% endif %}
+      {% else %}
+        background: transparent;
+      {% endif %}
+    }
+  }
+
+  {% if enable_advanced_settings == false and full_width_desktop == false %}
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} {
+        --section-horizontal-padding: 40px;
+      }
+    }
+  {% endif %}
+
+  {% if enable_advanced_settings == false and full_width_desktop %}
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} {
+        --section-container-max-width: var(--page-content-width, var(--page-width, 1440px));
+        --section-outer-gutter: max(0px, calc((100vw - var(--section-container-max-width)) / 2));
+        --section-horizontal-padding: max(0px, calc(var(--page-margin, 40px) - var(--section-outer-gutter)));
+      }
+    }
+  {% endif %}
+
+  {% if enable_advanced_settings %}
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} {
+        --section-horizontal-padding: {{ section_horizontal_padding }}px;
+      }
+    }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} .vso-node { display: none; }
+  #shopify-section-{{ section.id }} .vso-node--v2 { display: block; }
+
+  /* ── Container ── */
+  #shopify-section-{{ section.id }} > .vso-card-carousel__container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: var(--page-content-width, var(--page-width, 1440px));
+    {% if enable_advanced_settings %}
+      max-width: {{ section_max_width }}rem;
+    {% endif %}
+    padding-left: var(--section-horizontal-padding);
+    padding-right: var(--section-horizontal-padding);
+    padding-top: {{ section_padding_top_mobile }}px;
+    padding-bottom: {{ section_padding_bottom_mobile }}px;
+    border-radius: var(--section-border-radius);
+    box-sizing: border-box;
+  }
+
+  {% if full_width_desktop == false %}
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} > .vso-card-carousel__container {
+        width: calc(100% - (2 * var(--page-margin, 40px)));
+      }
+    }
+  {% endif %}
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} > .vso-card-carousel__container {
+      {% if full_width_desktop %}
+        background: transparent;
+      {% else %}
+        {% if section_bg_type == 'gradient' %}
+          background: {{ section_bg_gradient }};
+        {% else %}
+          background-color: {{ section_bg_color }};
+        {% endif %}
+      {% endif %}
+      padding-top: {{ section_padding_top }}px;
+      padding-bottom: {{ section_padding_bottom }}px;
+    }
+  }
+
+  /* ── Heading ── */
+  #shopify-section-{{ section.id }} .vso-card-carousel__heading {
+    margin: 0;
+    font-size: {{ heading_size_mobile }}px;
+    color: {{ heading_color }};
+    line-height: {{ heading_height }}%;
+    text-align: {{ heading_align }};
+    text-transform: unset;
+    margin-bottom: {{ title_margin_bottom_desktop | times: 0.75 | round: 0 }}px;
+  }
+
+  {% if heading_custom %}
+    #shopify-section-{{ section.id }} .vso-card-carousel__heading {
+      font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+      font-weight: {{ heading_font.weight }};
+      font-style: {{ heading_font.style }};
+    }
+  {% endif %}
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-card-carousel__heading {
+      font-size: {{ heading_size }}px;
+      margin-bottom: {{ title_margin_bottom_desktop }}px;
+    }
+  }
+
+  /* ── Carousel ── */
+  #shopify-section-{{ section.id }} .vso-card-carousel__carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: {{ scroll_behavior }};
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
+    gap: {{ items_gap }}px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: var(--section-horizontal-padding);
+    padding-right: var(--section-horizontal-padding);
+    touch-action: pan-x;
+    transition: all 0.2s ease;
+    scroll-padding: 0 var(--section-horizontal-padding);
+    margin-left: calc(var(--section-horizontal-padding) * -1);
+    margin-right: calc(var(--section-horizontal-padding) * -1);
+  }
+
+  #shopify-section-{{ section.id }} .vso-card-carousel__carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .vso-card-carousel__carousel.grabbing {
+    scroll-behavior: auto;
+    transition: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .vso-card-carousel__carousel {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding-left: var(--section-horizontal-padding);
+      padding-right: var(--section-horizontal-padding);
+      scroll-padding: 0 var(--section-horizontal-padding);
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-card-carousel__carousel {
+      padding-right: {% if section.blocks.size > items_per_row %}{{ desktop_peek_percentage }}%{% else %}var(--section-horizontal-padding){% endif %};
+    }
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 1279px) {
+    #shopify-section-{{ section.id }} .vso-card-carousel__carousel {
+      padding-right: {% if section.blocks.size > items_per_row_tablet %}{{ desktop_peek_percentage }}%{% else %}var(--section-horizontal-padding){% endif %};
+    }
+  }
+
+  /* ── Cards ── */
+  #shopify-section-{{ section.id }} .vso-card-carousel__card {
+    flex: 0 0 auto;
+    width: calc(100% - {{ mobile_peek_percentage }}%);
+    scroll-snap-align: start;
+    background-color: {{ card_bg_color }};
+    border-radius: {{ card_border_radius }}px;
+    padding: {{ card_padding_vertical | times: 0.75 | round: 0 }}px {{ card_padding_horizontal | times: 0.75 | round: 0 }}px;
+    text-align: {{ card_text_align }};
+    box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+    border: {{ card_border_width }}px solid {{ card_border_color }};
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  #shopify-section-{{ section.id }} .vso-card-carousel__card:last-child {
+    scroll-snap-align: end;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-card-carousel__card {
+      width: calc((100% - ({{ items_per_row }} - 1) * {{ items_gap }}px - {% if section.blocks.size > items_per_row %}{{ desktop_peek_percentage }}%{% else %}0%{% endif %}) / {{ items_per_row }});
+      padding: {{ card_padding_vertical }}px {{ card_padding_horizontal }}px;
+    }
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 1279px) {
+    #shopify-section-{{ section.id }} .vso-card-carousel__card {
+      width: calc((100% - ({{ items_per_row_tablet }} - 1) * {{ items_gap }}px - {% if section.blocks.size > items_per_row_tablet %}{{ desktop_peek_percentage }}%{% else %}0%{% endif %}) / {{ items_per_row_tablet }});
+    }
+  }
+
+  /* ── Card content ── */
+  #shopify-section-{{ section.id }} .vso-card-carousel__percentage {
+    font-size: {{ percentage_size_mobile }}px;
+    font-weight: 700;
+    color: {{ percentage_color }};
+    line-height: 1;
+    margin-bottom: {{ card_elements_spacing | times: 0.75 | round: 0 }}px;
+    margin-top: 0;
+  }
+
+  #shopify-section-{{ section.id }} .vso-card-carousel__card-title {
+    font-weight: 600;
+    line-height: {{ card_title_height }}%;
+    font-size: {{ card_title_size_mobile }}px;
+    margin: 0 0 {{ card_elements_spacing | times: 0.75 | round: 0 }}px;
+    color: {{ card_title_color }};
+  }
+
+  {% if card_title_custom %}
+    #shopify-section-{{ section.id }} .vso-card-carousel__card-title {
+      font-family: {{ card_title_font.family }}, {{ card_title_font.fallback_families }};
+      font-weight: {{ card_title_font.weight }};
+      font-style: {{ card_title_font.style }};
+    }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} .vso-card-carousel__card-description {
+    font-size: {{ card_description_size_mobile }}px;
+    line-height: {{ card_description_height }}%;
+    color: {{ card_description_color }};
+    margin: 0;
+  }
+
+  {% if card_description_custom %}
+    #shopify-section-{{ section.id }} .vso-card-carousel__card-description {
+      font-family: {{ card_description_font.family }}, {{ card_description_font.fallback_families }};
+      font-weight: {{ card_description_font.weight }};
+      font-style: {{ card_description_font.style }};
+    }
+  {% endif %}
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-card-carousel__percentage {
+      font-size: {{ percentage_size }}px;
+      margin-bottom: {{ card_elements_spacing }}px;
+    }
+
+    #shopify-section-{{ section.id }} .vso-card-carousel__card-title {
+      font-size: {{ card_title_size }}px;
+      margin: 0 0 {{ card_elements_spacing }}px;
+    }
+
+    #shopify-section-{{ section.id }} .vso-card-carousel__card-description {
+      font-size: {{ card_description_size }}px;
+    }
+  }
+
+  /* ── Navigation ── */
+  #shopify-section-{{ section.id }} .vso-card-carousel__nav-container {
+    display: none;
+    align-items: center;
+    margin-top: {{ nav_margin_top | times: 0.75 | round: 0 }}px;
+    gap: {{ nav_line_arrow_gap }}px;
+    visibility: hidden;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-card-carousel__nav-container {
+      margin-top: {{ nav_margin_top }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .vso-card-carousel__progress {
+    flex-grow: 1;
+    height: 2px;
+    background: {{ progress_bg_color | default: nav_line_color }};
+    position: relative;
+    overflow: hidden;
+    border-radius: 1px;
+  }
+
+  #shopify-section-{{ section.id }} .vso-card-carousel__progress .bar {
+    height: 100%;
+    width: 0%;
+    background: {{ progress_filled_color | default: nav_arrow_color }};
+    transition: width 0.5s ease;
+    border-radius: 1px;
+  }
+
+  #shopify-section-{{ section.id }} .vso-card-carousel__nav {
+    display: flex;
+    justify-content: center;
+    gap: {{ nav_arrow_gap }}px;
+  }
+
+  #shopify-section-{{ section.id }} .vso-card-carousel__nav-button {
+    width: {{ nav_arrow_size }}px;
+    height: {{ nav_arrow_size }}px;
+    border-radius: 50%;
+    border: {{ nav_arrow_border_width | default: 1 }}px solid {{ nav_arrow_border_color }};
+    background: {{ nav_arrow_bg | default: '#ffffff' }};
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: none;
+    box-shadow: none;
+  }
+
+  #shopify-section-{{ section.id }} .vso-card-carousel__nav-button:focus {
+    outline: none;
+  }
+
+  #shopify-section-{{ section.id }} .vso-card-carousel__nav-button:disabled {
+    opacity: .4;
+  }
+
+  #shopify-section-{{ section.id }} .vso-card-carousel__nav-button svg {
+    width: {{ nav_arrow_size | times: 0.4 | round: 0 }}px;
+    height: {{ nav_arrow_size | times: 0.4 | round: 0 }}px;
+    color: {{ nav_arrow_color }};
+  }
+
+  /* Navigation visibility */
+  {% if enable_navigation_desktop %}
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} .vso-card-carousel__nav-container {
+        display: flex;
+      }
+    }
+  {% endif %}
+
+  {% if enable_navigation_mobile %}
+    @media screen and (max-width: 749px) {
+      #shopify-section-{{ section.id }} .vso-card-carousel__nav-container {
+        display: flex;
+      }
+    }
+  {% endif %}
+
+  {% if section.settings.disable_progress_bar_when_arrows_hidden %}
+    @media screen and (min-width: 750px) {
+      {% if enable_navigation_desktop == false %}
+        #shopify-section-{{ section.id }} .vso-card-carousel__progress { display: none; }
+      {% endif %}
+    }
+    @media screen and (max-width: 749px) {
+      {% if enable_navigation_mobile == false %}
+        #shopify-section-{{ section.id }} .vso-card-carousel__progress { display: none; }
+      {% endif %}
+    }
+  {% endif %}
+{%- endstyle -%}
+
+{%- if request.design_mode -%}
+<div class="vso-require-script">
+  <div class="vso-warning">
+    <div class="vso-warning__left">
+      <div class="vso-warning__badge">
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="none">
+          <path d="M10 6.75a.75.75 0 0 1 .75.75v3.5a.75.75 0 1 1-1.5 0v-3.5a.75.75 0 0 1 .75-.75Z" fill="currentColor"/>
+          <path d="M11 13.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" fill="currentColor"/>
+          <path fill-rule="evenodd" d="M10 3.5c-1.045 0-1.784.702-2.152 1.447a449.26 449.26 0 0 1-2.005 3.847l-.028.052a403.426 403.426 0 0 0-2.008 3.856c-.372.752-.478 1.75.093 2.614.57.863 1.542 1.184 2.464 1.184h7.272c.922 0 1.895-.32 2.464-1.184.57-.864.465-1.862.093-2.614-.21-.424-1.113-2.147-2.004-3.847l-.032-.061a429.497 429.497 0 0 1-2.005-3.847c-.368-.745-1.107-1.447-2.152-1.447Zm-.808 2.112c.404-.816 1.212-.816 1.616 0 .202.409 1.112 2.145 2.022 3.88a418.904 418.904 0 0 1 2.018 3.875c.404.817 0 1.633-1.212 1.633h-7.272c-1.212 0-1.617-.816-1.212-1.633.202-.408 1.113-2.147 2.023-3.883a421.932 421.932 0 0 0 2.017-3.872Z" fill="currentColor"/>
+        </svg>
+        <span>Action Required</span>
+      </div>
+      <h2 class="vso-warning__title">App Embeds Are Disabled</h2>
+      <p class="vso-warning__subtitle">Enable the Versio Sections app embed in your theme editor to use this section.</p>
+      <div class="vso-warning__steps">
+        <div class="vso-warning__step">
+          <span class="vso-warning__step-number">1</span>
+          <span>Click the <strong>App embeds</strong> icon (puzzle piece) at the top of the left sidebar</span>
+        </div>
+        <div class="vso-warning__step">
+          <span class="vso-warning__step-number">2</span>
+          <span>Toggle on <strong>Versio Sections</strong></span>
+        </div>
+        <div class="vso-warning__step">
+          <span class="vso-warning__step-number">3</span>
+          <span>Click <strong>Save</strong> in the top right</span>
+        </div>
+      </div>
+    </div>
+    <div class="vso-warning__image">
+      <img src="https://cdn.shopify.com/s/files/1/0970/2880/0861/files/1.png?v=1773296966" alt="How to enable app embeds" loading="lazy" width="640" height="880" />
+    </div>
+  </div>
+</div>
+<style>
+  .vso-hidden {
+    display: none !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    opacity: 0 !important;
+  }
+  .vso-require-script .vso-warning {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    max-width: 900px;
+    margin: 24px auto;
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+  .vso-warning__left { flex: 1; min-width: 0; }
+  .vso-warning__badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #fef2f2; color: #dc2626;
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    padding: 5px 12px; border-radius: 100px; margin-bottom: 14px; border: 1px solid #fecaca;
+  }
+  .vso-warning__badge svg { flex-shrink: 0; }
+  .vso-warning__title { font-size: 22px; font-weight: 700; color: #1a1a1a; margin: 0 0 6px 0; line-height: 1.3; }
+  .vso-warning__subtitle { font-size: 13px; color: #777; margin: 0 0 20px 0; line-height: 1.5; max-width: 340px; }
+  .vso-warning__steps { display: flex; flex-direction: column; gap: 10px; }
+  .vso-warning__step { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #444; line-height: 1.4; }
+  .vso-warning__step strong { color: #1a1a1a; }
+  .vso-warning__step-number {
+    flex-shrink: 0; width: 26px; height: 26px;
+    background: #f3f3f3; color: #555; font-size: 12px; font-weight: 700;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid #e0e0e0;
+  }
+  .vso-warning__image { flex: 1; min-width: 0; }
+  .vso-warning__image img { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 10px; }
+  @media screen and (max-width: 749px) {
+    .vso-require-script .vso-warning { margin: 16px; padding: 24px 20px; flex-direction: column; gap: 24px; }
+    .vso-warning__title { font-size: 18px; }
+    .vso-warning__subtitle { max-width: none; }
+    .vso-warning__image { flex: none; max-width: 100%; }
+  }
+</style>
+{%- endif -%}
+
+<div class="vso-card-carousel__container vso-node">
+  {% if heading != blank %}
+    <h2 class="vso-card-carousel__heading">{{ heading }}</h2>
+  {% endif %}
+
+  <div class="vso-card-carousel__wrapper">
+    <div class="vso-card-carousel__carousel" id="vso-card-carousel-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        <div class="vso-card-carousel__card" {{ block.shopify_attributes }}>
+          <p class="vso-card-carousel__percentage">{{ block.settings.percentage }}</p>
+          <h3 class="vso-card-carousel__card-title">{{ block.settings.title }}</h3>
+          <p class="vso-card-carousel__card-description">{{ block.settings.description }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {% assign show_nav = true %}
+    {% if enable_navigation_desktop == false and enable_navigation_mobile == false and section.settings.disable_progress_bar_when_arrows_hidden %}
+      {% assign show_nav = false %}
+    {% endif %}
+
+    {% if show_nav %}
+    <div class="vso-card-carousel__nav-container" id="vso-card-carousel-nav-{{ section.id }}">
+      <div class="vso-card-carousel__progress"><div class="bar"></div></div>
+      <div class="vso-card-carousel__nav">
+        <button class="vso-card-carousel__nav-button prev" id="vso-card-carousel-prev-{{ section.id }}" type="button" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: scaleX(-1);"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.29289 4.29289C8.68342 3.90237 9.31658 3.90237 9.70711 4.29289L16.7071 11.2929C17.0976 11.6834 17.0976 12.3166 16.7071 12.7071L9.70711 19.7071C9.31658 20.0976 8.68342 20.0976 8.29289 19.7071C7.90237 19.3166 7.90237 18.6834 8.29289 18.2929L14.5858 12L8.29289 5.70711C7.90237 5.31658 7.90237 4.68342 8.29289 4.29289Z" fill="currentColor"></path></svg>
+        </button>
+        <button class="vso-card-carousel__nav-button next" id="vso-card-carousel-next-{{ section.id }}" type="button" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.29289 4.29289C8.68342 3.90237 9.31658 3.90237 9.70711 4.29289L16.7071 11.2929C17.0976 11.6834 17.0976 12.3166 16.7071 12.7071L9.70711 19.7071C9.31658 20.0976 8.68342 20.0976 8.29289 19.7071C7.90237 19.3166 7.90237 18.6834 8.29289 18.2929L14.5858 12L8.29289 5.70711C7.90237 5.31658 7.90237 4.68342 8.29289 4.29289Z" fill="currentColor"></path></svg>
+        </button>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  function initVSOCardCarousel{{ section.id | replace: '-', '' }}() {
+    const sectionEl = document.getElementById('shopify-section-{{ section.id }}');
+    if (!sectionEl) return;
+
+    const carousel = document.getElementById('vso-card-carousel-{{ section.id }}');
+    if (!carousel) return;
+
+    const cards = carousel.querySelectorAll('.vso-card-carousel__card');
+    const prevButton = document.getElementById('vso-card-carousel-prev-{{ section.id }}');
+    const nextButton = document.getElementById('vso-card-carousel-next-{{ section.id }}');
+    const navContainer = document.getElementById('vso-card-carousel-nav-{{ section.id }}');
+    const navArrowsWrap = navContainer ? navContainer.querySelector('.vso-card-carousel__nav') : null;
+    const progressBar = sectionEl.querySelector('.vso-card-carousel__progress');
+    const progressFill = progressBar ? progressBar.querySelector('.bar') : null;
+
+    const checkAllCardsVisible = () => {
+      if (!carousel || !cards.length) return true;
+      return carousel.scrollWidth <= carousel.clientWidth + 1;
+    };
+
+    const toggleNavigationVisibility = () => {
+      if (!navContainer) return;
+      const isMobileViewport = window.innerWidth <= 749;
+      const allCardsVisible = checkAllCardsVisible();
+      const arrowsEnabled = isMobileViewport ? {{ enable_navigation_mobile | json }} : {{ enable_navigation_desktop | json }};
+      const disableProgressBarWhenArrowsHidden = {{ section.settings.disable_progress_bar_when_arrows_hidden | default: true | json }};
+      const shouldShowProgress = !disableProgressBarWhenArrowsHidden || arrowsEnabled;
+
+      if (allCardsVisible) {
+        navContainer.style.display = 'none';
+      } else if (arrowsEnabled || shouldShowProgress) {
+        navContainer.style.display = 'flex';
+      } else {
+        navContainer.style.display = 'none';
+      }
+
+      if (navArrowsWrap) {
+        navArrowsWrap.style.display = arrowsEnabled ? 'flex' : 'none';
+      }
+
+      if (progressBar) {
+        if (allCardsVisible || (disableProgressBarWhenArrowsHidden && !arrowsEnabled)) {
+          progressBar.style.display = 'none';
+        } else {
+          progressBar.style.display = '';
+        }
+      }
+
+      navContainer.style.visibility = 'visible';
+    };
+
+    toggleNavigationVisibility();
+
+    window.addEventListener('resize', toggleNavigationVisibility);
+    window.addEventListener('load', toggleNavigationVisibility);
+
+    if (window.MutationObserver) {
+      const observer = new MutationObserver(toggleNavigationVisibility);
+      observer.observe(carousel, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['style', 'class']
+      });
+    }
+
+    const getItemWidth = () => {
+      const firstItem = carousel.querySelector('.vso-card-carousel__card');
+      if (!firstItem) return 0;
+      const gap = parseFloat(getComputedStyle(carousel).getPropertyValue('gap')) || parseInt('{{ items_gap }}');
+      return firstItem.offsetWidth + gap;
+    };
+
+    const navigateToCardIndex = (cardIndex) => {
+      if (!carousel) return;
+      carousel.scrollTo({
+        left: cardIndex * getItemWidth(),
+        behavior: '{{ scroll_behavior }}'
+      });
+    };
+
+    const updateProgress = () => {
+      if (!progressFill || !carousel) return;
+      const totalScrollable = Math.max(1, carousel.scrollWidth);
+      const progress = Math.min(1, (carousel.scrollLeft + carousel.clientWidth) / totalScrollable);
+      progressFill.style.width = `${progress * 100}%`;
+    };
+
+    carousel.addEventListener('scroll', updateProgress);
+
+    let startX, endX;
+    const handleTouchStart = (e) => {
+      startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+      carousel.style.scrollBehavior = 'auto';
+    };
+
+    const handleTouchMove = (e) => {
+      if (!startX) return;
+      endX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+    };
+
+    const handleTouchEnd = () => {
+      if (!startX || !endX) {
+        startX = null;
+        endX = null;
+        carousel.style.scrollBehavior = '{{ scroll_behavior }}';
+        return;
+      }
+
+      const diffX = startX - endX;
+      const threshold = 50;
+
+      if (Math.abs(diffX) > threshold) {
+        const itemWidth = getItemWidth();
+        const currentCardIndex = Math.round(carousel.scrollLeft / itemWidth);
+        let newCardIndex;
+        if (diffX > 0) {
+          newCardIndex = Math.min(currentCardIndex + 1, cards.length - 1);
+        } else {
+          newCardIndex = Math.max(currentCardIndex - 1, 0);
+        }
+        navigateToCardIndex(newCardIndex);
+      } else {
+        const itemWidth = getItemWidth();
+        const currentCardIndex = Math.round(carousel.scrollLeft / itemWidth);
+        navigateToCardIndex(currentCardIndex);
+      }
+
+      startX = null;
+      endX = null;
+      carousel.style.scrollBehavior = '{{ scroll_behavior }}';
+    };
+
+    if (prevButton && nextButton) {
+      prevButton.addEventListener('click', function() {
+        const itemWidth = getItemWidth();
+        const currentCardIndex = Math.round(carousel.scrollLeft / itemWidth);
+        navigateToCardIndex(Math.max(currentCardIndex - 1, 0));
+      });
+
+      nextButton.addEventListener('click', function() {
+        const itemWidth = getItemWidth();
+        const currentCardIndex = Math.round(carousel.scrollLeft / itemWidth);
+        navigateToCardIndex(Math.min(currentCardIndex + 1, cards.length - 1));
+      });
+    }
+
+    carousel.addEventListener('touchstart', handleTouchStart, { passive: true });
+    carousel.addEventListener('touchmove', handleTouchMove, { passive: true });
+    carousel.addEventListener('touchend', handleTouchEnd);
+
+    carousel.addEventListener('mousedown', function(e) {
+      handleTouchStart(e);
+      carousel.classList.add('grabbing');
+
+      document.addEventListener('mousemove', handleTouchMove);
+      document.addEventListener('mouseup', function mouseUpHandler() {
+        handleTouchEnd();
+        carousel.classList.remove('grabbing');
+        document.removeEventListener('mousemove', handleTouchMove);
+        document.removeEventListener('mouseup', mouseUpHandler);
+      });
+
+      e.preventDefault();
+    });
+
+    carousel.setAttribute('tabindex', '0');
+    carousel.addEventListener('keydown', (e) => {
+      const itemWidth = getItemWidth();
+      const currentCardIndex = Math.round(carousel.scrollLeft / itemWidth);
+
+      if (e.key === 'ArrowRight' && currentCardIndex < cards.length - 1) {
+        navigateToCardIndex(currentCardIndex + 1);
+        e.preventDefault();
+      } else if (e.key === 'ArrowLeft' && currentCardIndex > 0) {
+        navigateToCardIndex(currentCardIndex - 1);
+        e.preventDefault();
+      }
+    });
+
+    {% if enable_autoplay %}
+    let autoplayInterval;
+    let currentCardIndex = 0;
+
+    const startAutoplay = () => {
+      if (autoplayInterval) clearInterval(autoplayInterval);
+      autoplayInterval = setInterval(() => {
+        currentCardIndex = (currentCardIndex + 1) % cards.length;
+        navigateToCardIndex(currentCardIndex);
+      }, {{ autoplay_speed }});
+    };
+
+    const stopAutoplay = () => {
+      if (autoplayInterval) {
+        clearInterval(autoplayInterval);
+        autoplayInterval = null;
+      }
+    };
+
+    startAutoplay();
+
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('touchstart', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+    carousel.addEventListener('touchend', startAutoplay);
+    {% endif %}
+
+    window.addEventListener('resize', function() {
+      toggleNavigationVisibility();
+      updateProgress();
+    });
+
+    updateProgress();
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(initVSOCardCarousel{{ section.id | replace: '-', '' }}, 100);
+  });
+
+  if (Shopify.designMode) {
+    document.addEventListener('shopify:section:unload', initVSOCardCarousel{{ section.id | replace: '-', '' }});
+    document.addEventListener('shopify:section:load', initVSOCardCarousel{{ section.id | replace: '-', '' }});
+  }
+</script>
+
+{% schema %}
+{
+  "name": "VSO - Card Carousel 01",
+  "tag": "section",
+  "class": "section vso-node vso-node--v2 vso-card-carousel",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_advanced_settings",
+      "label": "Enable advanced settings",
+      "default": false,
+      "info": "Shows additional settings for spacing, layout, and typography."
+    },
+    {
+      "type": "range",
+      "id": "section_max_width",
+      "label": "Content max width",
+      "min": 60,
+      "max": 200,
+      "step": 2,
+      "unit": "rem",
+      "default": 120,
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "range",
+      "id": "section_horizontal_padding",
+      "label": "Desktop side spacing",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 24,
+      "info": "Adds spacing on the left and right sides of this section on desktop.",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "range",
+      "id": "section_horizontal_padding_mobile",
+      "label": "Mobile side spacing",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 15,
+      "info": "Adds spacing on the left and right sides of this section on mobile.",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Section Background"
+    },
+    {
+      "type": "select",
+      "id": "section_bg_type",
+      "label": "Section background type",
+      "options": [
+        { "value": "solid", "label": "Solid" },
+        { "value": "gradient", "label": "Gradient" }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section background color",
+      "default": "#FFFFFF",
+      "visible_if": "{{ section.settings.section_bg_type == 'solid' }}"
+    },
+    {
+      "type": "color_background",
+      "id": "section_bg_gradient",
+      "label": "Section background gradient",
+      "default": "linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%)",
+      "visible_if": "{{ section.settings.section_bg_type == 'gradient' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width_desktop",
+      "label": "Desktop full width",
+      "default": true,
+      "info": "Make section background full width on desktop"
+    },
+    {
+      "type": "range",
+      "id": "section_border_radius",
+      "label": "Desktop border radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 12,
+      "visible_if": "{{ section.settings.full_width_desktop == false }}"
+    },
+    {
+      "type": "range",
+      "id": "section_border_radius_mobile",
+      "label": "Mobile border radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Desktop padding top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Desktop padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_mobile",
+      "label": "Mobile padding top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_mobile",
+      "label": "Mobile padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+
+    {
+      "type": "header",
+      "content": "Section Margin"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Desktop margin top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Desktop margin bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "margin_top_mobile",
+      "label": "Mobile margin top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_mobile",
+      "label": "Mobile margin bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 20
+    },
+
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Proven benefits, proven results"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "heading_align",
+      "label": "Heading alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_custom",
+      "label": "Use custom font",
+      "default": false
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "assistant_n4",
+      "visible_if": "{{ section.settings.heading_custom == true }}"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Desktop font size",
+      "min": 18,
+      "max": 72,
+      "step": 1,
+      "default": 42,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Mobile font size",
+      "min": 16,
+      "max": 48,
+      "step": 1,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_height",
+      "min": 50,
+      "max": 200,
+      "step": 10,
+      "unit": "%",
+      "label": "Line height",
+      "default": 120,
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom_desktop",
+      "label": "Heading margin bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 30,
+      "unit": "px",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Card Typography"
+    },
+    {
+      "type": "color",
+      "id": "percentage_color",
+      "label": "Percentage color",
+      "default": "#6C8EEF"
+    },
+    {
+      "type": "range",
+      "id": "percentage_size",
+      "label": "Desktop percentage size",
+      "min": 32,
+      "max": 80,
+      "step": 2,
+      "default": 52,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "percentage_size_mobile",
+      "label": "Mobile percentage size",
+      "min": 28,
+      "max": 60,
+      "step": 2,
+      "default": 42,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card title color",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_title_custom",
+      "label": "Use custom title font",
+      "default": false
+    },
+    {
+      "type": "font_picker",
+      "id": "card_title_font",
+      "label": "Card title font",
+      "default": "assistant_n4",
+      "visible_if": "{{ section.settings.card_title_custom == true }}"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size",
+      "label": "Desktop card title size",
+      "min": 12,
+      "max": 44,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_title_size_mobile",
+      "label": "Mobile card title size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "default": 18,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_title_height",
+      "min": 50,
+      "max": 200,
+      "step": 10,
+      "unit": "%",
+      "label": "Card title line height",
+      "default": 120,
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "color",
+      "id": "card_description_color",
+      "label": "Card description color",
+      "default": "#666666"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_description_custom",
+      "label": "Use custom description font",
+      "default": false
+    },
+    {
+      "type": "font_picker",
+      "id": "card_description_font",
+      "label": "Card description font",
+      "default": "assistant_n4",
+      "visible_if": "{{ section.settings.card_description_custom == true }}"
+    },
+    {
+      "type": "range",
+      "id": "card_description_size",
+      "label": "Desktop card description size",
+      "min": 9,
+      "max": 40,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_description_size_mobile",
+      "label": "Mobile card description size",
+      "min": 9,
+      "max": 40,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_description_height",
+      "min": 50,
+      "max": 200,
+      "step": 10,
+      "unit": "%",
+      "label": "Card description line height",
+      "default": 140,
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "select",
+      "id": "card_text_align",
+      "label": "Card text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "card_elements_spacing",
+      "label": "Card element spacing",
+      "min": 5,
+      "max": 40,
+      "step": 1,
+      "default": 15,
+      "unit": "px",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Carousel Settings"
+    },
+    {
+      "type": "range",
+      "id": "items_per_row",
+      "label": "Desktop cards per row",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "items_per_row_tablet",
+      "label": "Tablet cards per row",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2,
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "range",
+      "id": "items_per_row_mobile",
+      "label": "Mobile cards per row",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "items_gap",
+      "label": "Gap between cards",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_peek_percentage",
+      "label": "Desktop peek",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 0,
+      "unit": "%",
+      "info": "Percentage of the next card to show on desktop",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "range",
+      "id": "mobile_peek_percentage",
+      "label": "Mobile peek",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 7,
+      "unit": "%",
+      "info": "Percentage of the next card to show on mobile"
+    },
+
+    {
+      "type": "header",
+      "content": "Card Styling"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card background",
+      "default": "#F7F7F7"
+    },
+    {
+      "type": "range",
+      "id": "card_padding_vertical",
+      "label": "Card vertical padding",
+      "min": 15,
+      "max": 60,
+      "step": 5,
+      "default": 30,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_padding_horizontal",
+      "label": "Card horizontal padding",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Card border radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "default": 8,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "label": "Card border width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "default": 0,
+      "unit": "px",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card border color",
+      "default": "#DDDDDD",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Animation",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Enable autoplay",
+      "default": false,
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Autoplay speed",
+      "min": 3000,
+      "max": 9000,
+      "step": 500,
+      "default": 5000,
+      "unit": "ms",
+      "visible_if": "{{ section.settings.enable_autoplay == true and section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "select",
+      "id": "scroll_behavior",
+      "label": "Scroll behavior",
+      "options": [
+        { "value": "smooth", "label": "Smooth" },
+        { "value": "auto", "label": "Instant" }
+      ],
+      "default": "smooth",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_navigation_desktop",
+      "label": "Desktop navigation",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_navigation_mobile",
+      "label": "Mobile navigation",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_progress_bar_when_arrows_hidden",
+      "label": "Hide progress bar when arrows are hidden",
+      "default": true
+    },
+
+    {
+      "type": "header",
+      "content": "Navigation Styling",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "range",
+      "id": "nav_margin_top",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "label": "Navigation margin top",
+      "default": 20,
+      "unit": "px",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "range",
+      "id": "nav_arrow_size",
+      "min": 30,
+      "max": 80,
+      "step": 2,
+      "label": "Arrow size",
+      "default": 42,
+      "unit": "px",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "range",
+      "id": "nav_arrow_gap",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "label": "Gap between arrows",
+      "default": 8,
+      "unit": "px",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "color",
+      "id": "nav_arrow_color",
+      "label": "Arrow icon color",
+      "default": "#6b7280",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "color",
+      "id": "nav_arrow_bg",
+      "label": "Arrow background",
+      "default": "#ffffff",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "color",
+      "id": "nav_arrow_border_color",
+      "label": "Arrow border color",
+      "default": "#5E5E5E",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "range",
+      "id": "nav_arrow_border_width",
+      "label": "Arrow border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1,
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "range",
+      "id": "nav_line_height",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "Line height",
+      "default": 1,
+      "unit": "px",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "color",
+      "id": "nav_line_color",
+      "label": "Line color",
+      "default": "#e0e0e0",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "range",
+      "id": "nav_line_border_radius",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "label": "Line border radius",
+      "default": 0,
+      "unit": "px",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "range",
+      "id": "nav_line_arrow_gap",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "label": "Gap between line and arrows",
+      "default": 8,
+      "unit": "px",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+
+    {
+      "type": "header",
+      "content": "Progress Bar",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "color",
+      "id": "progress_bg_color",
+      "label": "Progress bar background",
+      "default": "#CCCCCC",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "color",
+      "id": "progress_filled_color",
+      "label": "Progress bar filled color",
+      "default": "#000000",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+    {
+      "type": "range",
+      "id": "transition_duration",
+      "min": 100,
+      "max": 500,
+      "step": 50,
+      "label": "Transition duration",
+      "default": 300,
+      "unit": "ms",
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "lazy",
+      "label": "Lazy load",
+      "info": "Lazy load images for speed optimization",
+      "default": true,
+      "visible_if": "{{ section.settings.enable_advanced_settings == true }}"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "statistic",
+      "name": "Statistic Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "percentage",
+          "label": "Percentage",
+          "default": "92%"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Noticed a reduction in skin irritation."
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "*Based on a four-week independent customer panel"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "VSO - Card Carousel 01",
+      "blocks": [
+        {
+          "type": "statistic",
+          "settings": {
+            "percentage": "92%",
+            "title": "Noticed a reduction in skin irritation.",
+            "description": "*Based on a four-week independent customer panel"
+          }
+        },
+        {
+          "type": "statistic",
+          "settings": {
+            "percentage": "89%",
+            "title": "Reported an improvement in their sleep quality.",
+            "description": "*Based on a four-week independent customer panel"
+          }
+        },
+        {
+          "type": "statistic",
+          "settings": {
+            "percentage": "91%",
+            "title": "Noticed a decrease in fine lines on the face.",
+            "description": "*Based on a four-week independent customer panel"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

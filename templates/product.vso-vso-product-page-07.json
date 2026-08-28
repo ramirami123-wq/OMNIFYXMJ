@@ -1,0 +1,545 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "vso_product_info_06_ME5Ecu": {
+      "settings": {},
+      "blocks": {
+        "title_i5VpnA": {
+          "type": "title",
+          "settings": {}
+        },
+        "price_D1i4kz": {
+          "type": "price",
+          "settings": {}
+        },
+        "text_9v93h3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Designed for _deeper, uninterrupted sleep_. Silky-soft, contoured, and crafted to block out light completely — so you wake up refreshed every morning.</p>"
+          }
+        },
+        "feature_tags_ajumbj": {
+          "type": "feature_tags",
+          "settings": {
+            "tag_2": "Free Shipping",
+            "tag_3": "30-Day Returns"
+          }
+        },
+        "variant_picker_hcZXm2": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_style": "images",
+            "image_border_radius": 60
+          }
+        },
+        "quantity_SJw7Pw": {
+          "type": "quantity",
+          "settings": {}
+        },
+        "form_XKhkiD": {
+          "type": "form",
+          "settings": {}
+        },
+        "description_m3Qmkn": {
+          "type": "description",
+          "settings": {}
+        },
+        "collapsible_row_1_jzzR0S": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "Details",
+            "content": "<p>One size fits most with an adjustable strap for a secure, comfortable fit. Crafted from premium silk-btness and all-night comfort.</p>"
+          }
+        },
+        "collapsible_row_2_cUicdZ": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "Care Instructions",
+            "content": "<p>Hand wash cold with mild detergent. Lay flat to dry. Do not bleach, tumble dry, or iron directly on fabric.</p>"
+          }
+        },
+        "collapsible_row_3_zBlwf8": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p>Free standard shipping on all orders. Easy 30-day returns — no questions asked. Sleep better or your money back.</p>"
+          }
+        },
+        "media_gTrn6t": {
+          "type": "media",
+          "settings": {
+            "image_aspect_ratio": "adapt"
+          }
+        },
+        "content_card_YrD3qS": {
+          "type": "content_card",
+          "settings": {
+            "description": "Crafted from ultra-soft, breathable silk-blend fabric with a contoured fit that gently rests on your eyes — no pressure, no light leakage. Designed to stay in place all night, so you can enjoy uninterrupted, restorative sleep every single night.",
+            "checkpoint_1": "100% blackout light blocking",
+            "checkpoint_2": "Ultra-soft silk-blend fabric",
+            "checkpoint_3": "Contoured zero-pressure fit"
+          }
+        },
+        "upsell_wUU5Pw": {
+          "type": "upsell",
+          "settings": {
+            "title": "Comp",
+            "collection": "pj",
+            "image_aspect_ratio": "custom"
+          }
+        },
+        "social_press_t76KzT": {
+          "type": "social_press",
+          "settings": {
+            "testimonial": "“A must-have sleep essential that delivers real results — we’re genuinely impressed.”"
+          }
+        }
+      },
+      "block_order": [
+        "title_i5VpnA",
+        "price_D1i4kz",
+        "text_9v93h3",
+        "feature_tags_ajumbj",
+        "variant_picker_hcZXm2",
+        "quantity_SJw7Pw",
+        "form_XKhkiD",
+        "description_m3Qmkn",
+        "collapsible_row_1_jzzR0S",
+        "collapsible_row_2_cUicdZ",
+        "collapsible_row_3_zBlwf8",
+        "media_gTrn6t",
+        "content_card_YrD3qS",
+        "upsell_wUU5Pw",
+        "social_press_t76KzT"
+      ],
+      "name": "VSO - Product info 06",
+      "type": "vso-product-info-06"
+    },
+    "vso_testimonials_13_IsvNoj": {
+      "settings": {
+        "section_bg_type": "solid",
+        "section_bg_color": "#ffffff",
+        "enable_advanced_settings": false,
+        "header_width_desktop": 20,
+        "cards_per_view_desktop": 3,
+        "block_padding": 12,
+        "block_border_radius": 8,
+        "star_size": 20,
+        "star_gap": 0,
+        "block_title_as": "h4",
+        "block_description_color": "#000000",
+        "block_author_color": "#000000"
+      },
+      "blocks": {
+        "section_title_JW58cF": {
+          "type": "section_title",
+          "settings": {
+            "title": "Great",
+            "custom_title_font": true,
+            "title_font": "sans_serif_n4",
+            "title_size_desktop": 32,
+            "title_size_mobile": 32,
+            "title_font_weight": 500,
+            "title_line_height": 80
+          }
+        },
+        "rating_header_MyFsNu": {
+          "type": "rating_header",
+          "settings": {
+            "rating_header": "Based on <strong>10,000+</strong> happy sleepers!",
+            "header_star_rating": 4.5,
+            "rating_star_size": 40
+          }
+        },
+        "testimonial_card_1_x8oeba": {
+          "type": "testimonial_card",
+          "settings": {
+            "title": "Best Sleep of My Life",
+            "description": "I've tried so many sleep masks but nothing compares to the Versio. Complete blackout, zero pressure on my eyes, and it stays on all night. I wake up actually feeling rested!",
+            "author": "Sarah M.",
+            "star_rating": 5,
+            "show_verified": true
+          }
+        },
+        "testimonial_card_2_kMJTmU": {
+          "type": "testimonial_card",
+          "settings": {
+            "title": "Perfect Weight",
+            "description": "The fabric is incredibly soft — I forget I'm even wearing it. The adjustable strap is a game changer. No more waking up with it across my face. Absolute must-have for light sleepers.",
+            "author": "Jessica T.",
+            "star_rating": 5,
+            "show_verified": true
+          }
+        },
+        "testimonial_card_3_SCfuKw": {
+          "type": "testimonial_card",
+          "settings": {
+            "title": "Total Game Changer",
+            "description": "After years of restless nights from streetlights coming through my curtains, this mask has been a total game changer. The blackout is 100% real. Quality is exceptional too.",
+            "author": "David L.",
+            "star_rating": 5,
+            "show_verified": true
+          }
+        },
+        "testimonial_card_4_Jqk4Ko": {
+          "type": "testimonial_card",
+          "settings": {
+            "title": "Worth Every Penny",
+            "description": "I travel a loa non-negotiable in my carry-on. Blocks out cabin light completely and the contoured design means no eye pressure on long flights. Worth every penny.",
+            "author": "Michael R.",
+            "star_rating": 5,
+            "show_verified": true
+          }
+        }
+      },
+      "block_order": [
+        "section_title_JW58cF",
+        "rating_header_MyFsNu",
+        "testimonial_card_1_x8oeba",
+        "testimonial_card_2_kMJTmU",
+        "testimonial_card_3_SCfuKw",
+        "testimonial_card_4_Jqk4Ko"
+      ],
+      "name": "VSO - Testimonials 13",
+      "type": "vso-testimonials-13"
+    },
+    "vso_hero_41_1_3jQ0BV": {
+      "settings": {
+        "section_bg_color": "#f9f9f9",
+        "section_border_radius": 0,
+        "section_padding_bottom_mobile": 40,
+        "margin_bottom_mobile": 0,
+        "content_alignment": "left",
+        "content_alignment_mobile": "left",
+        "benefits_layout": "row",
+        "benefits_icon_color": "#6c8eef"
+      },
+      "blocks": {
+        "media_jCxpUp": {
+          "type": "media",
+          "settings": {}
+        },
+        "heading_1DAtaV": {
+          "type": "heading",
+          "settings": {
+            "eyebrow": "SLEEP ESSENTIALS",
+            "title": "Sleep Like You've Never Slept Before",
+            "title_font_size": 40,
+            "title_font_size_mobile": 32
+          }
+        },
+        "description_LAiugB": {
+          "type": "description",
+          "settings": {
+            "description": "Engineered for total darkness and all-night comfort — the Versio Sleep Mask blocks out light completely so you can fall asleep faster and wake up truly refreshed."
+          }
+        },
+        "benefit_1_2YW05y": {
+          "type": "benefit",
+          "settings": {
+            "text": "100% blackout light blocking"
+          }
+        },
+        "benefit_2_CwAStA": {
+          "type": "benefit",
+          "settings": {
+            "text": "Ultra-soft, zero-pressure fit"
+          }
+        }
+      },
+      "block_order": [
+        "media_jCxpUp",
+        "heading_1DAtaV",
+        "description_LAiugB",
+        "benefit_1_2YW05y",
+        "benefit_2_CwAStA"
+      ],
+      "name": "VSO - Hero 41",
+      "type": "vso-hero-41"
+    },
+    "vso_card_carousel_01_BG0zoZ": {
+      "settings": {
+        "heading": "Results our customers actually feel"
+      },
+      "blocks": {
+        "statistic_1_MgJo6P": {
+          "type": "statistic",
+          "settings": {
+            "percentage": "94%",
+            "title": "Fell asleep faster within the first week."
+          }
+        },
+        "statistic_2_Expfpa": {
+          "type": "statistic",
+          "settings": {
+            "percentage": "89%",
+            "title": "Reported waking up more refreshed each morning."
+          }
+        },
+        "statistic_3_yKCBI4": {
+          "type": "statistic",
+          "settings": {
+            "percentage": "96%",
+            "title": "Said they'd recommend it to a friend or family member."
+          }
+        }
+      },
+      "block_order": [
+        "statistic_1_MgJo6P",
+        "statistic_2_Expfpa",
+        "statistic_3_yKCBI4"
+      ],
+      "name": "VSO - Card Carousel 01",
+      "type": "vso-card-carousel-01"
+    },
+    "vso_hero_41_2_dBrf7I": {
+      "settings": {
+        "section_bg_color": "#f9f9f9",
+        "section_border_radius": 0,
+        "section_padding_bottom_mobile": 40,
+        "margin_bottom_mobile": 0,
+        "content_alignment": "left",
+        "content_alignment_mobile": "left",
+        "reverse_layout_desktop": true,
+        "benefits_layout": "column",
+        "benefits_icon_color": "#6c8eef"
+      },
+      "blocks": {
+        "media_vbMd5a": {
+          "type": "media",
+          "settings": {}
+        },
+        "heading_MYSlfV": {
+          "type": "heading",
+          "settings": {
+            "eyebrow": "THE VERSIO DIFFERENCE",
+            "title": "Crafted for the Way You Sleep"
+          }
+        },
+        "description_fQQr0i": {
+          "type": "description",
+          "settings": {
+            "description": "Every detail of the Versio Sleep Mask is intentional — from the silk-blend fabric that's gentle on skin to the contoured shape that eliminates eye pressure. Because great sleep starts with the right foundation."
+          }
+        },
+        "benefit_1_bS3INr": {
+          "type": "benefit",
+          "settings": {
+            "text": "Adjustable strap for a perfect, secure fit"
+          }
+        },
+        "benefit_2_3G8sZZ": {
+          "type": "benefit",
+          "settings": {
+            "text": "Breathable fabric that stays cool all night"
+          }
+        }
+      },
+      "block_order": [
+        "media_vbMd5a",
+        "heading_MYSlfV",
+        "description_fQQr0i",
+        "benefit_1_bS3INr",
+        "benefit_2_3G8sZZ"
+      ],
+      "name": "VSO - Hero 41",
+      "type": "vso-hero-41"
+    },
+    "vso_hero_41_3_irm1Yh": {
+      "settings": {
+        "section_bg_color": "#f9f9f9",
+        "section_border_radius": 0,
+        "section_padding_bottom_mobile": 40,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0,
+        "content_alignment": "left",
+        "content_alignment_mobile": "left",
+        "benefits_layout": "column",
+        "benefits_icon_color": "#6c8eef"
+      },
+      "blocks": {
+        "media_pttrll": {
+          "type": "media",
+          "settings": {}
+        },
+        "heading_Qg3pTE": {
+          "type": "heading",
+          "settings": {
+            "eyebrow": "SLEEP ANYWHERE",
+            "title": "Your Sleep, On Your Terms",
+            "title_font_size": 40,
+            "title_font_size_mobile": 32
+          }
+        },
+        "description_wkDUIW": {
+          "type": "description",
+          "settings": {
+            "description": "Whether you're a shift worker, a frequent flyer, or just someone who deserves better rest — the Versio Sleep Mask adapts to your life. Lightweight enough to take anywhere, effective enough to change everything."
+          }
+        },
+        "benefit_1_AH3UXY": {
+          "type": "benefit",
+          "settings": {
+            "text": "Compact & travel-ready design"
+          }
+        },
+        "benefit_2_rNLr3T": {
+          "type": "benefit",
+          "settings": {
+            "text": "Ideal for home, travel & napping"
+          }
+        }
+      },
+      "block_order": [
+        "media_pttrll",
+        "heading_Qg3pTE",
+        "description_wkDUIW",
+        "benefit_1_AH3UXY",
+        "benefit_2_rNLr3T"
+      ],
+      "name": "VSO - Hero 41",
+      "type": "vso-hero-41"
+    },
+    "vso_faq_02_8uCVFi": {
+      "settings": {},
+      "blocks": {
+        "title_ZoLa3T": {
+          "type": "title",
+          "settings": {
+            "title": "Answers to Your _Sleep Mask_ Questions",
+            "title_highlight_color": "#6c8eef"
+          }
+        },
+        "subtitle_q7GITp": {
+          "type": "subtitle",
+          "settings": {}
+        },
+        "team_7QPVWj": {
+          "type": "team",
+          "settings": {}
+        },
+        "faq_item_1_6Lgnmc": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will it block out light completely?",
+            "answer": "<p>Yes — the Versio Sleep Mask is engineered for 100% blackout. The contoured design sits away from your eyes and the opaque silk-blend fabric eliminates all light leakage, even in bright environments.</p>"
+          }
+        },
+        "faq_item_2_r43Fis": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is it comfortable to wear all night?",
+            "answer": "<p>Absolutely. The contoured shape means the mask never touches your eyelids, and the ultra-soft silk-blend fabric is gentle on even the most sensitive skin. Most customers forget they're wearing it.</p>"
+          }
+        },
+        "faq_item_3_15ysl8": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will it fit my head size?",
+            "answer": "<p>The Versio Sleep Mask features a fully adjustable strap that fits most head sizes comfortably. Whether you sleep on your back or side, the strap keeps the mask securely in place all night without feeling tight.</p>"
+          }
+        },
+        "faq_item_4_CoBlu0": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you offer a satisfaction guarantee?",
+            "answer": "<p>Yes — we offer a 30-day satisfaction guarantee. If you're not sleeping better with the Versio Sleep Mask, return it within 30 days for a full refund. No questions asked.</p>"
+          }
+        },
+        "faq_item_5_LiQB4a": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I care for my sleep mask?",
+            "answer": "<p>Hand wash cold with mild detergent and lay flat to dry. Do not bleach, tumble dry, or iron directly on the fabric to preserve the silk-blend material.</p>"
+          }
+        },
+        "faq_item_6_NZEzYc": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is your shipping and return policy?",
+            "answer": "<p>We offer free standard shipping on all orders. Easy 30-day returns — no questions asked. Sleep better or your money back.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "title_ZoLa3T",
+        "subtitle_q7GITp",
+        "team_7QPVWj",
+        "faq_item_1_6Lgnmc",
+        "faq_item_2_r43Fis",
+        "faq_item_3_15ysl8",
+        "faq_item_4_CoBlu0",
+        "faq_item_5_LiQB4a",
+        "faq_item_6_NZEzYc"
+      ],
+      "name": "VSO - FAQ 02",
+      "type": "vso-faq-02"
+    },
+    "vso_featured_collection_01_Z0vi0Z": {
+      "settings": {
+        "columns_desktop": 4,
+        "badge_border_radius": 5,
+        "image_aspect_ratio": 160
+      },
+      "blocks": {
+        "heading_7Hngkv": {
+          "type": "heading",
+          "settings": {}
+        },
+        "button_4TjMDz": {
+          "type": "button",
+          "settings": {}
+        },
+        "product_1_PB4MAS": {
+          "type": "product",
+          "settings": {}
+        },
+        "product_2_PyLMOY": {
+          "type": "product",
+          "settings": {}
+        },
+        "product_3_HE18mB": {
+          "type": "product",
+          "settings": {}
+        },
+        "product_4_95bUKR": {
+          "type": "product",
+          "settings": {}
+        },
+        "product_5_lIUghR": {
+          "type": "product",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_7Hngkv",
+        "button_4TjMDz",
+        "product_1_PB4MAS",
+        "product_2_PyLMOY",
+        "product_3_HE18mB",
+        "product_4_95bUKR",
+        "product_5_lIUghR"
+      ],
+      "name": "VSO - Collection 01",
+      "type": "vso-featured-collection-01"
+    }
+  },
+  "order": [
+    "vso_product_info_06_ME5Ecu",
+    "vso_testimonials_13_IsvNoj",
+    "vso_hero_41_1_3jQ0BV",
+    "vso_card_carousel_01_BG0zoZ",
+    "vso_hero_41_2_dBrf7I",
+    "vso_hero_41_3_irm1Yh",
+    "vso_faq_02_8uCVFi",
+    "vso_featured_collection_01_Z0vi0Z"
+  ]
+}

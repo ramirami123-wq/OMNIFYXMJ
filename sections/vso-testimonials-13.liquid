@@ -1,0 +1,1099 @@
+{% comment %}
+WARNING: UNAUTHORIZED MODIFICATION PROHIBITED
+This code is proprietary property of Versio Studio. Any unauthorized tampering,
+alteration, or distribution of this file is strictly forbidden and will be prosecuted to the maximum extent permitted by law.
+All modifications are logged.
+
+If you require assistance or have questions regarding this code, please contact support@versio.studio.
+{% endcomment %}
+
+{%- liquid
+  assign rating_block = section.blocks | where: 'type', 'rating_header' | first
+  assign title_block = section.blocks | where: 'type', 'section_title' | first
+  assign blocks_alignment_desktop = section.settings.card_content_alignment_desktop
+  assign blocks_alignment_mobile = section.settings.card_content_alignment_mobile
+  assign block_padding = section.settings.block_padding
+  assign header_blocks_gap_mobile = section.settings.header_blocks_gap_mobile
+  assign stars_title_gap = section.settings.stars_title_gap
+  assign cards_gap = section.settings.cards_gap
+-%}
+
+{%- style -%}
+  .vd-l { display: none !important; }
+  {% if title_block %}{{ title_block.settings.title_font | font_face: font_display: 'swap' }}{% endif %}
+  {{ section.settings.block_title_font | font_face: font_display: 'swap' }}
+  {{ section.settings.block_description_font | font_face: font_display: 'swap' }}
+  {% if title_block %}{{ title_block.settings.title_highlight_font | font_face: font_display: 'swap' }}{% endif %}
+
+  #shopify-section-{{ section.id }} {
+    --section-border-radius: {{ section.settings.section_border_radius_mobile }}px;
+    --section-horizontal-padding: var(--page-margin, 16px);
+    margin-top: {{ section.settings.margin_top_mobile }}px;
+    margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
+    border-radius: var(--section-border-radius);
+    overflow: hidden;
+    padding: 0;
+  }
+
+  {% if section.settings.enable_advanced_settings %}
+    #shopify-section-{{ section.id }} {
+      --section-horizontal-padding: {{ section.settings.padding_horizontal_mobile }}px;
+    }
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} {
+      {% if section.settings.section_bg_type == 'gradient' %}
+        background: {{ section.settings.section_bg_gradient }};
+      {% else %}
+        background-color: {{ section.settings.section_bg_color }};
+      {% endif %}
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      --section-border-radius: {% if section.settings.full_width_desktop %}0px{% else %}{{ section.settings.section_border_radius }}px{% endif %};
+      --section-horizontal-padding: 0px;
+      margin-top: {{ section.settings.margin_top_desktop }}px;
+      margin-bottom: {{ section.settings.margin_bottom_desktop }}px;
+      {% if section.settings.full_width_desktop %}
+        {% if section.settings.section_bg_type == 'gradient' %}
+          background: {{ section.settings.section_bg_gradient }};
+        {% else %}
+          background-color: {{ section.settings.section_bg_color }};
+        {% endif %}
+      {% else %}
+        background: transparent;
+      {% endif %}
+    }
+  }
+
+  {% if section.settings.enable_advanced_settings == false and section.settings.full_width_desktop == false %}
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} {
+        --section-horizontal-padding: 40px;
+      }
+    }
+  {% endif %}
+
+  {% if section.settings.enable_advanced_settings == false and section.settings.full_width_desktop %}
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} {
+        --section-container-max-width: var(--page-content-width, var(--page-width, 1440px));
+        --section-outer-gutter: max(0px, calc((100vw - var(--section-container-max-width)) / 2));
+        --section-horizontal-padding: max(0px, calc(var(--page-margin, 40px) - var(--section-outer-gutter)));
+      }
+    }
+  {% endif %}
+
+  {% if section.settings.enable_advanced_settings %}
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} {
+        --section-horizontal-padding: {{ section.settings.padding_horizontal_desktop }}px;
+      }
+    }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} > .vso-testimonials-13__container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: var(--page-content-width, var(--page-width, 1440px));
+    {% if section.settings.enable_advanced_settings %}
+      max-width: {{ section.settings.section_max_width }}rem;
+    {% endif %}
+    padding-left: var(--section-horizontal-padding);
+    padding-right: var(--section-horizontal-padding);
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    border-radius: var(--section-border-radius);
+    overflow: hidden;
+    box-sizing: border-box;
+    {% if section.settings.enable_advanced_settings %}
+      border: {{ section.settings.section_border_width }}px solid {{ section.settings.section_border_color }};
+    {% endif %}
+  }
+
+  {% if section.settings.full_width_desktop == false %}
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} > .vso-testimonials-13__container {
+        width: calc(100% - (2 * var(--page-margin, 40px)));
+      }
+    }
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} > .vso-testimonials-13__container {
+      background: transparent;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} > .vso-testimonials-13__container {
+      {% if section.settings.full_width_desktop %}
+        background: transparent;
+      {% else %}
+        {% if section.settings.section_bg_type == 'gradient' %}
+          background: {{ section.settings.section_bg_gradient }};
+        {% else %}
+          background-color: {{ section.settings.section_bg_color }};
+        {% endif %}
+      {% endif %}
+      padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-13__inner {
+    display: flex;
+    flex-direction: column;
+    gap: {{ header_blocks_gap_mobile }}px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-testimonials-13__inner {
+      flex-direction: row;
+      gap: {{ section.settings.layout_gap_desktop }}px;
+      align-items: flex-start;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__header {
+      flex: 0 0 {{ section.settings.header_width_desktop }}%;
+      max-width: {{ section.settings.header_width_desktop }}%;
+      {% if section.settings.header_vertical_position_desktop == 'middle' %}
+        align-self: center;
+      {% elsif section.settings.header_vertical_position_desktop == 'bottom' %}
+        align-self: flex-end;
+      {% else %}
+        align-self: flex-start;
+      {% endif %}
+    }
+  }
+
+  {% if rating_block %}
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__rating {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    {% if rating_block.settings.rating_position == 'above_title' %}
+      margin-bottom: {{ rating_block.settings.rating_bottom_spacing }}px;
+    {% else %}
+      margin-top: {{ rating_block.settings.rating_bottom_spacing }}px;
+    {% endif %}
+    white-space: nowrap;
+    width: 100%;
+    text-align: {{ rating_block.settings.rating_alignment_mobile }};
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__header .vso-testimonials-grid__rating {
+    {% if rating_block.settings.rating_alignment_mobile == 'left' %}
+      align-items: flex-start;
+    {% elsif rating_block.settings.rating_alignment_mobile == 'center' %}
+      align-items: center;
+    {% elsif rating_block.settings.rating_alignment_mobile == 'right' %}
+      align-items: flex-end;
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__rating-stars {
+    display: inline-flex;
+    gap: {{ section.settings.star_gap }}px;
+    font-size: {{ section.settings.star_size }}px;
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__rating-stars svg {
+    width: {{ rating_block.settings.rating_star_size }}px;
+    height: {{ rating_block.settings.rating_star_size }}px;
+    color: {{ rating_block.settings.rating_star_color }};
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__rating .star-empty svg {
+    color: {{ section.settings.star_empty_color }};
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__rating-text {
+    margin: 0;
+    width: 100%;
+    line-height: 1;
+    text-align: {{ rating_block.settings.rating_alignment_mobile }};
+    color: {{ rating_block.settings.rating_text_color }};
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__rating-text {
+      text-align: {{ rating_block.settings.rating_alignment_desktop }};
+    }
+  }
+
+  {% if rating_block.settings.custom_rating_header_font %}
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__rating-text {
+      font-size: {{ rating_block.settings.rating_text_size }}px;
+    }
+  {% endif %}
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__rating {
+      white-space: normal;
+      flex-wrap: wrap;
+      text-align: {{ rating_block.settings.rating_alignment_desktop }};
+    }
+
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__header .vso-testimonials-grid__rating {
+      {% if rating_block.settings.rating_alignment_desktop == 'left' %}
+        align-items: flex-start;
+      {% elsif rating_block.settings.rating_alignment_desktop == 'center' %}
+        align-items: center;
+      {% elsif rating_block.settings.rating_alignment_desktop == 'right' %}
+        align-items: flex-end;
+      {% endif %}
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__rating {
+      white-space: normal;
+      flex-wrap: wrap;
+    }
+  }
+  {% endif %}
+
+  {% if title_block %}
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__title {
+    margin: 0;
+    width: 100%;
+    text-align: {{ title_block.settings.title_alignment_mobile }};
+    color: {{ title_block.settings.title_color }};
+  }
+
+  {% if title_block.settings.custom_title_font %}
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__title {
+      font-family: {{ title_block.settings.title_font.family }}, {{ title_block.settings.title_font.fallback_families }};
+      font-style: {{ title_block.settings.title_font.style }};
+      font-size: {{ title_block.settings.title_size_mobile }}px;
+      line-height: {{ title_block.settings.title_line_height }}%;
+      {% if section.settings.enable_advanced_settings %}
+        font-weight: {{ title_block.settings.title_font_weight }};
+      {% endif %}
+    }
+
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} .vso-testimonials-grid__title {
+        font-size: {{ title_block.settings.title_size_desktop }}px;
+      }
+    }
+  {% endif %}
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__title {
+      text-align: {{ title_block.settings.title_alignment_desktop }};
+    }
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__title .vso-testimonials-grid__title-highlight-{{ section.id }} {
+    background: {{ title_block.settings.title_highlight_color }} !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+  }
+
+  {% if title_block.settings.title_highlight_enable_custom %}
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__title .vso-testimonials-grid__title-highlight-{{ section.id }} {
+      font-family: {{ title_block.settings.title_highlight_font.family }}, {{ title_block.settings.title_highlight_font.fallback_families }};
+      font-style: {{ title_block.settings.title_highlight_font.style }};
+      {% if section.settings.enable_advanced_settings %}
+        font-weight: {{ title_block.settings.title_highlight_font_weight }};
+      {% endif %}
+    }
+  {% endif %}
+  {% endif %}
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__swiper {
+    width: 100%;
+    padding: 0px !important;
+    overflow: hidden;
+    position: relative;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__swiper {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__slide {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__slide {
+      width: auto;
+      box-sizing: border-box;
+    }
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__card {
+    display: flex;
+    flex-direction: column;
+    align-items: {{ blocks_alignment_mobile }};
+    padding: {{ block_padding }}px;
+    background-color: {{ section.settings.block_background_color }};
+    border-radius: {{ section.settings.block_border_radius }}px;
+    border: {{ section.settings.block_border_width }}px solid {{ section.settings.block_border_color }};
+    text-align: {{ blocks_alignment_mobile }};
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__card {
+      align-items: {{ blocks_alignment_desktop }};
+      text-align: {{ blocks_alignment_desktop }};
+    }
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__card-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: {{ blocks_alignment_mobile }};
+    gap: {{ stars_title_gap }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__card-header {
+      align-items: {{ blocks_alignment_desktop }};
+    }
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__stars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: {{ blocks_alignment_mobile }};
+    gap: {{ section.settings.star_gap }}px;
+    font-size: {{ section.settings.star_size }}px;
+    margin: 0;
+    margin-bottom: {{ section.settings.author_row_margin_bottom }}px;
+    color: {{ section.settings.star_color }};
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__stars svg {
+    display: block;
+  }
+
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__stars {
+      justify-content: {{ blocks_alignment_desktop }};
+    }
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__block-title {
+    width: 100%;
+    margin: 0 0 {{ section.settings.block_title_margin_bottom }}px 0;
+    color: {{ section.settings.block_title_color }};
+  }
+
+  {% if section.settings.custom_block_title_font %}
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__block-title {
+      font-family: {{ section.settings.block_title_font.family }}, {{ section.settings.block_title_font.fallback_families }};
+      font-style: {{ section.settings.block_title_font.style }};
+      font-size: {{ section.settings.block_title_size_mobile }}px;
+      line-height: {{ section.settings.block_title_line_height }}%;
+      {% if section.settings.enable_advanced_settings %}
+        font-weight: {{ section.settings.block_title_font_weight }};
+      {% endif %}
+    }
+
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} .vso-testimonials-grid__block-title {
+        font-size: {{ section.settings.block_title_size_desktop }}px;
+      }
+    }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__block-description {
+    width: 100%;
+    margin: 0;
+    margin-top: {{ section.settings.block_description_margin_top }}px;
+    position: relative;
+    color: {{ section.settings.block_description_color }};
+  }
+
+  {% if section.settings.custom_block_description_font %}
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__block-description {
+      font-family: {{ section.settings.block_description_font.family }}, {{ section.settings.block_description_font.fallback_families }};
+      font-style: {{ section.settings.block_description_font.style }};
+      font-size: {{ section.settings.block_description_size_mobile }}px;
+      line-height: {{ section.settings.block_description_line_height }}%;
+      {% if section.settings.enable_advanced_settings %}
+        font-weight: {{ section.settings.block_description_font_weight }};
+      {% endif %}
+    }
+
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} .vso-testimonials-grid__block-description {
+        font-size: {{ section.settings.block_description_size_desktop }}px;
+      }
+    }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__meta-author {
+    margin: 0;
+    margin-top: {{ section.settings.block_description_margin_top }}px;
+    {% if section.settings.author_pill_enable %}
+      background: {{ section.settings.author_pill_bg_color }};
+      padding: 4px 10px;
+      border-radius: 999px;
+    {% else %}
+      background: transparent;
+      padding: 0;
+    {% endif %}
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    color: {{ section.settings.block_author_color }};
+  }
+
+  {% if section.settings.custom_block_author_font %}
+    #shopify-section-{{ section.id }} .vso-testimonials-grid__meta-author {
+      font-size: {{ section.settings.block_author_size_mobile }}px;
+      {% if section.settings.enable_advanced_settings %}
+        font-weight: {{ section.settings.block_author_font_weight }};
+      {% endif %}
+    }
+
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} .vso-testimonials-grid__meta-author {
+        font-size: {{ section.settings.block_author_size_desktop }}px;
+      }
+    }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__author-avatar {
+    width: {{ section.settings.author_avatar_size }}px;
+    height: {{ section.settings.author_avatar_size }}px;
+    border-radius: 999px;
+    object-fit: cover;
+    display: inline-block;
+    flex: 0 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .vso-testimonials-grid__meta-author svg {
+    width: {{ section.settings.verified_icon_size }}px;
+    height: {{ section.settings.verified_icon_size }}px;
+  }
+
+  .vso-node { display: none; }
+  .vso-node--v2 { display: block; }
+{%- endstyle -%}
+
+<div class="vso-testimonials-13__container vso-node vd-l">
+  <div class="vso-testimonials-13__inner" id="Testimonials-Grid-{{ section.id }}">
+    <div class="vso-testimonials-grid__header">
+      {% if rating_block and rating_block.settings.show_rating and rating_block.settings.rating_position == 'above_title' %}
+        <div class="vso-testimonials-grid__rating">
+          <span class="vso-testimonials-grid__rating-stars" aria-hidden="true">
+            {%- liquid
+              assign rating = rating_block.settings.header_star_rating | default: 5
+              assign full_stars = rating | floor
+              assign half_star = rating | modulo: 1
+              assign empty_stars = 5 | minus: full_stars
+              if half_star >= 0.5
+                assign empty_stars = empty_stars | minus: 1
+              endif
+            -%}
+
+            {% for i in (1..full_stars) %}
+              <span class="star star-filled">
+                <svg viewBox="-2.4 -2.4 28.80 28.80" xmlns="http://www.w3.org/2000/svg" fill="none" width="1em" height="1em" style="display:block;">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(1.2,1.2), scale(0.9)">
+                    <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="0" fill="{{ section.settings.star_background_color }}" strokewidth="0"></rect>
+                  </g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <rect x="0" fill="none" width="24" height="24"></rect>
+                    <g>
+                      <path d="M12 2l2.582 6.953L22 9.257l-5.822 4.602L18.18 21 12 16.89 5.82 21l2.002-7.14L2 9.256l7.418-.304" fill="currentColor"></path>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            {% endfor %}
+
+            {% if half_star >= 0.5 %}
+              <span class="star star-half">
+                <svg viewBox="-2.4 -2.4 28.80 28.80" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                  <defs>
+                    <linearGradient id="half-rating-{{ section.id }}" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="50%" style="stop-color:{{ section.settings.star_background_color }};stop-opacity:1" />
+                      <stop offset="50%" style="stop-color:{{ section.settings.star_empty_color }};stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(1.2,1.2), scale(0.9)">
+                    <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="0" fill="url(#half-rating-{{ section.id }})" strokewidth="0"></rect>
+                  </g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <rect x="0" fill="none" width="24" height="24"></rect>
+                    <g>
+                      <path d="M12 2l2.582 6.953L22 9.257l-5.822 4.602L18.18 21 12 16.89 5.82 21l2.002-7.14L2 9.256l7.418-.304" fill="currentColor"></path>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            {% endif %}
+
+            {% for i in (1..empty_stars) %}
+              <span class="star star-empty">
+                <svg viewBox="-2.4 -2.4 28.80 28.80" xmlns="http://www.w3.org/2000/svg" fill="none" width="1em" height="1em" style="display:block;">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(1.2,1.2), scale(0.9)">
+                    <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="0" fill="{{ section.settings.star_empty_color }}" strokewidth="0"></rect>
+                  </g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <rect x="0" fill="none" width="24" height="24"></rect>
+                    <g>
+                      <path d="M12 2l2.582 6.953L22 9.257l-5.822 4.602L18.18 21 12 16.89 5.82 21l2.002-7.14L2 9.256l7.418-.304" fill="currentColor"></path>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            {% endfor %}
+          </span>
+          {% if rating_block.settings.custom_rating_header_font %}
+            <p class="vso-testimonials-grid__rating-text">{{ rating_block.settings.rating_header }}</p>
+          {% else %}
+            {%- assign rating_header_tag = rating_block.settings.rating_header_as | default: 'p' -%}
+            <{{ rating_header_tag }} class="vso-testimonials-grid__rating-text">{{ rating_block.settings.rating_header }}</{{ rating_header_tag }}>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if title_block and title_block.settings.title != blank %}
+        {%- liquid
+          assign title_parts = title_block.settings.title | split: '_'
+          assign processed_title = ''
+          assign is_highlighted = false
+          for part in title_parts
+            if is_highlighted
+              capture highlighted_part
+                echo '<span class="vso-testimonials-grid__title-highlight-' | append: section.id | append: '">' | append: part | append: '</span>'
+              endcapture
+              assign processed_title = processed_title | append: highlighted_part
+              assign is_highlighted = false
+            else
+              assign processed_title = processed_title | append: part
+              assign is_highlighted = true
+            endif
+          endfor
+        -%}
+        {% if title_block.settings.custom_title_font %}
+          <h2 class="vso-testimonials-grid__title">
+            {{ processed_title }}
+          </h2>
+        {% else %}
+          {%- assign header_title_tag = title_block.settings.title_as | default: 'h2' -%}
+          <{{ header_title_tag }} class="vso-testimonials-grid__title">
+            {{ processed_title }}
+          </{{ header_title_tag }}>
+        {% endif %}
+      {% endif %}
+
+      {% if rating_block and rating_block.settings.show_rating and rating_block.settings.rating_position == 'below_title' %}
+        <div class="vso-testimonials-grid__rating">
+          <span class="vso-testimonials-grid__rating-stars" aria-hidden="true">
+            {%- liquid
+              assign rating = rating_block.settings.header_star_rating | default: 5
+              assign full_stars = rating | floor
+              assign half_star = rating | modulo: 1
+              assign empty_stars = 5 | minus: full_stars
+              if half_star >= 0.5
+                assign empty_stars = empty_stars | minus: 1
+              endif
+            -%}
+
+            {% for i in (1..full_stars) %}
+              <span class="star star-filled">
+                <svg viewBox="-2.4 -2.4 28.80 28.80" xmlns="http://www.w3.org/2000/svg" fill="none" width="1em" height="1em" style="display:block;">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(1.2,1.2), scale(0.9)">
+                    <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="0" fill="{{ section.settings.star_background_color }}" strokewidth="0"></rect>
+                  </g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <rect x="0" fill="none" width="24" height="24"></rect>
+                    <g>
+                      <path d="M12 2l2.582 6.953L22 9.257l-5.822 4.602L18.18 21 12 16.89 5.82 21l2.002-7.14L2 9.256l7.418-.304" fill="currentColor"></path>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            {% endfor %}
+
+            {% if half_star >= 0.5 %}
+              <span class="star star-half">
+                <svg viewBox="-2.4 -2.4 28.80 28.80" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                  <defs>
+                    <linearGradient id="half-rating-below-{{ section.id }}" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="50%" style="stop-color:{{ section.settings.star_background_color }};stop-opacity:1" />
+                      <stop offset="50%" style="stop-color:{{ section.settings.star_empty_color }};stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(1.2,1.2), scale(0.9)">
+                    <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="0" fill="url(#half-rating-below-{{ section.id }})" strokewidth="0"></rect>
+                  </g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <rect x="0" fill="none" width="24" height="24"></rect>
+                    <g>
+                      <path d="M12 2l2.582 6.953L22 9.257l-5.822 4.602L18.18 21 12 16.89 5.82 21l2.002-7.14L2 9.256l7.418-.304" fill="currentColor"></path>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            {% endif %}
+
+            {% for i in (1..empty_stars) %}
+              <span class="star star-empty">
+                <svg viewBox="-2.4 -2.4 28.80 28.80" xmlns="http://www.w3.org/2000/svg" fill="none" width="1em" height="1em" style="display:block;">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(1.2,1.2), scale(0.9)">
+                    <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="0" fill="{{ section.settings.star_empty_color }}" strokewidth="0"></rect>
+                  </g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <rect x="0" fill="none" width="24" height="24"></rect>
+                    <g>
+                      <path d="M12 2l2.582 6.953L22 9.257l-5.822 4.602L18.18 21 12 16.89 5.82 21l2.002-7.14L2 9.256l7.418-.304" fill="currentColor"></path>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            {% endfor %}
+          </span>
+          {% if rating_block.settings.custom_rating_header_font %}
+            <p class="vso-testimonials-grid__rating-text">{{ rating_block.settings.rating_header }}</p>
+          {% else %}
+            {%- assign rating_header_tag = rating_block.settings.rating_header_as | default: 'p' -%}
+            <{{ rating_header_tag }} class="vso-testimonials-grid__rating-text">{{ rating_block.settings.rating_header }}</{{ rating_header_tag }}>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+    {%- assign testimonial_blocks = section.blocks | where: 'type', 'testimonial_card' -%}
+    {% if testimonial_blocks.size > 0 %}
+      <div class="swiper vso-testimonials-grid__swiper">
+        <div class="swiper-wrapper">
+          {% for block in testimonial_blocks %}
+            <div class="swiper-slide vso-testimonials-grid__slide">
+              <div class="vso-testimonials-grid__card" {{ block.shopify_attributes }}>
+                <div class="vso-testimonials-grid__card-header">
+                  <div class="vso-testimonials-grid__stars">
+                    {%- liquid
+                      assign rating = block.settings.star_rating
+                      assign full_stars = rating | floor
+                      assign half_star = rating | modulo: 1
+                      assign empty_stars = 5 | minus: full_stars
+                      if half_star >= 0.5
+                        assign empty_stars = empty_stars | minus: 1
+                      endif
+                    -%}
+
+                    {% for i in (1..full_stars) %}
+                      <span class="star star-filled">
+                        <svg viewBox="-2.4 -2.4 28.80 28.80" xmlns="http://www.w3.org/2000/svg" fill="{{ section.settings.star_color }}" width="1em" height="1em" style="display:block;">
+                          <g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(1.2,1.2), scale(0.9)">
+                            <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="0" fill="{{ section.settings.star_background_color }}" strokewidth="0"></rect>
+                          </g>
+                          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <rect x="0" fill="none" width="24" height="24"></rect>
+                            <g>
+                              <path d="M12 2l2.582 6.953L22 9.257l-5.822 4.602L18.18 21 12 16.89 5.82 21l2.002-7.14L2 9.256l7.418-.304"></path>
+                            </g>
+                          </g>
+                        </svg>
+                      </span>
+                    {% endfor %}
+
+                    {% if half_star >= 0.5 %}
+                      <span class="star star-half">
+                        <svg viewBox="-2.4 -2.4 28.80 28.80" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                          <defs>
+                            <linearGradient id="half-testimonial-{{ block.id }}" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="50%" style="stop-color:{{ section.settings.star_background_color }};stop-opacity:1" />
+                              <stop offset="50%" style="stop-color:{{ section.settings.star_empty_color }};stop-opacity:1" />
+                            </linearGradient>
+                          </defs>
+                          <g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(1.2,1.2), scale(0.9)">
+                            <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="0" fill="url(#half-testimonial-{{ block.id }})" strokewidth="0"></rect>
+                          </g>
+                          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <rect x="0" fill="none" width="24" height="24"></rect>
+                            <g>
+                              <path d="M12 2l2.582 6.953L22 9.257l-5.822 4.602L18.18 21 12 16.89 5.82 21l2.002-7.14L2 9.256l7.418-.304" fill="{{ section.settings.star_color }}"></path>
+                            </g>
+                          </g>
+                        </svg>
+                      </span>
+                    {% endif %}
+
+                    {% for i in (1..empty_stars) %}
+                      <span class="star star-empty">
+                        <svg viewBox="-2.4 -2.4 28.80 28.80" xmlns="http://www.w3.org/2000/svg" fill="{{ section.settings.star_color }}" width="1em" height="1em" style="display:block;">
+                          <g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(1.2,1.2), scale(0.9)">
+                            <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="0" fill="{{ section.settings.star_empty_color }}" strokewidth="0"></rect>
+                          </g>
+                          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <rect x="0" fill="none" width="24" height="24"></rect>
+                            <g>
+                              <path d="M12 2l2.582 6.953L22 9.257l-5.822 4.602L18.18 21 12 16.89 5.82 21l2.002-7.14L2 9.256l7.418-.304"></path>
+                            </g>
+                          </g>
+                        </svg>
+                      </span>
+                    {% endfor %}
+                  </div>
+
+                  {% if block.settings.title != blank %}
+                    {%- assign block_title_tag = section.settings.block_title_as | default: 'h3' -%}
+                    <{{ block_title_tag }} class="vso-testimonials-grid__block-title">
+                      {{ block.settings.title }}
+                    </{{ block_title_tag }}>
+                  {% endif %}
+                </div>
+
+                {% if block.settings.description != blank %}
+                  {%- assign block_desc_tag = section.settings.block_description_as | default: 'p' -%}
+                  <{{ block_desc_tag }} class="vso-testimonials-grid__block-description">
+                    {{ block.settings.description }}
+                  </{{ block_desc_tag }}>
+                {% endif %}
+
+                {% if block.settings.author != blank or block.settings.author_image != blank %}
+                  {%- assign block_author_tag = section.settings.block_author_as | default: 'p' -%}
+                  <{{ block_author_tag }} class="vso-testimonials-grid__meta-author">
+                    {% if block.settings.author_image != blank %}
+                      <img
+                        class="vso-testimonials-grid__author-avatar"
+                        srcset="{{ block.settings.author_image | image_url: width: 80 }} 80w, {{ block.settings.author_image | image_url: width: 160 }} 160w"
+                        sizes="{{ section.settings.author_avatar_size }}px"
+                        src="{{ block.settings.author_image | image_url: width: 160 }}"
+                        alt="{{ block.settings.author | strip_html | escape }}"
+                        loading="lazy"
+                        width="{{ section.settings.author_avatar_size }}"
+                        height="{{ section.settings.author_avatar_size }}"
+                      />
+                    {% endif %}
+                    {% if block.settings.author != blank %}
+                      {{ block.settings.author }}
+                    {% endif %}
+                    {% if block.settings.show_verified %}
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_iconCarrier">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M21.007 8.27C22.194 9.125 23 10.45 23 12c0 1.55-.806 2.876-1.993 3.73.24 1.442-.134 2.958-1.227 4.05-1.095 1.095-2.61 1.459-4.046 1.225C14.883 22.196 13.546 23 12 23c-1.55 0-2.878-.807-3.731-1.996-1.438.235-2.954-.128-4.05-1.224-1.095-1.095-1.459-2.611-1.217-4.05C1.816 14.877 1 13.551 1 12s.816-2.878 2.002-3.73c-.242-1.439.122-2.955 1.218-4.05 1.093-1.094 2.61-1.467 4.057-1.227C9.125 1.804 10.453 1 12 1c1.545 0 2.88.803 3.732 1.993 1.442-.24 2.956.135 4.048 1.227 1.093 1.092 1.468 2.608 1.227 4.05Z" fill="{{ section.settings.verified_icon_color }}"></path>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M16.581 8.186a1 1 0 0 1 .233 1.395l-5 7a1 1 0 0 1-1.521.126l-3-3a1 1 0 0 1 1.414-1.414l2.165 2.165 4.314-6.04a1 1 0 0 1 1.395-.232Z" fill="{{ section.settings.verified_check_color }}"></path>
+                        </g>
+                      </svg>
+                    {% endif %}
+                  </{{ block_author_tag }}>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+  var swiperEl = document.querySelector('#shopify-section-{{ section.id }} .vso-testimonials-grid__swiper');
+  if (swiperEl) {
+    new Swiper(swiperEl, {
+      loop: {{ section.settings.enable_loop | json }},
+      slidesPerView: 1,
+      spaceBetween: {{ section.settings.cards_gap_mobile }},
+      grabCursor: false,
+      speed: 600,
+      {% if section.settings.enable_autoplay %}
+      autoplay: {
+        delay: {{ section.settings.autoplay_delay }},
+        disableOnInteraction: false,
+      },
+      {% endif %}
+      breakpoints: {
+        750: {
+          spaceBetween: {{ cards_gap }},
+          slidesPerView: {{ section.settings.cards_per_view_desktop }},
+        }
+      }
+    });
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "VSO - Testimonials 13",
+  "tag": "section",
+  "class": "section vso-node vso-node--v2 vso-testimonials-13",
+  "settings": [
+    {"type": "header", "content": "Section Settings"},
+    {"type": "checkbox", "id": "enable_advanced_settings", "label": "Enable advanced settings", "default": false, "info": "Shows additional settings for spacing, layout, and typography."},
+    {"type": "range", "id": "section_max_width", "min": 60, "max": 200, "step": 2, "unit": "rem", "label": "Content max width", "default": 120, "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+    {"type": "range", "id": "padding_horizontal_desktop", "min": 0, "max": 100, "step": 1, "unit": "px", "label": "Desktop side spacing", "default": 0, "info": "Adds spacing on the left and right sides of this section on desktop.", "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+    {"type": "range", "id": "padding_horizontal_mobile", "min": 0, "max": 50, "step": 1, "unit": "px", "label": "Mobile side spacing", "default": 0, "info": "Adds spacing on the left and right sides of this section on mobile.", "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+
+    {"type": "header", "content": "Section Background"},
+    {"type": "select", "id": "section_bg_type", "label": "Background type", "options": [
+      {"value": "solid", "label": "Solid color"},
+      {"value": "gradient", "label": "Gradient"}
+    ], "default": "gradient"},
+    {"type": "color", "id": "section_bg_color", "label": "Background color", "default": "#F8FCFA", "visible_if": "{{ section.settings.section_bg_type == 'solid' }}"},
+    {"type": "color_background", "id": "section_bg_gradient", "label": "Background gradient", "default": "linear-gradient(180deg, #E8F7F1 0%, #FFFFFF 100%)", "visible_if": "{{ section.settings.section_bg_type == 'gradient' }}"},
+    {"type": "checkbox", "id": "full_width_desktop", "label": "Full width on desktop", "default": true},
+    {"type": "range", "id": "section_border_radius", "min": 0, "max": 60, "step": 2, "unit": "px", "label": "Desktop border radius", "default": 12, "visible_if": "{{ section.settings.full_width_desktop == false }}"},
+    {"type": "range", "id": "section_border_radius_mobile", "min": 0, "max": 60, "step": 2, "unit": "px", "label": "Mobile border radius", "default": 12, "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+    {"type": "range", "id": "section_border_width", "min": 0, "max": 10, "step": 1, "unit": "px", "label": "Border width", "default": 0, "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+    {"type": "color", "id": "section_border_color", "label": "Border color", "default": "#E5E7EB", "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+
+    {"type": "header", "content": "Layout Settings", "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+    {"type": "range", "id": "header_width_desktop", "min": 20, "max": 50, "step": 1, "unit": "%", "label": "Desktop header column width", "default": 35, "info": "Width of the left column containing heading and rating on desktop"},
+    {"type": "range", "id": "layout_gap_desktop", "min": 20, "max": 100, "step": 5, "unit": "px", "label": "Desktop gap between columns", "default": 60, "info": "Space between header and carousel on desktop", "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+    {"type": "range", "id": "header_blocks_gap_mobile", "min": 0, "max": 80, "step": 4, "unit": "px", "label": "Mobile spacing between header and cards", "default": 32, "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+    {"type": "select", "id": "header_vertical_position_desktop", "label": "Desktop header vertical position", "options": [
+      {"value": "top", "label": "Top"},
+      {"value": "middle", "label": "Middle"},
+      {"value": "bottom", "label": "Bottom"}
+    ], "default": "middle", "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+    {"type": "range", "id": "cards_per_view_desktop", "min": 1, "max": 4, "step": 1, "label": "Cards visible at once (desktop)", "default": 2, "info": "Number of cards visible in the carousel on desktop", "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+    {"type": "range", "id": "cards_gap", "min": 8, "max": 60, "step": 4, "unit": "px", "label": "Desktop gap between cards", "default": 20, "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+    {"type": "range", "id": "cards_gap_mobile", "min": 8, "max": 40, "step": 4, "unit": "px", "label": "Mobile gap between cards", "default": 16, "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+
+    {"type": "header", "content": "Carousel Settings"},
+    {"type": "checkbox", "id": "enable_loop", "label": "Enable infinite loop", "default": true, "info": "Carousel will loop infinitely", "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+    {"type": "checkbox", "id": "enable_autoplay", "label": "Enable autoplay", "default": true, "info": "Automatically advance slides"},
+    {"type": "range", "id": "autoplay_delay", "min": 1000, "max": 9000, "step": 500, "unit": "ms", "label": "Autoplay delay", "default": 3000, "info": "Time between slide transitions", "visible_if": "{{ section.settings.enable_autoplay }}"},
+
+    {"type": "header", "content": "Section Padding"},
+    {"type": "range", "id": "padding_top_desktop", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Desktop padding top", "default": 40},
+    {"type": "range", "id": "padding_bottom_desktop", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Desktop padding bottom", "default": 40},
+    {"type": "range", "id": "padding_top_mobile", "min": 0, "max": 80, "step": 4, "unit": "px", "label": "Mobile padding top", "default": 20},
+    {"type": "range", "id": "padding_bottom_mobile", "min": 0, "max": 80, "step": 4, "unit": "px", "label": "Mobile padding bottom", "default": 20},
+
+    {"type": "header", "content": "Section Margin"},
+    {"type": "range", "id": "margin_top_desktop", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Desktop margin top", "default": 40},
+    {"type": "range", "id": "margin_bottom_desktop", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Desktop margin bottom", "default": 40},
+    {"type": "range", "id": "margin_top_mobile", "min": 0, "max": 80, "step": 4, "unit": "px", "label": "Mobile margin top", "default": 20},
+    {"type": "range", "id": "margin_bottom_mobile", "min": 0, "max": 80, "step": 4, "unit": "px", "label": "Mobile margin bottom", "default": 20},
+
+    {"type": "header", "content": "Card Styling"},
+    {"type": "select", "id": "card_content_alignment_desktop", "label": "Desktop card content alignment", "options": [{"value": "left", "label": "Left"}, {"value": "center", "label": "Center"}, {"value": "right", "label": "Right"}], "default": "left"},
+    {"type": "select", "id": "card_content_alignment_mobile", "label": "Mobile card content alignment", "options": [{"value": "left", "label": "Left"}, {"value": "center", "label": "Center"}, {"value": "right", "label": "Right"}], "default": "left"},
+    {"type": "color", "id": "block_background_color", "label": "Card background color", "default": "#FFFFFF"},
+    {"type": "range", "id": "block_padding", "min": 0, "max": 60, "step": 1, "unit": "px", "label": "Card padding", "default": 20, "info": "Inner spacing of each card"},
+    {"type": "range", "id": "block_border_radius", "min": 0, "max": 40, "step": 2, "unit": "px", "label": "Card border radius", "default": 12},
+    {"type": "range", "id": "block_border_width", "min": 0, "max": 10, "step": 1, "unit": "px", "label": "Card border width", "default": 1, "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+    {"type": "color", "id": "block_border_color", "label": "Card border color", "default": "#E5E7EB", "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+
+    {"type": "header", "content": "Testimonial card author"},
+    {"type": "range", "id": "author_avatar_size", "min": 32, "max": 80, "step": 1, "unit": "px", "label": "Author avatar size", "default": 40, "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+    {"type": "range", "id": "author_row_margin_bottom", "min": 0, "max": 40, "step": 2, "unit": "px", "label": "Space below author row", "default": 12, "info": "Space between author row and card title", "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+    {"type": "checkbox", "id": "author_pill_enable", "label": "Enable author name pill background", "default": false},
+    {"type": "color", "id": "author_pill_bg_color", "label": "Author pill background color", "default": "#F3F4F6", "visible_if": "{{ section.settings.author_pill_enable }}"},
+    {"type": "range", "id": "verified_icon_size", "min": 12, "max": 32, "step": 1, "unit": "px", "label": "Verified icon size", "default": 16},
+    {"type": "color", "id": "verified_icon_color", "label": "Verified icon color", "default": "#34C7FD"},
+    {"type": "color", "id": "verified_check_color", "label": "Verified check color", "default": "#FFFFFF"},
+
+    {"type": "header", "content": "Card star rating"},
+    {"type": "range", "id": "star_size", "min": 16, "max": 60, "step": 1, "unit": "px", "label": "Star size", "default": 16},
+    {"type": "range", "id": "star_gap", "min": 0, "max": 12, "step": 1, "unit": "px", "label": "Gap between stars", "default": 2},
+    {"type": "color", "id": "star_color", "label": "Star color", "default": "#FFFFFF"},
+    {"type": "color", "id": "star_background_color", "label": "Star background color", "default": "#05B67C"},
+    {"type": "color", "id": "star_empty_color", "label": "Star empty color", "default": "#DFDFDF"},
+    {"type": "range", "id": "stars_title_gap", "min": 0, "max": 24, "step": 1, "unit": "px", "label": "Gap between stars and title", "default": 0, "info": "Controls the gap between the star rating and card title", "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+
+    {"type": "header", "content": "Card title typography"},
+    {"type": "color", "id": "block_title_color", "label": "Card title color", "default": "#000000"},
+    {"type": "checkbox", "id": "custom_block_title_font", "label": "Enable custom font settings", "default": false},
+    {"type": "select", "id": "block_title_as", "label": "Render as", "options": [
+      {"value": "h2", "label": "H2"},
+      {"value": "h3", "label": "H3"},
+      {"value": "h4", "label": "H4"},
+      {"value": "h5", "label": "H5"},
+      {"value": "p", "label": "Paragraph (p)"}
+    ], "default": "h3", "visible_if": "{{ section.settings.custom_block_title_font == false }}"},
+    {"type": "font_picker", "id": "block_title_font", "label": "Font family", "default": "helvetica_n4", "visible_if": "{{ section.settings.custom_block_title_font }}"},
+    {"type": "range", "id": "block_title_size_desktop", "min": 14, "max": 36, "step": 1, "unit": "px", "label": "Desktop card title size", "default": 18, "visible_if": "{{ section.settings.custom_block_title_font }}"},
+    {"type": "range", "id": "block_title_size_mobile", "min": 12, "max": 28, "step": 1, "unit": "px", "label": "Mobile card title size", "default": 16, "visible_if": "{{ section.settings.custom_block_title_font }}"},
+    {"type": "range", "id": "block_title_line_height", "min": 50, "max": 200, "step": 10, "unit": "%", "label": "Line height", "default": 140, "visible_if": "{{ section.settings.custom_block_title_font }}"},
+    {"type": "range", "id": "block_title_font_weight", "min": 100, "max": 900, "step": 100, "label": "Font weight", "default": 600, "visible_if": "{{ section.settings.custom_block_title_font and section.settings.enable_advanced_settings }}"},
+    {"type": "range", "id": "block_title_margin_bottom", "min": 0, "max": 40, "step": 2, "unit": "px", "label": "Space below title", "default": 8, "info": "Space between title and description", "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+
+    {"type": "header", "content": "Card description typography"},
+    {"type": "color", "id": "block_description_color", "label": "Card description color", "default": "#6B7280"},
+    {"type": "checkbox", "id": "custom_block_description_font", "label": "Enable custom font settings", "default": false},
+    {"type": "select", "id": "block_description_as", "label": "Render as", "options": [
+      {"value": "h2", "label": "H2"},
+      {"value": "h3", "label": "H3"},
+      {"value": "h4", "label": "H4"},
+      {"value": "h5", "label": "H5"},
+      {"value": "p", "label": "Paragraph (p)"}
+    ], "default": "p", "visible_if": "{{ section.settings.custom_block_description_font == false }}"},
+    {"type": "font_picker", "id": "block_description_font", "label": "Font family", "default": "helvetica_n4", "visible_if": "{{ section.settings.custom_block_description_font }}"},
+    {"type": "range", "id": "block_description_size_desktop", "min": 12, "max": 24, "step": 1, "unit": "px", "label": "Desktop card description size", "default": 14, "visible_if": "{{ section.settings.custom_block_description_font }}"},
+    {"type": "range", "id": "block_description_size_mobile", "min": 12, "max": 20, "step": 1, "unit": "px", "label": "Mobile card description size", "default": 13, "visible_if": "{{ section.settings.custom_block_description_font }}"},
+    {"type": "range", "id": "block_description_line_height", "min": 50, "max": 200, "step": 10, "unit": "%", "label": "Line height", "default": 150, "visible_if": "{{ section.settings.custom_block_description_font }}"},
+    {"type": "range", "id": "block_description_font_weight", "min": 100, "max": 900, "step": 100, "label": "Font weight", "default": 400, "visible_if": "{{ section.settings.custom_block_description_font and section.settings.enable_advanced_settings }}"},
+    {"type": "range", "id": "block_description_margin_top", "min": 0, "max": 40, "step": 1, "unit": "px", "label": "Card description margin top", "default": 8, "info": "Space above the card description", "visible_if": "{{ section.settings.enable_advanced_settings }}"},
+
+    {"type": "header", "content": "Author typography"},
+    {"type": "color", "id": "block_author_color", "label": "Author text color", "default": "#374151"},
+    {"type": "checkbox", "id": "custom_block_author_font", "label": "Enable custom font settings", "default": false},
+    {"type": "select", "id": "block_author_as", "label": "Render as", "options": [
+      {"value": "h2", "label": "H2"},
+      {"value": "h3", "label": "H3"},
+      {"value": "h4", "label": "H4"},
+      {"value": "h5", "label": "H5"},
+      {"value": "p", "label": "Paragraph (p)"}
+    ], "default": "p", "visible_if": "{{ section.settings.custom_block_author_font == false }}"},
+    {"type": "range", "id": "block_author_size_desktop", "min": 12, "max": 24, "step": 1, "unit": "px", "label": "Desktop author text size", "default": 13, "visible_if": "{{ section.settings.custom_block_author_font }}"},
+    {"type": "range", "id": "block_author_size_mobile", "min": 12, "max": 20, "step": 1, "unit": "px", "label": "Mobile author text size", "default": 12, "visible_if": "{{ section.settings.custom_block_author_font }}"},
+    {"type": "range", "id": "block_author_font_weight", "min": 100, "max": 900, "step": 100, "label": "Font weight", "default": 500, "visible_if": "{{ section.settings.custom_block_author_font and section.settings.enable_advanced_settings }}"}
+  ],
+  "blocks": [
+    {
+      "type": "rating_header",
+      "name": "Rating Header",
+      "limit": 1,
+      "settings": [
+        {"type": "checkbox", "id": "show_rating", "label": "Show rating badge", "default": true},
+        {"type": "select", "id": "rating_position", "label": "Rating position", "options": [
+          {"value": "above_title", "label": "Above title"},
+          {"value": "below_title", "label": "Below title"}
+        ], "default": "below_title", "visible_if": "{{ block.settings.show_rating }}"},
+        {"type": "inline_richtext", "id": "rating_header", "label": "Rating header", "default": "Based on <strong>10,000+</strong> reviews!", "visible_if": "{{ block.settings.show_rating }}"},
+        {"type": "range", "id": "header_star_rating", "label": "Header star rating", "min": 0, "max": 5, "step": 0.5, "default": 5, "visible_if": "{{ block.settings.show_rating }}"},
+        {"type": "color", "id": "rating_star_color", "label": "Rating star color", "default": "#FFFFFF", "visible_if": "{{ block.settings.show_rating }}"},
+        {"type": "range", "id": "rating_star_size", "min": 10, "max": 40, "step": 1, "unit": "px", "label": "Rating star size", "default": 20, "visible_if": "{{ block.settings.show_rating }}"},
+        {"type": "range", "id": "rating_bottom_spacing", "min": 0, "max": 40, "step": 1, "unit": "px", "label": "Space between rating and title", "default": 12, "visible_if": "{{ block.settings.show_rating }}"},
+        {"type": "select", "id": "rating_alignment_desktop", "label": "Desktop rating alignment", "options": [
+          {"value": "left", "label": "Left"},
+          {"value": "center", "label": "Center"},
+          {"value": "right", "label": "Right"}
+        ], "default": "center", "visible_if": "{{ block.settings.show_rating }}"},
+        {"type": "select", "id": "rating_alignment_mobile", "label": "Mobile rating alignment", "options": [
+          {"value": "left", "label": "Left"},
+          {"value": "center", "label": "Center"},
+          {"value": "right", "label": "Right"}
+        ], "default": "center", "visible_if": "{{ block.settings.show_rating }}"},
+        {"type": "color", "id": "rating_text_color", "label": "Rating text color", "default": "#111111"},
+        {"type": "checkbox", "id": "custom_rating_header_font", "label": "Enable rating header custom font", "default": false, "visible_if": "{{ block.settings.show_rating }}"},
+        {"type": "select", "id": "rating_header_as", "label": "Rating header render as", "options": [
+          {"value": "h2", "label": "H2"},
+          {"value": "h3", "label": "H3"},
+          {"value": "h4", "label": "H4"},
+          {"value": "h5", "label": "H5"},
+          {"value": "p", "label": "Paragraph (p)"}
+        ], "default": "p", "visible_if": "{{ block.settings.show_rating and block.settings.custom_rating_header_font == false }}"},
+        {"type": "range", "id": "rating_text_size", "min": 10, "max": 40, "step": 1, "unit": "px", "label": "Rating text size", "default": 16, "visible_if": "{{ block.settings.show_rating and block.settings.custom_rating_header_font }}"}
+      ]
+    },
+    {
+      "type": "section_title",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        {"type": "inline_richtext", "id": "title", "label": "Title text", "default": "What _our customers_ are saying", "info": "Use _underscores_ to highlight text"},
+        {"type": "color", "id": "title_color", "label": "Title color", "default": "#000000"},
+        {"type": "checkbox", "id": "custom_title_font", "label": "Enable custom title font", "default": false},
+        {"type": "select", "id": "title_as", "label": "Title render as", "options": [
+          {"value": "h1", "label": "H1"},
+          {"value": "h2", "label": "H2"},
+          {"value": "h3", "label": "H3"},
+          {"value": "h4", "label": "H4"},
+          {"value": "h5", "label": "H5"},
+          {"value": "p", "label": "Paragraph (p)"}
+        ], "default": "h2", "visible_if": "{{ block.settings.custom_title_font == false }}"},
+        {"type": "font_picker", "id": "title_font", "label": "Title font", "default": "helvetica_n4", "visible_if": "{{ block.settings.custom_title_font }}"},
+        {"type": "range", "id": "title_size_desktop", "min": 20, "max": 80, "step": 2, "unit": "px", "label": "Desktop title size", "default": 40, "visible_if": "{{ block.settings.custom_title_font }}"},
+        {"type": "range", "id": "title_size_mobile", "min": 16, "max": 60, "step": 2, "unit": "px", "label": "Mobile title size", "default": 32, "visible_if": "{{ block.settings.custom_title_font }}"},
+        {"type": "range", "id": "title_line_height", "min": 50, "max": 200, "step": 10, "unit": "%", "label": "Title line height", "default": 130, "visible_if": "{{ block.settings.custom_title_font }}"},
+        {"type": "range", "id": "title_font_weight", "min": 100, "max": 900, "step": 100, "label": "Title font weight", "default": 700, "visible_if": "{{ block.settings.custom_title_font and section.settings.enable_advanced_settings }}"},
+        {"type": "select", "id": "title_alignment_desktop", "label": "Desktop title alignment", "options": [
+          {"value": "left", "label": "Left"},
+          {"value": "center", "label": "Center"},
+          {"value": "right", "label": "Right"}
+        ], "default": "center"},
+        {"type": "select", "id": "title_alignment_mobile", "label": "Mobile title alignment", "options": [
+          {"value": "left", "label": "Left"},
+          {"value": "center", "label": "Center"},
+          {"value": "right", "label": "Right"}
+        ], "default": "center"},
+        {"type": "color_background", "id": "title_highlight_color", "label": "Title highlight color", "default": "linear-gradient(135deg, #A7E9D3 0%, #05B67C 100%)"},
+        {"type": "checkbox", "id": "title_highlight_enable_custom", "label": "Enable highlight custom font", "default": false},
+        {"type": "font_picker", "id": "title_highlight_font", "label": "Highlight font", "default": "helvetica_n4", "visible_if": "{{ block.settings.title_highlight_enable_custom }}"},
+        {"type": "range", "id": "title_highlight_font_weight", "min": 100, "max": 900, "step": 100, "label": "Highlight font weight", "default": 700, "visible_if": "{{ block.settings.title_highlight_enable_custom and section.settings.enable_advanced_settings }}"}
+      ]
+    },
+    {
+      "type": "testimonial_card",
+      "name": "Testimonial Card",
+      "limit": 12,
+      "settings": [
+        {"type": "header", "content": "Card Content"},
+        {"type": "inline_richtext", "id": "title", "label": "Title", "default": "Best Sleep of My Life"},
+        {"type": "inline_richtext", "id": "description", "label": "Description", "default": "This weighted blanket has completely transformed my sleep quality. I fall asleep faster and wake up feeling more refreshed. Highly recommend!"},
+        {"type": "range", "id": "star_rating", "label": "Star rating", "min": 0, "max": 5, "step": 0.5, "default": 5},
+
+        {"type": "header", "content": "Author"},
+        {"type": "image_picker", "id": "author_image", "label": "Author avatar image"},
+        {"type": "inline_richtext", "id": "author", "label": "Author name", "default": "Sarah M."},
+        {"type": "checkbox", "id": "show_verified", "label": "Show verified badge", "default": true}
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "VSO - Testimonials 13",
+      "blocks": [
+        {"type": "rating_header", "settings": {"show_rating": true, "rating_position": "below_title", "rating_header": "Based on <strong>10,000+</strong> reviews!", "header_star_rating": 5}},
+        {"type": "section_title", "settings": {"title": "What _our customers_ are saying"}},
+        {"type": "testimonial_card", "settings": {"title": "Best Sleep of My Life", "description": "This weighted blanket has completely transformed my sleep quality. I fall asleep faster and wake up feeling more refreshed. Highly recommend!", "author": "Sarah M.", "star_rating": 5, "show_verified": true}},
+        {"type": "testimonial_card", "settings": {"title": "Perfect Weight", "description": "I was worried it might be too heavy, but the 15lb option is perfect. It feels like a gentle hug all night long. My anxiety has decreased significantly.", "author": "Jessica T.", "star_rating": 5, "show_verified": true}},
+        {"type": "testimonial_card", "settings": {"title": "Game Changer", "description": "After years of restless nights, this blanket has been a game changer. The quality is exceptional and it's held up beautifully after months of use.", "author": "David L.", "star_rating": 5, "show_verified": true}},
+        {"type": "testimonial_card", "settings": {"title": "Worth Every Penny", "description": "My neck and shoulders feel amazing. The quality is outstanding and worth every penny. Can't imagine sleeping without it now!", "author": "Michael R.", "star_rating": 5, "show_verified": true}}
+      ]
+    }
+  ]
+}
+{% endschema %}
