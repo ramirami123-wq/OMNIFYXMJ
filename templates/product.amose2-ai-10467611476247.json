@@ -1,0 +1,572 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "amose_product_information": {
+      "type": "amose-product-information-2",
+      "blocks": {
+        "pi_tp": {
+          "type": "trustpilot_row",
+          "settings": {
+            "label": "Excellent",
+            "rating": "4.8",
+            "review_count": "1,284",
+            "reviews_label": "reviews",
+            "label_size": 14,
+            "label_weight": "600"
+          }
+        },
+        "pi_title": {
+          "type": "title",
+          "settings": {}
+        },
+        "pi_price": {
+          "type": "price",
+          "settings": {}
+        },
+        "pi_summary": {
+          "type": "summary_line",
+          "settings": {
+            "summary_text": "Ergonomic Memory Foam Cervical Pillow Back Support Innovative Design Sleeping Pillow for Body and Neck Relief",
+            "highlight": "Body and Neck Relief"
+          }
+        },
+        "pi_low_stock": {
+          "type": "low_stock",
+          "settings": {
+            "show": true,
+            "show_number": true,
+            "lead": "Low stock, only ",
+            "tail": " left",
+            "stock_min": 4,
+            "stock_max": 22,
+            "tick_min_sec": 15,
+            "tick_max_sec": 30,
+            "pause_min_sec": 45,
+            "pause_extra_sec": 60,
+            "accent_color": "#dc2626",
+            "text_color": "#171717",
+            "font_size": 14,
+            "margin_top": 6,
+            "margin_bottom": 0
+          }
+        },
+        "pi_buy": {
+          "type": "buy_buttons",
+          "settings": {
+            "button_text": "Add to cart",
+            "button_bg": "#000000",
+            "button_text_color": "#ffffff",
+            "button_radius": 15
+          }
+        },
+        "pi_shipping": {
+          "type": "shipping_eta",
+          "settings": {
+            "show": true,
+            "line_lead": "Get your order on",
+            "date_locale": "en-US",
+            "transit_min": 3,
+            "transit_max": 6,
+            "text_color": "#171717",
+            "muted_color": "#525252",
+            "font_size": 14,
+            "margin_top": 14
+          }
+        },
+        "pi_trust": {
+          "type": "trust_container",
+          "settings": {
+            "show": true,
+            "rating_icon_style": "trustpilot",
+            "rating": "4.8",
+            "review_count": "1,284",
+            "reviews_label": "reviews",
+            "delivery_title": "Free delivery",
+            "delivery_body": "on orders over $50",
+            "guarantee_title": "30-day guarantee",
+            "guarantee_body": "— full refund, no hassle",
+            "bg_color": "#ffffff",
+            "border_color": "#e8e8ec",
+            "text_color": "#0a0a0a",
+            "rating_color": "#0a0a0a",
+            "divider_color": "#e8e8ec",
+            "star_color": "#000000",
+            "padding": 18,
+            "border_radius": 12,
+            "star_size": 16,
+            "star_gap": 8,
+            "font_size": 14,
+            "margin_top": 12,
+            "margin_bottom": 0
+          }
+        },
+        "pi_desc": {
+          "type": "description",
+          "settings": {}
+        },
+        "pi_row_1": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "What is the Ergonomic Sleeping Pillow and who is it for?",
+            "content": "<p>The Ergonomic Sleeping Pillow is designed for people who want a consistent routine with practical benefits they can feel over time. It is best suited for customers looking for easy daily usage, clear directions, and messaging focused on realistic progress rather than hype. If you want a simple product you can use regularly and evaluate week by week, this is a strong fit.</p>"
+          }
+        },
+        "pi_row_2": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "How do I use the Ergonomic Sleeping Pillow?",
+            "content": "<p>Use it consistently according to the product instructions and keep your routine stable for the first few weeks. Most users get the best experience when they follow the same timing each day, avoid skipping days, and combine usage with healthy day-to-day habits. Consistency is more important than intensity, so a steady routine is recommended.</p>"
+          }
+        },
+        "pi_row_3": {
+          "type": "collapsible_row",
+          "settings": {
+            "title": "When should I expect results?",
+            "content": "<p>Results are usually gradual, not instant. Early changes can appear in the first weeks, while stronger and more stable improvements typically come with longer consistent use. Individual timelines vary based on baseline habits, product fit, and consistency, so the best approach is to track progress over time instead of expecting immediate transformation.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "pi_tp",
+        "pi_title",
+        "pi_price",
+        "pi_summary",
+        "pi_low_stock",
+        "pi_buy",
+        "pi_shipping",
+        "pi_trust",
+        "pi_row_1",
+        "pi_row_2",
+        "pi_row_3"
+      ],
+      "settings": {
+        "max_width": 1200,
+        "padding_top": 32,
+        "padding_bottom": 24,
+        "media_radius": 14,
+        "section_bg": "#ffffff",
+        "text_color": "#000000",
+        "muted_text_color": "#444444",
+        "border_color": "#cccccc",
+        "benefit_bg_color": "#f3f3f3",
+        "benefit_text_color": "#000000",
+        "benefit_icon_color": "#000000",
+        "side_benefit_1": "Thoughtful design for",
+        "side_benefit_2": "Comfort-first format for",
+        "side_benefit_3": "Quality you can trust from"
+      }
+    },
+    "amose_image_description": {
+      "type": "amose-image-with-description",
+      "settings": {
+        "max_width": 1200,
+        "image_radius": 20,
+        "image_aspect_ratio": "1 / 1",
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "section_bg": "#f2f1ed",
+        "text_color": "#000000",
+        "muted_text_color": "#444444",
+        "eyebrow": "Why it works",
+        "heading": "Proof, fit, and a reason to believe—spelled out clearly",
+        "description": "<p>Built for consistent routines, this product focuses on practical value you can feel over time. The formula and format are designed to be easy to trust, simple to use, and worth keeping in daily use.</p>",
+        "image": "shopify://shop_images/ChatGPT_Image_Aug_28_2026_11_36_42_AM.png",
+        "show_trustpilot": true,
+        "trustpilot_label": "Excellent",
+        "trustpilot_rating": "4.8",
+        "trustpilot_review_count": "1,284",
+        "trustpilot_reviews_label": "reviews",
+        "trustpilot_label_size": 14,
+        "trustpilot_label_weight": "600",
+        "star_rating_row_label": "Rated",
+        "star_rating_value": "4.8",
+        "star_rating_color": "#000000",
+        "star_rating_review_count": "1,284",
+        "star_rating_reviews_label": "reviews"
+      }
+    },
+    "amose_image_benefits_2": {
+      "type": "amose-image-with-benefits-2",
+      "blocks": {
+        "iwb2_1": {
+          "type": "point",
+          "settings": {
+            "side": "left",
+            "title": "Why people choose the Ergonomic Sleeping Pillow",
+            "text": "<p>The Ergonomic Sleeping Pillow is designed to be simple, practical, and easy to use consistently in daily life.</p>",
+            "phosphor_icon": "calendar"
+          }
+        },
+        "iwb2_2": {
+          "type": "point",
+          "settings": {
+            "side": "left",
+            "title": "Clear value from day one",
+            "text": "<p>The product is positioned with straightforward benefits customers can quickly understand.</p>",
+            "phosphor_icon": "rocket-launch"
+          }
+        },
+        "iwb2_3": {
+          "type": "point",
+          "settings": {
+            "side": "left",
+            "title": "Built for consistency",
+            "text": "<p>It fits naturally into a routine, helping customers stay consistent over time.</p>",
+            "phosphor_icon": "plant"
+          }
+        },
+        "iwb2_4": {
+          "type": "point",
+          "settings": {
+            "side": "right",
+            "title": "Quality-focused positioning",
+            "text": "<p>The message emphasizes premium quality and realistic outcomes without hype.</p>",
+            "phosphor_icon": "brain"
+          }
+        },
+        "iwb2_5": {
+          "type": "point",
+          "settings": {
+            "side": "right",
+            "title": "Benefit-led structure",
+            "text": "<p>Each section explains not only what it does, but why that matters for the customer.</p>",
+            "phosphor_icon": "x-circle"
+          }
+        },
+        "iwb2_6": {
+          "type": "point",
+          "settings": {
+            "side": "right",
+            "title": "Long-term confidence",
+            "text": "<p>Customers get clear guidance that supports trust and repeat usage.</p>",
+            "phosphor_icon": "hand-heart"
+          }
+        }
+      },
+      "block_order": [
+        "iwb2_1",
+        "iwb2_2",
+        "iwb2_3",
+        "iwb2_4",
+        "iwb2_5",
+        "iwb2_6"
+      ],
+      "settings": {
+        "max_width": 1400,
+        "image_column_max": 400,
+        "image_radius": 20,
+        "icon_size": 44,
+        "icon_overlap": 22,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "section_bg": "#ffffff",
+        "text_color": "#000000",
+        "muted_text_color": "#555555",
+        "icon_bg": "#f2f1ed",
+        "icon_color": "#000000",
+        "heading": "What makes the Ergonomic Sleeping Pillow worth building into your routine",
+        "subtitle": "The Ergonomic Sleeping Pillow is summarized in this band: the upside it...",
+        "image": "shopify://shop_images/1780319218_phpr23c9krld1u73NFjmIZ.jpg"
+      }
+    },
+    "amose_comparison_table": {
+      "type": "amose-comparison-table",
+      "blocks": {
+        "cmp_1": {
+          "type": "row",
+          "settings": {
+            "feature": "Better ingredient quality",
+            "left_included": true,
+            "right_included": false
+          }
+        },
+        "cmp_2": {
+          "type": "row",
+          "settings": {
+            "feature": "Designed for daily consistency",
+            "left_included": true,
+            "right_included": false
+          }
+        },
+        "cmp_3": {
+          "type": "row",
+          "settings": {
+            "feature": "Benefit-led formula",
+            "left_included": true,
+            "right_included": false
+          }
+        },
+        "cmp_4": {
+          "type": "row",
+          "settings": {
+            "feature": "Customer-friendly routine",
+            "left_included": true,
+            "right_included": false
+          }
+        },
+        "cmp_5": {
+          "type": "row",
+          "settings": {
+            "feature": "Supports long-term use",
+            "left_included": true,
+            "right_included": false
+          }
+        },
+        "cmp_6": {
+          "type": "row",
+          "settings": {
+            "feature": "Built for conversion-focused messaging",
+            "left_included": true,
+            "right_included": false
+          }
+        }
+      },
+      "block_order": [
+        "cmp_1",
+        "cmp_2",
+        "cmp_3",
+        "cmp_4",
+        "cmp_5",
+        "cmp_6"
+      ],
+      "settings": {
+        "max_width": 1200,
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "heading": "What sets the Ergonomic Sleeping Pillow apart—side by side with the rest",
+        "subtext": "<p>Built for consistent routines, this product focuses on practical value you can feel over time. The formula and format are designed to be easy to trust, simple to use, and worth keeping in daily use.</p>",
+        "left_column_heading": "Ergonomic Sleeping Pillow",
+        "right_column_heading": "Others",
+        "button_label": "Try the Ergonomic Sleeping Pillow",
+        "section_bg": "#ffffff",
+        "text_color": "#000000",
+        "subtext_color": "#000000",
+        "line_color": "#000000",
+        "highlight_bg": "#f2f1ed",
+        "check_bg": "#000000",
+        "check_icon": "#ffffff",
+        "cross_bg": "rgba(0,0,0,0.5)",
+        "cross_icon": "#f2f1ed",
+        "button_bg": "#000000",
+        "button_text": "#ffffff"
+      }
+    },
+    "amose_customer_reviews": {
+      "type": "amose-trustpilot-reviews",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "quote": "<p>I started using the Ergonomic Sleeping Pillow recently and what stood out most is how easy it is to keep in my routine. After a few weeks of consistency, I noticed gradual improvements that felt natural and realistic. I also like that it does exactly what it says without overpromising.</p>",
+            "verified_label": "Verified customer",
+            "name": "Sophie L.",
+            "rating": 5
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "quote": "<p>The experience with the Ergonomic Sleeping Pillow has been very solid so far. The product feels high quality, and the messaging matches what I actually felt over time. It was simple to use daily, and that made it much easier to stay consistent.</p>",
+            "verified_label": "Verified customer",
+            "name": "Daniel R.",
+            "rating": 5
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "quote": "<p>I was looking for something practical and easy to commit to, and the Ergonomic Sleeping Pillow fit that perfectly. The progression was steady, and I appreciated that the benefits felt more reliable week after week. Overall, it has become part of my normal routine.</p>",
+            "verified_label": "Verified customer",
+            "name": "Mia C.",
+            "rating": 4
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "quote": "<p>I’ve tried similar products before, but the Ergonomic Sleeping Pillow is the first one I’ve genuinely stuck with. It is straightforward, the quality is there, and the results felt believable rather than exaggerated. I would definitely keep using it.</p>",
+            "verified_label": "Verified customer",
+            "name": "Noah P.",
+            "rating": 5
+          }
+        },
+        "review_5": {
+          "type": "review",
+          "settings": {
+            "quote": "<p>I bought the Ergonomic Sleeping Pillow with cautious expectations and ended up pleasantly surprised. It feels premium, easy to use, and the improvements felt progressive with consistency. I’d recommend it to anyone looking for something dependable.</p>",
+            "verified_label": "Verified customer",
+            "name": "Emma T.",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4",
+        "review_5"
+      ],
+      "settings": {
+        "trustpilot_stars_image": "",
+        "badge_label": "4.8/5 on 1,284 reviews.",
+        "heading": "What they say about the Ergonomic Sleeping Pillow",
+        "max_width": 1400,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "section_bg": "#f2f1ed",
+        "text_color": "#000000",
+        "muted_color": "#444444",
+        "card_bg": "#ffffff",
+        "card_border": "#858585",
+        "avatar_bg": "#000000",
+        "avatar_text": "#ffffff",
+        "arrow_bg": "#f7f6f3",
+        "arrow_text": "#000000"
+      }
+    },
+    "amose_faq": {
+      "type": "amose-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "item",
+          "settings": {
+            "question": "What is the Ergonomic Sleeping Pillow and who is it for?",
+            "answer": "<p>The Ergonomic Sleeping Pillow is designed for people who want a consistent routine with practical benefits they can feel over time. It is best suited for customers looking for easy daily usage, clear directions, and messaging focused on realistic progress rather than hype. If you want a simple product you can use regularly and evaluate week by week, this is a strong fit.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "item",
+          "settings": {
+            "question": "How do I use the Ergonomic Sleeping Pillow?",
+            "answer": "<p>Use it consistently according to the product instructions and keep your routine stable for the first few weeks. Most users get the best experience when they follow the same timing each day, avoid skipping days, and combine usage with healthy day-to-day habits. Consistency is more important than intensity, so a steady routine is recommended.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "item",
+          "settings": {
+            "question": "When should I expect results?",
+            "answer": "<p>Results are usually gradual, not instant. Early changes can appear in the first weeks, while stronger and more stable improvements typically come with longer consistent use. Individual timelines vary based on baseline habits, product fit, and consistency, so the best approach is to track progress over time instead of expecting immediate transformation.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "item",
+          "settings": {
+            "question": "What makes this different from similar products?",
+            "answer": "<p>The positioning focuses on practical daily use, clearer benefit messaging, and a format that is easier to stick with. Instead of vague promises, the copy emphasizes realistic progress, consistent quality, and a routine that fits into normal life. That combination helps shoppers compare value more confidently before they buy.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "item",
+          "settings": {
+            "question": "Is it suitable for sensitive users?",
+            "answer": "<p>Many shoppers with sensitive routines prefer starting slowly and following the product directions carefully. If you have a known sensitivity or medical concern, check the ingredients and usage guidance first, and consult a professional when needed. Patch testing or a gradual introduction can help you evaluate comfort before full daily use.</p>"
+          }
+        },
+        "faq_6": {
+          "type": "item",
+          "settings": {
+            "question": "What is the return or shipping policy?",
+            "answer": "<p>Most orders ship within a few business days, with delivery timing depending on location and carrier. If the product is not the right fit, review the store return window and follow the listed process for exchanges or refunds. Clear shipping and return details are shown at checkout so you can buy with more confidence.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ],
+      "settings": {
+        "max_width": 1400,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "section_bg": "#ffffff",
+        "text_color": "#000000",
+        "muted_color": "#444444",
+        "divider_color": "#cccccc",
+        "badge_bg": "#f2f1ed",
+        "badge_text_color": "#000000",
+        "show_badge": true,
+        "badge_label": "FAQs",
+        "heading": "Everything to know about the Ergonomic Sleeping Pillow"
+      }
+    },
+    "amose_before_after": {
+      "type": "amose-before-after",
+      "blocks": {
+        "ba_step_1": {
+          "type": "step",
+          "settings": {
+            "kicker": "Weeks 1-2",
+            "title": "Foundation",
+            "text": "<p>The routine establishes a baseline: application feels familiar, and the formula begins working into daily habits. Early changes are usually subtle and individual.</p>"
+          }
+        },
+        "ba_step_2": {
+          "type": "step",
+          "settings": {
+            "kicker": "Weeks 3-4",
+            "title": "Momentum",
+            "text": "<p>With steady use, benefits that depend on consistency tend to show more clearly. This phase rewards repetition more than intensity.</p>"
+          }
+        },
+        "ba_step_3": {
+          "type": "step",
+          "settings": {
+            "kicker": "Months 2+",
+            "title": "Compounding",
+            "text": "<p>Longer timelines often deliver the most convincing outcomes: smoother routines, more stable results, and clearer differentiation from one-off use.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "ba_step_1",
+        "ba_step_2",
+        "ba_step_3"
+      ],
+      "settings": {
+        "max_width": 1200,
+        "padding_top": 56,
+        "padding_bottom": 56,
+        "image_radius": 14,
+        "image_aspect_ratio": "4 / 3",
+        "heading": "What to expect over time with the Ergonomic Sleeping Pillow",
+        "subtitle": "Ergonomic Memory Foam Cervical Pillow Back Support Innovative Design Sleeping Pillow for Body and Neck Relief",
+        "image_before": "shopify://shop_images/1780319218_php10ob5fu8hpdd6mtXBX8.jpg",
+        "image_after": "shopify://shop_images/1780319218_phpr23c9krld1u73NFjmIZ.jpg",
+        "image": "shopify://shop_images/1780319218_phpjh0gt8al59vh4EZtrDB.jpg",
+        "before_label": "Before",
+        "after_label": "After",
+        "badge_bg": "#000000",
+        "badge_text_color": "#ffffff",
+        "badge_radius": 6,
+        "slider_initial": 50,
+        "slider_bar_color": "#ffffff",
+        "handle_color": "#171717",
+        "section_bg": "#ffffff",
+        "text_color": "#171717",
+        "muted_text_color": "#525252"
+      }
+    }
+  },
+  "order": [
+    "amose_product_information",
+    "amose_image_description",
+    "amose_before_after",
+    "amose_image_benefits_2",
+    "amose_comparison_table",
+    "amose_customer_reviews",
+    "amose_faq"
+  ]
+}
