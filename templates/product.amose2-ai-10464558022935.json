@@ -12,6 +12,62 @@
     "amose_product_information": {
       "type": "amose-product-information-2",
       "blocks": {
+        "section_vso_theme_sections_social_proof_XVKDmL": {
+          "type": "shopify://apps/section-vso-theme-sections/blocks/socialProof/06016590-3938-4460-bd08-bd58cf996a58",
+          "settings": {
+            "margin_top": -8,
+            "margin_bottom": 0,
+            "verified_name_1": "Rita",
+            "verified_name_2": "Ahmad",
+            "additional_text": "and <strong>1,000+</strong> others love our products!",
+            "image_1": "shopify://shop_images/ChatGPT_Image_Aug_29_2026_12_42_18_PM.png",
+            "image_2": "shopify://shop_images/pfp2.jpg",
+            "image_3": "shopify://shop_images/pfp3.jpg",
+            "image_4": "shopify://shop_images/pfp4.jpg",
+            "image_5": "shopify://shop_images/pfp5.jpg",
+            "image_6": "shopify://shop_images/pfp6.jpg",
+            "border_width": 1,
+            "border_color": "#000000",
+            "border_style": "dashed",
+            "background_color": "#F4F5F6",
+            "text_color": "#333333",
+            "border_radius": 12,
+            "font_size": 14,
+            "image_size": 36,
+            "padding": 16,
+            "border_radius_mobile": 8,
+            "font_size_mobile": 12,
+            "image_size_mobile": 28,
+            "padding_mobile": 12
+          }
+        },
+        "pi_title": {
+          "type": "title",
+          "settings": {
+            "font_size": 28,
+            "text_color": "#000000"
+          }
+        },
+        "custom_liquid_yh8tUw": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div style=\"\n  display:inline-flex;\n  align-items:center;\n  background:#eef5ed;\n  color:#315b38;\n  padding:7px 12px;\n  border-radius:20px;\n  font-size:13px;\n  font-weight:700;\n  margin-top:6px;\n\">\n  Supports Your Neck & Spine\n</div>"
+          }
+        },
+        "pi_price": {
+          "type": "price",
+          "settings": {
+            "font_size": 19,
+            "text_color": "#000000",
+            "compare_color": "#444444",
+            "show_sale_badge": true,
+            "sale_badge_text": "26% OFF",
+            "sale_badge_bg": "#dc2626",
+            "sale_badge_text_color": "#ffffff",
+            "sale_badge_radius": 7,
+            "sale_badge_font_size": 15
+          }
+        },
         "star_badge_iFdwAm": {
           "type": "star_badge",
           "settings": {
@@ -36,31 +92,10 @@
             "wrapper_margin_bottom": 8
           }
         },
-        "pi_title": {
-          "type": "title",
-          "settings": {
-            "font_size": 28,
-            "text_color": "#000000"
-          }
-        },
-        "custom_liquid_yh8tUw": {
+        "custom_liquid_Ht9N7V": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div style=\"\n  display:inline-flex;\n  align-items:center;\n  background:#eef5ed;\n  color:#315b38;\n  padding:7px 12px;\n  border-radius:20px;\n  font-size:13px;\n  font-weight:700;\n  margin-top:6px;\n\">\n  Supports Your Neck & Spine\n</div>"
-          }
-        },
-        "pi_price": {
-          "type": "price",
-          "settings": {
-            "font_size": 19,
-            "text_color": "#000000",
-            "compare_color": "#444444",
-            "show_sale_badge": true,
-            "sale_badge_text": "Sale",
-            "sale_badge_bg": "#dc2626",
-            "sale_badge_text_color": "#ffffff",
-            "sale_badge_radius": 6,
-            "sale_badge_font_size": 12
+            "custom_liquid": "<style>\n.pillow-proof {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 7px;\n  width: fit-content;\n  margin: 10px auto;\n  padding: 8px 14px;\n  border: 1px solid #e4d5ae;\n  border-radius: 50px;\n  background: linear-gradient(135deg, #fffdf7, #f8f1df);\n  color: #171717;\n  font-size: 13px;\n  font-weight: 700;\n  line-height: 1.3;\n  text-align: center;\n  box-shadow: 0 3px 10px rgba(0,0,0,.06);\n}\n\n.pillow-proof__icon {\n  color: #d39d24;\n  font-size: 15px;\n}\n\n.pillow-proof strong {\n  color: #b67c00;\n  font-weight: 800;\n}\n\n@media (max-width: 480px) {\n  .pillow-proof {\n    font-size: 12px;\n    padding: 7px 11px;\n  }\n}\n</style>\n\n<div class=\"pillow-proof\">\n  <span class=\"pillow-proof__icon\">★</span>\n  <span><strong>#1 Pillow in the USA</strong> — Now Available in Lebanon</span>\n</div>"
           }
         },
         "pi_summary": {
@@ -74,12 +109,6 @@
             "margin_bottom": 16
           }
         },
-        "custom_liquid_Ht9N7V": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<style>\n.pillow-proof {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 7px;\n  width: fit-content;\n  margin: 10px auto;\n  padding: 8px 14px;\n  border: 1px solid #e4d5ae;\n  border-radius: 50px;\n  background: linear-gradient(135deg, #fffdf7, #f8f1df);\n  color: #171717;\n  font-size: 13px;\n  font-weight: 700;\n  line-height: 1.3;\n  text-align: center;\n  box-shadow: 0 3px 10px rgba(0,0,0,.06);\n}\n\n.pillow-proof__icon {\n  color: #d39d24;\n  font-size: 15px;\n}\n\n.pillow-proof strong {\n  color: #b67c00;\n  font-weight: 800;\n}\n\n@media (max-width: 480px) {\n  .pillow-proof {\n    font-size: 12px;\n    padding: 7px 11px;\n  }\n}\n</style>\n\n<div class=\"pillow-proof\">\n  <span class=\"pillow-proof__icon\">★</span>\n  <span><strong>#1 Pillow in the USA</strong> — Now Available in Lebanon</span>\n</div>"
-          }
-        },
         "pi_low_stock": {
           "type": "low_stock",
           "settings": {
@@ -87,11 +116,11 @@
             "show_number": true,
             "lead": "Low stock, only",
             "tail": "left",
-            "stock_min": 4,
-            "stock_max": 22,
-            "tick_min_sec": 15,
+            "stock_min": 3,
+            "stock_max": 8,
+            "tick_min_sec": 30,
             "tick_max_sec": 30,
-            "pause_min_sec": 45,
+            "pause_min_sec": 200,
             "pause_extra_sec": 60,
             "accent_color": "#dc2626",
             "text_color": "#171717",
@@ -159,12 +188,13 @@
         }
       },
       "block_order": [
-        "star_badge_iFdwAm",
+        "section_vso_theme_sections_social_proof_XVKDmL",
         "pi_title",
         "custom_liquid_yh8tUw",
         "pi_price",
-        "pi_summary",
+        "star_badge_iFdwAm",
         "custom_liquid_Ht9N7V",
+        "pi_summary",
         "pi_low_stock",
         "pi_buy",
         "pi_shipping",
