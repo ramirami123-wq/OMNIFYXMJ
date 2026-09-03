@@ -45,8 +45,109 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "featured_product_8EtWmj": {
+      "type": "featured-product",
+      "blocks": {
+        "text_8bfpkV": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_zntDi8": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_kEdNGF": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_YY6pK7": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "enable_color_swatches": false,
+            "custom_swatch_option_name": ""
+          }
+        },
+        "quantity_selector_JwaGYR": {
+          "type": "quantity_selector",
+          "settings": {
+            "enable_quantity_discounts": false,
+            "headline": "BUNDLE & SAVE",
+            "preselected": "option_1",
+            "display_badge": "none",
+            "badge_text": "Most Popular",
+            "option_1_quantity": 1,
+            "option_1_label": "",
+            "option_1_caption": "You save X",
+            "option_1_discount_type": "none",
+            "option_1_percentage_off": 0,
+            "option_1_fixed_amount_off": "0",
+            "option_2_quantity": 2,
+            "option_2_label": "",
+            "option_2_caption": "You save X",
+            "option_2_discount_type": "none",
+            "option_2_percentage_off": 0,
+            "option_2_fixed_amount_off": "0",
+            "option_3_quantity": 3,
+            "option_3_label": "",
+            "option_3_caption": "You save X",
+            "option_3_discount_type": "none",
+            "option_3_percentage_off": 0,
+            "option_3_fixed_amount_off": "0",
+            "option_4_quantity": 4,
+            "option_4_label": "",
+            "option_4_caption": "You save X",
+            "option_4_discount_type": "none",
+            "option_4_percentage_off": 0,
+            "option_4_fixed_amount_off": "0"
+          }
+        },
+        "buy_buttons_yqjCLK": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "share_MzkjzP": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_8bfpkV",
+        "title_zntDi8",
+        "price_kEdNGF",
+        "variant_picker_YY6pK7",
+        "quantity_selector_JwaGYR",
+        "buy_buttons_yqjCLK",
+        "share_MzkjzP"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "ergonomic-sleeping-pillow",
+        "color_scheme": "background-1",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "featured_collection_At8DnQ": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "title": "OMNIFY ESSENTIALS",
@@ -75,6 +176,7 @@
     },
     "featured_collection_YwEcUT": {
       "type": "featured-collection",
+      "disabled": true,
       "custom_css": [],
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
@@ -493,6 +595,7 @@
   },
   "order": [
     "e6750b05-7703-4f69-ab7c-9ffb0acf18fb",
+    "featured_product_8EtWmj",
     "featured_collection_At8DnQ",
     "featured_collection_YwEcUT",
     "d8b7c7f2-8a7b-486d-b2c1-184eea98110d",
