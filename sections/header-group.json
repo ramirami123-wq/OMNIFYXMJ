@@ -11,6 +11,16 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "custom_liquid_XFAQVg": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div style=\"width:100%; overflow:hidden; background:#000; padding:10px 0;\">\n  <div style=\"display:flex; width:max-content; animation:ticker-scroll 8s linear infinite;\">\n    <span style=\"display:flex; align-items:center; gap:10px; font-family:'Poppins', sans-serif; font-weight:800; font-size:16px; letter-spacing:0.5px; color:#fff; white-space:nowrap; padding-right:40px;\">\n      🚚 FREE DELIVERY ON ALL ORDERS\n    </span>\n    <span style=\"display:flex; align-items:center; gap:10px; font-family:'Poppins', sans-serif; font-weight:800; font-size:16px; letter-spacing:0.5px; color:#fff; white-space:nowrap; padding-right:40px;\">\n      🚚 FREE DELIVERY ON ALL ORDERS\n    </span>\n    <span style=\"display:flex; align-items:center; gap:10px; font-family:'Poppins', sans-serif; font-weight:800; font-size:16px; letter-spacing:0.5px; color:#fff; white-space:nowrap; padding-right:40px;\">\n      🚚 FREE DELIVERY ON ALL ORDERS\n    </span>\n  </div>\n</div>\n\n<style>\n@keyframes ticker-scroll {\n  0% { transform: translateX(0); }\n  100% { transform: translateX(-33.333%); }\n}\n</style>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -27,6 +37,7 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "disabled": true,
       "settings": {}
     },
     "header": {
@@ -50,6 +61,7 @@
     }
   },
   "order": [
+    "custom_liquid_XFAQVg",
     "announcement-bar",
     "header"
   ]
