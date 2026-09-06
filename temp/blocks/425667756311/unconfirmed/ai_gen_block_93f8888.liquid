@@ -1,6 +1,180 @@
+{% doc %}
+  @prompt
+    gif 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-gif-block-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ai-gif-block-{{ ai_gen_id }}__frame {
+    width: 100%;
+    overflow: hidden;
+    border-radius: {{ block.settings.corner_radius }}px;
+    background: {{ block.settings.background_color }};
+    line-height: 0;
+  }
+
+  .ai-gif-block-{{ ai_gen_id }}__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: {{ block.settings.image_fit }};
+  }
+
+  .ai-gif-block-{{ ai_gen_id }}__placeholder {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    background: {{ block.settings.background_color }};
+    color: {{ block.settings.text_color }};
+    line-height: 1.4;
+  }
+
+  .ai-gif-block-{{ ai_gen_id }}__placeholder svg {
+    width: 100%;
+    height: 220px;
+    opacity: 0.35;
+  }
+
+  .ai-gif-block-{{ ai_gen_id }}__empty-state {
+    position: absolute;
+    padding: 12px 18px;
+    color: {{ block.settings.text_color }};
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .ai-gif-block-{{ ai_gen_id }}__caption {
+    margin: 10px 0 0;
+    color: {{ block.settings.text_color }};
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: {{ block.settings.caption_alignment }};
+  }
+{% endstyle %}
+
+<div class="ai-gif-block-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-gif-block-{{ ai_gen_id }}__frame">
+    {% if block.settings.gif_image != blank %}
+      <img
+        class="ai-gif-block-{{ ai_gen_id }}__image"
+        src="{{ block.settings.gif_image | image_url: width: 2000 }}"
+        alt="{{ block.settings.alt_text | escape }}"
+        loading="{{ block.settings.loading }}"
+        width="{{ block.settings.gif_image.width }}"
+        height="{{ block.settings.gif_image.height }}"
+      >
+    {% else %}
+      <div class="ai-gif-block-{{ ai_gen_id }}__placeholder">
+        {{ 'image' | placeholder_svg_tag }}
+        <div class="ai-gif-block-{{ ai_gen_id }}__empty-state">Add a GIF or image from the theme editor</div>
+      </div>
+    {% endif %}
+  </div>
+
+  {% if block.settings.caption != blank %}
+    <p class="ai-gif-block-{{ ai_gen_id }}__caption">{{ block.settings.caption }}</p>
+  {% endif %}
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "GIF image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "gif_image",
+      "label": "GIF or image"
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "Alt text",
+      "default": "Animated store graphic"
+    },
+    {
+      "type": "textarea",
+      "id": "caption",
+      "label": "Caption"
+    },
+    {
+      "type": "select",
+      "id": "loading",
+      "label": "Loading",
+      "options": [
+        { "value": "lazy", "label": "Lazy" },
+        { "value": "eager", "label": "Eager" }
+      ],
+      "default": "lazy"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "options": [
+        { "value": "contain", "label": "Contain" },
+        { "value": "cover", "label": "Cover" }
+      ],
+      "default": "contain"
+    },
+    {
+      "type": "select",
+      "id": "caption_alignment",
+      "label": "Caption alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "Corner radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#F3F3F3"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#121212"
+    }
+  ],
+  "presets": [
+    {
+      "name": "GIF image"
+    }
+  ],
+  "tag": null,
+  "class": "gif-image-block"
+}
 {% endschema %}
