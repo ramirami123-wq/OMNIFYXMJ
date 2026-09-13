@@ -201,7 +201,9 @@
         "pi_shipping",
         "pi_trust"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".amose-pi2__trust-score, .amose-pi2__trust-score + hr {display: none;}"
+      ],
       "settings": {
         "product_handle": "sample-product",
         "max_width": 1200,
@@ -289,7 +291,7 @@
         "heading": "Elevate your sleep experience with this essential accessory.",
         "description": "<p>The Ergonomic Sleep Pillow features premium memory foam that adapts to your unique shape, ensuring perfect support. Its breathable cover keeps you cool and fresh throughout the night.</p>",
         "image": "shopify://shop_images/shopping.webp",
-        "show_trustpilot": true,
+        "show_trustpilot": false,
         "trustpilot_label": "Excellent",
         "trustpilot_rating": "4.9",
         "trustpilot_badge_image": "",
@@ -313,7 +315,21 @@
       "type": "apps",
       "settings": {
         "include_margins": true
-      }
+      },
+      "blocks": {
+        "judge_me_reviews_review_widget_Jdgm01": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_Jdgm01"
+      ]
     },
     "amose_before_after": {
       "type": "amose-before-after",
@@ -683,11 +699,11 @@
     "amose_product_information",
     "blocks_znRqLn",
     "amose_image_description",
-    "178571769172912dac",
     "amose_before_after",
     "amose_image_benefits_2",
     "amose_comparison_table",
     "amose_reviews_with_image_7HrED9",
+    "178571769172912dac",
     "amose_faq"
   ]
 }
