@@ -29,7 +29,7 @@
         "custom_liquid_iMx3Lg": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"jdgm-widget jdgm-preview-badge\" data-id=\"{{ product.id }}\" data-template=\"product\">{{ product.metafields.judgeme.badge }}</div>"
+            "custom_liquid": "<div class=\"jdgm-widget jdgm-preview-badge\" data-id=\"{{ product.id }}\" data-template=\"manual-installation\">{{ product.metafields.judgeme.badge }}</div>"
           }
         },
         "price": {
