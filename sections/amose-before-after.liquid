@@ -293,6 +293,19 @@
     display: block;
   }
 
+  #shopify-section-{{ section.id }} .amose-ba__video {
+    margin-top: 8px;
+    border-radius: var(--ba-radius, 14px);
+    overflow: hidden;
+    background: #f2f1ed;
+  }
+
+  #shopify-section-{{ section.id }} .amose-ba__video video {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
   #shopify-section-{{ section.id }} .amose-ba__kicker {
     margin: 0 0 2px;
     font-size: 13px;
@@ -427,7 +440,9 @@
               {% if block.settings.title != blank %}
                 <h3 class="amose-ba__title">{{ block.settings.title | escape }}</h3>
               {% endif %}
-              {% if block.settings.text != blank %}
+              {% if block.settings.video_url != blank %}
+                <div class="amose-ba__video"><video src="{{ block.settings.video_url }}" autoplay loop muted playsinline preload="metadata" aria-label="{{ block.settings.title | escape }}"></video></div>
+              {% elsif block.settings.text != blank %}
                 <div class="amose-ba__text rte">{{ block.settings.text }}</div>
               {% endif %}
             </div>
@@ -643,7 +658,8 @@
       "settings": [
         { "type": "text", "id": "kicker", "label": "Small label", "default": "Weeks 1-2" },
         { "type": "text", "id": "title", "label": "Title", "default": "Gut Adjustment Begins" },
-        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Your microbiome begins adapting to the probiotic strains. Some users notice less digestive discomfort as beneficial bacteria begin to balance the gut.</p>" }
+        { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Your microbiome begins adapting to the probiotic strains. Some users notice less digestive discomfort as beneficial bacteria begin to balance the gut.</p>" },
+        { "type": "url", "id": "video_url", "label": "Video link (shows instead of text, plays like a GIF)" }
       ]
     }
   ],
